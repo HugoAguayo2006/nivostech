@@ -36,7 +36,7 @@ a {
   display: flex;
   align-items: center;
   padding: 0 2.5rem;
-  padding-top: 120px; /* Espacio para la navbar flotante redondeada */
+  padding-top: 50px; /* Espacio para la navbar flotante redondeada */
   color: #f9fafb;
   overflow: hidden;
 
@@ -552,7 +552,7 @@ h2 {
   .hero {
     padding: 0 1.5rem;
     align-items: flex-start;
-    padding-top: 5rem;
+    padding-top: 3rem;
   }
 
   section {
