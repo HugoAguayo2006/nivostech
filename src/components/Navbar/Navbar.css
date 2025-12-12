@@ -52,12 +52,36 @@
   );
 }
 
+/* ====== OVERLAY MENÚ MÓVIL ====== */
+.mobile-menu-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+  z-index: 999;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 .logo {
   display: flex;
   align-items: center;
   gap: 0.5rem;
   text-decoration: none;
   transition: opacity 0.3s ease;
+  flex-shrink: 0;
+  z-index: 1002;
 }
 
 .logo img {
@@ -75,6 +99,47 @@
   max-height: 4rem;
   width: auto;
   object-fit: contain;
+}
+
+/* ====== BOTÓN HAMBURGUESA ====== */
+.mobile-menu-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 2rem;
+  height: 2rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 1002;
+  gap: 0.25rem;
+  flex-shrink: 0;
+}
+
+.mobile-menu-toggle span {
+  width: 100%;
+  height: 3px;
+  background: #e5e7eb;
+  border-radius: 3px;
+  transition: all 0.3s ease;
+  transform-origin: center;
+}
+
+.mobile-menu-toggle:hover span {
+  background: #00d4ff;
+}
+
+.mobile-menu-toggle.active span:nth-child(1) {
+  transform: rotate(45deg) translate(8px, 8px);
+}
+
+.mobile-menu-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.mobile-menu-toggle.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -7px);
 }
 
 .logo:hover {
@@ -218,32 +283,122 @@
   .navbar {
     top: 0.75rem;
     width: calc(100% - 1.5rem);
-    padding: 1rem 1.5rem;
-    border-radius: 30px;
-    flex-wrap: wrap;
-  }
-
-  .nav-links {
-    gap: 0.25rem;
-  }
-
-  .nav-link {
-    font-size: 0.85rem;
-    padding: 0.4rem 0.7rem;
-  }
-
-  .dropdown-menu {
-    min-width: 140px;
-  }
-
-  .dropdown-item {
     padding: 0.6rem 1rem;
-    font-size: 0.85rem;
+    border-radius: 30px;
+    flex-wrap: nowrap;
+    gap: 0.5rem;
+  }
+
+  /* Logos más pequeños en tablets */
+  .logo img,
+  .logo-left,
+  .logo-right {
+    height: 3rem;
+    max-height: 3rem;
+  }
+
+  .mobile-menu-toggle {
+    display: flex;
+    order: 3;
+    margin-left: 0;
   }
 
   .cta-button {
-    font-size: 0.85rem;
-    padding: 0.6rem 1.2rem;
+    order: 2;
+    margin-left: auto;
+    margin-right: 0.5rem;
+  }
+
+  .logo {
+    order: 1;
+  }
+
+  .nav-links {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(15, 23, 42, 0.98);
+    backdrop-filter: blur(20px);
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding-top: 6rem;
+    padding-bottom: 2rem;
+    gap: 1.5rem;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    z-index: 1000;
+    overflow-y: auto;
+  }
+
+  .nav-links.mobile-open {
+    transform: translateX(0);
+  }
+
+  .nav-link {
+    font-size: 1.1rem;
+    padding: 1rem 2rem;
+    width: 80%;
+    text-align: center;
+    border-radius: 12px;
+  }
+
+  .nav-dropdown {
+    width: 80%;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .dropdown-toggle {
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    text-align: center;
+    display: flex;
+  }
+
+  .dropdown-arrow {
+    margin-left: 0.3rem;
+  }
+
+  .dropdown-menu {
+    position: static;
+    width: 100%;
+    margin-top: 0.5rem;
+    min-width: auto;
+    transform: none;
+    left: auto;
+    border-radius: 12px;
+    align-self: center;
+  }
+
+  .dropdown-item {
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    text-align: center;
+  }
+
+  .cta-button {
+    position: static;
+    font-size: 0.75rem;
+    padding: 0.5rem 0.9rem;
+    white-space: nowrap;
+    display: inline-block;
+    transform: none;
+    width: auto;
+    max-width: none;
+    z-index: 1002;
+    opacity: 1;
+    pointer-events: all;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    flex-shrink: 0;
   }
 }
 
@@ -251,26 +406,123 @@
   .navbar {
     top: 0.5rem;
     width: calc(100% - 1rem);
-    flex-direction: column;
-    gap: 1rem;
-    padding: 1rem;
+    padding: 0.5rem 0.8rem;
     border-radius: 25px;
+    gap: 0.4rem;
   }
 
-  .nav-links {
-    width: 100%;
-    justify-content: center;
-    flex-wrap: wrap;
+  /* Logos aún más pequeños en móviles */
+  .logo img,
+  .logo-left,
+  .logo-right {
+    height: 2.5rem;
+    max-height: 2.5rem;
   }
 
-  .dropdown-menu {
-    left: 50%;
-    transform: translateX(-50%);
+  .mobile-menu-toggle {
+    width: 1.75rem;
+    height: 1.75rem;
+    order: 3;
+    margin-left: 0;
   }
 
   .cta-button {
+    order: 2;
+    margin-left: auto;
+    margin-right: 0.5rem;
+  }
+
+  .logo {
+    order: 1;
+  }
+
+  .nav-links {
+    padding-top: 5rem;
+    padding-bottom: 2rem;
+    gap: 1rem;
+  }
+
+  .nav-link {
+    font-size: 1rem;
+    padding: 0.9rem 1.5rem;
+    width: 85%;
+  }
+
+  .nav-dropdown {
+    width: 85%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .dropdown-toggle {
     width: 100%;
+    justify-content: center;
+    align-items: center;
+    padding: 0.9rem 1.5rem;
+    font-size: 1rem;
     text-align: center;
+    display: flex;
+  }
+
+  .dropdown-arrow {
+    margin-left: 0.3rem;
+  }
+
+  .dropdown-menu {
+    align-self: center;
+  }
+
+  .dropdown-item {
+    padding: 0.7rem 1.2rem;
+    font-size: 0.95rem;
+  }
+
+  .cta-button {
+    font-size: 0.7rem;
+    padding: 0.45rem 0.8rem;
+    width: auto;
+    position: static;
+    transform: none;
+    bottom: auto;
+    z-index: 1002;
+    flex-shrink: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    padding: 0.4rem 0.6rem;
+    gap: 0.3rem;
+  }
+
+  /* Logos muy pequeños en móviles pequeños */
+  .logo img,
+  .logo-left,
+  .logo-right {
+    height: 2rem;
+    max-height: 2rem;
+  }
+
+  .mobile-menu-toggle {
+    width: 1.5rem;
+    height: 1.5rem;
+    order: 3;
+    margin-left: 0;
+  }
+
+  .cta-button {
+    order: 2;
+    margin-left: auto;
+    margin-right: 0.3rem;
+    font-size: 0.65rem;
+    padding: 0.4rem 0.7rem;
+    z-index: 1002;
+    flex-shrink: 0;
+  }
+
+  .logo {
+    order: 1;
   }
 }
 
