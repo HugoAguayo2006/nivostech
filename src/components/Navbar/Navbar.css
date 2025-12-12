@@ -10,7 +10,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1.2rem 2.5rem;
+  padding: 0.8rem 2.5rem;
   background: rgba(15, 23, 42, 0.85);
   backdrop-filter: blur(10px);
   border: 1px solid rgba(148, 163, 184, 0.2);
@@ -18,6 +18,8 @@
   transition: all 0.3s ease;
   font-family: 'Zen Dots', cursive;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  min-height: fit-content;
+  height: auto;
 }
 
 .navbar:hover {
@@ -51,17 +53,32 @@
 }
 
 .logo {
-  font-family: 'Zen Dots', cursive;
-  font-weight: 400;
-  font-size: 1.5rem;
-  letter-spacing: 0.06em;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
   text-decoration: none;
-  color: #f9fafb;
-  transition: color 0.3s ease;
+  transition: opacity 0.3s ease;
+}
+
+.logo img {
+  height: 4rem;
+  max-height: 4rem;
+  width: auto;
+  object-fit: contain;
+  transition: opacity 0.3s ease;
+  display: block;
+}
+
+.logo-left,
+.logo-right {
+  height: 4rem;
+  max-height: 4rem;
+  width: auto;
+  object-fit: contain;
 }
 
 .logo:hover {
-  color: #00d4ff;
+  opacity: 0.8;
 }
 
 .nav-links {

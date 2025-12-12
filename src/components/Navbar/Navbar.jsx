@@ -43,7 +43,8 @@ const Navbar = () => {
       
       <nav className="navbar">
         <Link to="/" className="logo">
-          NIVO
+          <img src="/logos/logonivos3.png" alt="Nivos" className="logo-left" />
+          <img src="/logos/logonivos1.png" alt="Nivos" className="logo-right" />
         </Link>
 
       <div className="nav-links">
