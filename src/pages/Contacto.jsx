@@ -9,9 +9,9 @@ function Contacto() {
     e.preventDefault();
 
     // 🔴 RELLENAR CON TUS DATOS DE EMAILJS
-    const SERVICE_ID = "service_xxxxxx";
-    const TEMPLATE_ID = "template_xxxxxx";
-    const PUBLIC_KEY = "xxxxxxxxxxxxxxxx";
+    const SERVICE_ID = "service_7l60jww";
+    const TEMPLATE_ID = "template_bclppip";
+    const PUBLIC_KEY = "pHDhdhRRjDQLVxpTY";
 
     emailjs
       .sendForm(SERVICE_ID, TEMPLATE_ID, formRef.current, PUBLIC_KEY)
@@ -74,26 +74,11 @@ function Contacto() {
                 <input type="email" name="user_email" required />
               </label>
               <label>
-                Teléfono (opcional)
-                <input type="tel" name="user_phone" />
-              </label>
-              <label>
                 Mensaje
                 <textarea name="message" rows="4" required />
               </label>
               <button type="submit">Enviar mensaje</button>
             </form>
-            <small>
-              Formulario conectado con{" "}
-              <a
-                href="https://www.emailjs.com/?src=email-footer"
-                target="_blank"
-                rel="noreferrer"
-              >
-                EmailJS
-              </a>
-              .
-            </small>
           </div>
         </div>
 

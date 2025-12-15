@@ -159,17 +159,7 @@ function Home() {
               </label>
               <button type="submit">Enviar mensaje</button>
             </form>
-            <small>
-              Formulario conectado con{" "}
-              <a
-                href="https://www.emailjs.com/?src=email-footer"
-                target="_blank"
-                rel="noreferrer"
-              >
-                EmailJS
-              </a>
-              .
-            </small>
+            
           </div>
         </div>
       </section>
