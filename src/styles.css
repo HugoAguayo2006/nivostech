@@ -12,11 +12,12 @@ html,
 body {
   height: 100%;
   min-height: 100%;
+  
   background: #020617; /* ✅ fallback si no carga la imagen */
 }
 
 body {
-  background-image: url("/bg-nivos.png");
+  background-image: url("/imagen_mejorada_4k.webp");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -72,7 +73,7 @@ a {
   content: "";
   position: fixed;
   inset: 0;
-  background-image: url("/bg-nivos.png");
+  background: linear-gradient(to right, transparent, rgba(0, 25, 83, 0.95), transparent) ;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -174,7 +175,7 @@ a {
   border-radius: 999px;
   font-weight: 600;
   font-size: 0.95rem;
-  background: #4f46e5;
+  background: #332aea;
   color: #f9fafb;
   box-shadow: 0 12px 30px rgba(79, 70, 229, 0.4);
   transition: transform 0.15s ease, box-shadow 0.15s ease;
@@ -198,16 +199,29 @@ a {
   display: flex;
   justify-content: flex-start;
   align-items: center;
+  position: relative;
 }
 
+/* VIDEO LOGO ANIMADO */
 .hero-video {
   width: 100%;
   max-width: 580px;
+  height: auto;
+
+  /* Estética */
   border-radius: 24px;
-  border: 1px solid rgba(148, 163, 184, 0.35);
-  box-shadow: 0 24px 60px rgba(15, 23, 42, 0.8);
+  /*border: 1px solid rgba(148, 163, 184, 0.35);
+  box-shadow: 0 24px 60px rgba(15, 23, 42, 0.8);*/
   object-fit: cover;
+
+  /* 🔥 CLAVE: elimina el negro visualmente */
+  mix-blend-mode: screen;
+
+  /* UX / performance */
+  pointer-events: none;
+  will-change: transform, opacity;
 }
+
 
 /* ====== SECCIONES GENERALES ====== */
 section {
@@ -674,6 +688,13 @@ h2 {
 /* ====== SECCIONES GENERALES ====== */
 .about-section {
   margin-top: 1.5rem;
+  background: rgba(15, 23, 42, 0.9);
+  border: 1px solid rgba(148, 163, 184, 0.4);
+  border-radius: 20px;
+  padding: 2rem;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  
+  
 }
 
 /* ====== GRID MISION / VISION ====== */
@@ -681,6 +702,7 @@ h2 {
   display: grid;
   gap: 1.5rem;
   margin-top: 1.5rem;
+  
 }
 
 @media (min-width: 768px) {
@@ -735,6 +757,7 @@ h2 {
   left: 0;
   color: #4ade80;
 }
+
 
 /* ====== RESPONSIVE EXTRA ====== */
 @media (max-width: 768px) {

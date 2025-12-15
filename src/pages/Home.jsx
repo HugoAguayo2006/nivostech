@@ -77,23 +77,45 @@ function Home() {
           </div>
 
           {/* VIDEO DERECHA */}
+          {/* VIDEO DERECHA */}
           <div className="hero-media">
-            <video
-              className="hero-video"
-              autoPlay
-              muted
-              loop
-              playsInline
-            >
-              <source src="/video/hero.mp4" type="video/mp4" />
-              Tu navegador no soporta video HTML5.
-            </video>
+            {/* VIDEO DERECHA */}
+<div className="hero-media">
+  <video
+    className="hero-video"
+    autoPlay
+    muted
+    loop
+    playsInline
+    preload="metadata"
+  >
+    <source src="/video/1215.webm" type="video/webm" />
+    <source src="/video/1215.mov" type="video/quicktime" />
+    <source src="/video/1215.mp4" type="video/mp4" />
+    Tu navegador no soporta video HTML5.
+  </video>
+</div>
+
           </div>
+
         </div>
+        
       </section>
+
+      <div
+        style={{
+          width: "100%",
+          height: "5px",
+          background:
+            "rgba(255,255,255,0.8)",
+            // "linear-gradient(to right, transparent, rgba(255,255,255,0.8), transparent)",
+        }}
+      />
+
 
       {/* CONTACTO */}
       <section id="contacto" className="contact">
+        
         <p className="hero-title">Hablemos de tu proyecto</p>
 
         <p className="section-subtitle">

@@ -2,10 +2,10 @@
 .navbar {
   position: fixed;
   top: 1rem;
-  left: 50%;
-  transform: translateX(-50%);
-  width: calc(100% - 3rem);
-  max-width: 1400px;
+  left: 5%;
+  transform: none;
+  width: 90%;
+  max-width: none;
   z-index: 1000;
   display: flex;
   justify-content: space-between;
@@ -20,6 +20,7 @@
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
   min-height: fit-content;
   height: auto;
+  
 }
 
 .navbar:hover {

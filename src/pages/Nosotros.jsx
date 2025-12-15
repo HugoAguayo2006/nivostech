@@ -1,3 +1,4 @@
+import WhatsAppFloat from "../WhatsAppFloat";
 export default function Nosotros() {
   return (
     <div className="page">
@@ -84,6 +85,7 @@ export default function Nosotros() {
             </li>
           </ul>
         </div>
+        <WhatsAppFloat />
       </section>
 
     </div>
