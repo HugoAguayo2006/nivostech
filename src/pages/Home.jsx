@@ -43,7 +43,7 @@ function Home() {
           {/* TEXTO IZQUIERDA */}
           <div className="hero-inner">
             <p className="hero-tag">
-              Estudio de páginas web en Guadalajara | NIVO
+              Estudio de páginas web en Guadalajara | NIVOSTECH
             </p>
 
             <h1 className="hero-title">
@@ -110,7 +110,7 @@ function Home() {
               y directa.
             </p>
             <a
-              href="https://wa.me/523310392675?text=Hola,%20me%20gustaría%20saber%20más%20sobre%20NIVO%20y%20sus%20páginas%20web."
+              href="https://wa.me/523310392675?text=Hola,%20me%20gustaría%20saber%20más%20sobre%20NIVOSTECH%20y%20sus%20páginas%20web."
               target="_blank"
               rel="noreferrer"
               className="whatsapp-btn-main"
@@ -158,7 +158,7 @@ function Home() {
       {/* FOOTER */}
       <footer className="footer">
         <p>
-          © {new Date().getFullYear()} NIVO · Diseño y desarrollo de páginas
+          © {new Date().getFullYear()} NIVOSTECH · Diseño y desarrollo de páginas
           web.
         </p>
       </footer>

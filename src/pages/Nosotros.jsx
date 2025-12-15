@@ -4,7 +4,7 @@ export default function Nosotros() {
 
       {/* HERO NOSOTROS */}
       <section className="about-hero">
-        <h1 className="about-title">Sobre NIVOS</h1>
+        <h1 className="about-title">Sobre NIVOSTECH</h1>
         <p className="about-subtitle">
           Diseñamos experiencias digitales claras, funcionales y alineadas a
           objetivos reales de negocio.
