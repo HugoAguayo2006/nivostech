@@ -15,9 +15,9 @@ function Home() {
     e.preventDefault();
 
     // 🔴 RELLENAR CON TUS DATOS DE EMAILJS
-    const SERVICE_ID = "service_xxxxxx";
-    const TEMPLATE_ID = "template_xxxxxx";
-    const PUBLIC_KEY = "xxxxxxxxxxxxxxxx";
+    const SERVICE_ID = "service_7l60jww";
+    const TEMPLATE_ID = "template_bclppip";
+    const PUBLIC_KEY = "pHDhdhRRjDQLVxpTY";
 
     emailjs
       .sendForm(SERVICE_ID, TEMPLATE_ID, formRef.current, PUBLIC_KEY)
