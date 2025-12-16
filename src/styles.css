@@ -321,9 +321,7 @@ a {
     padding-top: 110px;
     
   }
-
 }
-
 
 /* ====== DESKTOP ====== */
 @media (min-width: 900px) {
@@ -371,50 +369,7 @@ a {
     border-radius: 18px;
     
   }
-
-  
-  
 }
-
-
-
-/* ====== SOLO Surface Duo (≈540px) ====== */
-@media (min-width: 520px) and (max-width: 620px) {
-
-  /* centra todo el contenido del hero */
-  .hero-content {
-    display: flex;
-    flex-direction: column;   /* ✅ ESTO era lo que faltaba */
-    align-items: center;      /* centra hijos horizontalmente */
-  }
-
-  /* centra el “pill” de arriba */
-  .hero-inner {
-    align-self: center;
-    margin: 0 auto;
-    width: fit-content;
-    text-align: center;
-  }
-
-  /* centra el título */
-  .hero-title {
-    margin: 0 auto;
-    text-align: center;
-  }
-
-  /* centra botones */
-  .hero-actions {
-    display: flex;
-    justify-content: center;
-  }
-
-  /* centra nota */
-  .hero-note {
-    text-align: center;
-    margin: 0.75rem auto 0;
-  }
-}
-
 
 
 
@@ -1126,4 +1081,5 @@ body.modal-open .navbar {
 body.modal-open {
   overflow: hidden;
 }
+
 
