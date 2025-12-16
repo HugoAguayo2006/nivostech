@@ -5,12 +5,12 @@
   left: 5%;
   transform: none;
   width: 90%;
-  max-width: none;
+  max-width: 1800px;
   z-index: 1000;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0.8rem 2.5rem;
+  padding: 0.8rem 1.5rem;
   background: rgba(15, 23, 42, 0.85);
   backdrop-filter: blur(10px);
   border: 1px solid rgba(148, 163, 184, 0.2);
@@ -20,7 +20,9 @@
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
   min-height: fit-content;
   height: auto;
-  
+  overflow: visible;
+  flex-wrap: nowrap;
+  gap: 1rem;
 }
 
 
@@ -85,12 +87,15 @@
   transition: opacity 0.3s ease;
   flex-shrink: 0;
   z-index: 1002;
+  min-width: 0;
+  max-width: 200px;
 }
 
 .logo img {
   height: 4rem;
   max-height: 4rem;
   width: auto;
+  max-width: 100%;
   object-fit: contain;
   transition: opacity 0.3s ease;
   display: block;
@@ -105,7 +110,7 @@
 }
 
 .logo-left {
-  margin-left: 2.5rem; /* ⬅️ separa hacia la derecha */
+  margin-left: 0; /* ⬅️ sin margen extra para evitar desbordes */
 }
 
 
@@ -189,21 +194,27 @@
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  flex-wrap: nowrap;
+  overflow: visible;
+  flex-shrink: 1;
+  min-width: 0;
 }
 
 .nav-link {
   font-family: 'Zen Dots', cursive;
   text-decoration: none;
   color: #e5e7eb;
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   font-weight: 400;
-  padding: 0.5rem 1rem;
+  padding: 0.5rem 0.8rem;
   border-radius: 8px;
   transition: all 0.3s ease;
   position: relative;
   background: none;
   border: none;
   cursor: pointer;
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
 /* Hover específico para Servicios */
@@ -231,6 +242,8 @@
   /* Agregar padding invisible para facilitar el hover */
   padding: 0.5rem 0;
   margin: -0.5rem 0;
+  overflow: visible;
+  z-index: 1001;
 }
 
 .dropdown-toggle {
@@ -264,6 +277,10 @@
   /* Agregar padding invisible arriba para facilitar el movimiento del mouse */
   margin-top: 0.25rem;
   padding-top: 0.75rem;
+  z-index: 1002;
+  display: block;
+  visibility: visible;
+  opacity: 1;
 }
 
 @keyframes dropdownFadeIn {
@@ -308,16 +325,17 @@
 .cta-button {
   font-family: 'Zen Dots', cursive;
   display: inline-block;
-  padding: 0.75rem 1.5rem;
+  padding: 0.7rem 1.3rem;
   background: #ffffff;
   color: #0f172a;
   text-decoration: none;
   border-radius: 8px;
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   font-weight: 400;
   transition: all 0.3s ease;
   white-space: nowrap;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  flex-shrink: 0;
 }
 
 .cta-button:hover {
@@ -608,6 +626,11 @@
 
 /* ====== DESKTOP - Mostrar menú normal ====== */
 @media (min-width: 1367px) {
+  .navbar {
+    padding: 0.8rem 1.8rem;
+    gap: 1.2rem;
+  }
+
   .mobile-menu-toggle {
     display: none !important;
   }
@@ -623,10 +646,11 @@
     padding: 0 !important;
     overflow: visible !important;
     flex-direction: row !important;
-    gap: 5.5rem !important;
+    gap: 0.8rem !important;
+    flex-wrap: nowrap !important;
+    flex-shrink: 1 !important;
+    min-width: 0 !important;
   }
-
-  /* HUGO */
 
   .cta-button {
     position: static !important;
@@ -636,19 +660,23 @@
     margin-left: 0 !important;
     margin-right: 0 !important;
     order: unset !important;
-    font-size: 0.95rem !important;
-    padding: 0.75rem 1.5rem !important;
+    font-size: 0.9rem !important;
+    padding: 0.7rem 1.3rem !important;
+    flex-shrink: 0 !important;
   }
 
   .logo {
     order: unset !important;
+    flex-shrink: 0 !important;
   }
 
   .nav-link {
     width: auto !important;
     text-align: left !important;
-    padding: 0.5rem 1rem !important;
-    font-size: 0.95rem !important;
+    padding: 0.5rem 0.75rem !important;
+    font-size: 0.88rem !important;
+    white-space: nowrap !important;
+    flex-shrink: 0 !important;
   }
 
   .nav-dropdown {
@@ -656,13 +684,17 @@
     display: block !important;
     flex-direction: unset !important;
     align-items: unset !important;
+    flex-shrink: 0 !important;
+    overflow: visible !important;
+    z-index: 1001 !important;
   }
 
   .dropdown-toggle {
     width: auto !important;
-    padding: 0.5rem 1rem !important;
-    font-size: 0.95rem !important;
+    padding: 0.5rem 0.75rem !important;
+    font-size: 0.88rem !important;
     text-align: left !important;
+    white-space: nowrap !important;
   }
 
   .dropdown-menu {
@@ -673,10 +705,41 @@
     min-width: 160px !important;
     transform: none !important;
     align-self: unset !important;
+    z-index: 1002 !important;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
   }
 
   .dropdown-arrow {
     margin-left: 0.4rem !important;
+  }
+}
+
+/* ====== PANTALLAS MUY GRANDES ====== */
+@media (min-width: 1600px) {
+  .navbar {
+    padding: 0.8rem 2rem;
+    gap: 1.5rem;
+  }
+
+  .nav-links {
+    gap: 1.2rem !important;
+  }
+
+  .nav-link {
+    padding: 0.5rem 1rem !important;
+    font-size: 0.95rem !important;
+  }
+
+  .dropdown-toggle {
+    padding: 0.5rem 1rem !important;
+    font-size: 0.95rem !important;
+  }
+
+  .cta-button {
+    font-size: 0.95rem !important;
+    padding: 0.75rem 1.5rem !important;
   }
 }
 
