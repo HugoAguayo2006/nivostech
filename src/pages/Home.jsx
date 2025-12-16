@@ -53,13 +53,17 @@ function Home() {
               para tu negocio.
             </h1>
 
-            <Link to="/contacto" className="hero-btn">
-              Agendar reunión
-            </Link>
+            <div className="hero-actions">
 
             <Link to="/proyectos" className="hero-btn">
               Nuestros Proyectos
             </Link>
+            <Link to="/contacto" className="hero-btn">
+              Agendar reunión
+            </Link>
+
+            
+            </div>
 
             <p className="hero-note">
               * Reunión de 15 minutos para entender tus necesidades.
@@ -68,7 +72,7 @@ function Home() {
 
           {/* VIDEO DERECHA */}
           {/* VIDEO DERECHA */}
-          <div className="hero-media">
+
             {/* VIDEO DERECHA */}
 <div className="hero-media">
   <video
@@ -85,8 +89,6 @@ function Home() {
     Tu navegador no soporta video HTML5.
   </video>
 </div>
-
-          </div>
 
         </div>
         

@@ -53,24 +53,23 @@ a {
 /* ====== NAVBAR ====== */
 /* Los estilos de la navbar están en src/components/Navbar/Navbar.css */
 
-/* ====== HERO ====== */
+/* ====== HERO (COMPLETO + RESPONSIVO) ====== */
 .hero {
   position: relative;
   min-height: 100vh;
   display: flex;
   align-items: center;
-  padding: 0 2.5rem;
-  padding-top: 50px; /* Espacio para la navbar flotante redondeada */
+
+  /* ✅ padding fluido */
+  padding: 0 1.25rem;
+  padding-top: 90px; /* espacio para navbar */
   color: #f9fafb;
   overflow: hidden;
 
-  /* 🔥 IMPORTANTE: quitar el límite de 1000px */
   max-width: 100%;
   width: 100%;
   margin: 0; /* anula el margin: 0 auto del selector section */
-
-  /*margin-left: -0rem; */
-  margin-top: -7rem; /* 🔼 sube todo */
+  margin-top: 0; /* ✅ en móvil no subimos el hero */
 }
 
 /* ✅ Backdrop fijo para que SIEMPRE se vea el fondo incluso con overlays */
@@ -78,7 +77,12 @@ a {
   content: "";
   position: fixed;
   inset: 0;
-  background: linear-gradient(to right, transparent, rgba(0, 25, 83, 0.95), transparent) ;
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(0, 25, 83, 0.95),
+    transparent
+  );
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -86,41 +90,14 @@ a {
   pointer-events: none;
 }
 
-/* Fondo */
+/* Fondo (si lo usas) */
 .hero-bg {
   position: absolute;
   inset: 0;
-  /* background-image: url("/gradient_converted.webp"); */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   z-index: -2;
-}
-
-.whatsapp-float {
-  position: fixed;
-  /* 👇 Lo queremos a la IZQUIERDA */
-  right: 18px;
-  left: auto;
-
-  /* ✅ Pegado al borde visible, respetando barras del navegador */
-  bottom: calc(env(safe-area-inset-bottom, 0px) + 18px);
-
-  z-index: 9999;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.6rem;
-  background: #22c55e;
-  color: #ffffff;
-  padding: 0.7rem 0.9rem;
-  border-radius: 999px;
-  box-shadow: 0 12px 30px -10px rgba(34, 197, 94, 0.5);
-  font-weight: 700;
-}
-
-.whatsapp-float img {
-  width: 20px;
-  height: 20px;
 }
 
 /* Gradiente azul */
@@ -131,27 +108,28 @@ a {
   background: radial-gradient(
     circle at top left,
     rgba(59, 130, 246, 0.28),
-    transparent 0%
+    transparent 60%
   );
   z-index: -1;
 }
 
-/* Contenido a 2 columnas */
+/* ✅ Contenido: 1 columna en móvil, 2 en desktop */
 .hero-content {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 3rem;
   width: 100%;
   max-width: 1100px;
   margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: 1fr; /* móvil */
+  gap: 2rem;
+  align-items: center;
 }
 
 /* Columna texto izquierda */
 .hero-inner {
-  flex: 0 0 50%;
   text-align: left;
   max-width: 650px;
+  min-width: 0;
 }
 
 .hero-tag {
@@ -167,25 +145,36 @@ a {
 }
 
 .hero-title {
-  font-size: clamp(2.4rem, 4vw, 3.6rem);
+  font-size: clamp(2rem, 6vw, 3.6rem);
   font-weight: 800;
   line-height: 1.1;
-  margin-top: -1rem;
-  margin-bottom: 1.5rem;
+  margin-top: 0; /* ✅ móvil: no lo subimos */
+  margin-bottom: 1.25rem;
+}
+
+/* ===== BOTONES (ARREGLADOS) ===== */
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;     /* ✅ baja a otra línea si no cabe */
+  gap: 0.75rem;
+  margin-top: 1.25rem;
 }
 
 .hero-btn {
   border: none;
   cursor: pointer;
-  padding: 0.85rem 1.8rem;
+  padding: 0.85rem 1.6rem;
   border-radius: 999px;
   font-weight: 600;
   font-size: 0.95rem;
+
   background: #332aea;
   color: #f9fafb;
+
   box-shadow: 0 12px 30px rgba(79, 70, 229, 0.4);
   transition: transform 0.15s ease, box-shadow 0.15s ease;
-  margin-right: 15px;
+
+  white-space: nowrap; /* ✅ evita que el texto se rompa */
 }
 
 .hero-btn:hover {
@@ -193,40 +182,168 @@ a {
   box-shadow: 0 18px 40px rgba(79, 70, 229, 0.55);
 }
 
+.hero-btn-outline {
+  background: rgba(51, 42, 234, 0.18);
+  border: 1px solid rgba(99, 102, 241, 0.45);
+  box-shadow: none;
+}
+
 .hero-note {
-  margin-top: 1.5rem;
+  margin-top: 1.25rem;
   font-size: 0.8rem;
   color: #d4d4d8;
 }
 
 /* Columna media derecha */
 .hero-media {
-  flex: 0 0 100%;
+  min-width: 0;
   display: flex;
-  justify-content: flex-start;
+  justify-content: center; /* ✅ móvil centrado */
   align-items: center;
   position: relative;
 }
 
 /* VIDEO LOGO ANIMADO */
 .hero-video {
-  width: 100%;
+  width: 1000%;
   max-width: 580px;
   height: auto;
 
-  /* Estética */
   border-radius: 24px;
-  /*border: 1px solid rgba(148, 163, 184, 0.35);
-  box-shadow: 0 24px 60px rgba(15, 23, 42, 0.8);*/
   object-fit: cover;
 
-  /* 🔥 CLAVE: elimina el negro visualmente */
+  /* 🔥 elimina el negro visualmente */
   mix-blend-mode: screen;
 
-  /* UX / performance */
   pointer-events: none;
   will-change: transform, opacity;
 }
+
+/* ✅ WhatsApp flotante */
+.whatsapp-float {
+  position: fixed;
+  right: 18px;
+  left: auto;
+  bottom: calc(env(safe-area-inset-bottom, 0px) + 18px);
+  z-index: 9999;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+
+  background: #22c55e;
+  color: #ffffff;
+  padding: 0.7rem 0.9rem;
+  border-radius: 999px;
+
+  box-shadow: 0 12px 30px -10px rgba(34, 197, 94, 0.5);
+  font-weight: 700;
+}
+
+.whatsapp-float img {
+  width: 20px;
+  height: 20px;
+}
+
+@media (max-width: 768px) {
+  .hero {
+    min-height: auto;     /* 🔥 CLAVE */
+    padding-bottom: 2rem;
+    
+  }
+}
+
+/* ===== HERO: MOBILE + TABLET (iPad) ===== */
+@media (max-width: 1024px) {
+  .hero {
+    min-height: auto;          /* 🔥 ya no fuerza 100vh */
+    align-items: flex-start;   /* pega el contenido arriba */
+    padding-top: 85px;         /* ajusta según tu navbar */
+    padding-bottom: 2rem;
+  }
+
+  .hero-video {
+    max-height: 55vh;          /* evita que el video se coma toda la pantalla */
+    width: auto;
+    margin-top: 1.25rem;
+    margin-bottom: 3.25rem;
+    
+  }
+}
+
+/* ===== FIX: 2 columnas en pantallas ~900-1100px (Surface, iPad landscape) ===== */
+@media (min-width: 900px) and (max-width: 1100px) {
+  .hero-media {
+    justify-content: center;   /* en vez de pegado a la derecha/izq */
+    padding-right: 1.25rem;    /* “mete” la esfera */
+  }
+
+  .hero-video {
+    max-width: 420px;          /* un poquito más chica */
+  }
+}
+
+
+
+/* ====== TABLET ====== */
+@media (min-width: 600px) {
+  .hero {
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-top: 110px;
+    
+  }
+}
+
+/* ====== DESKTOP ====== */
+@media (min-width: 900px) {
+  .hero {
+    padding: 0 2.5rem;
+    padding-top: 110px;
+    margin-top: -7rem; /* ✅ solo desktop como lo tenías */
+  }
+
+  .hero-content {
+    grid-template-columns: 1.1fr 0.9fr; /* 2 columnas */
+    gap: 3rem;
+  }
+
+  .hero-media {
+    justify-content: flex-start; /* ✅ desktop */
+  }
+
+  .hero-title {
+    margin-top: -1rem; /* ✅ conserva tu estilo */
+  }
+}
+
+/* ====== TELÉFONO CHICO ====== */
+@media (max-width: 480px) {
+  .hero {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 10px !important;
+    
+  }
+
+  .hero-actions {
+    flex-direction: column; /* ✅ botones en columna */
+    align-items: stretch;
+  }
+
+  .hero-btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  .hero-video {
+    max-width: 100%;
+    border-radius: 18px;
+    
+  }
+}
+
+
 
 
 /* ====== SECCIONES GENERALES ====== */
@@ -307,9 +424,29 @@ h2 {
   margin-top: 1rem;
 }
 
+
+
+/* Tablet: un poco hacia arriba */
+@media (max-width: 900px) {
+  .contact {
+    margin-top: -1.5rem;
+  }
+}
+
+/* Móvil: más hacia arriba */
+@media (max-width: 480px) {
+  .contact {
+    margin-top: -3rem;
+  }
+}
+
 @media (min-width: 768px) {
   .contact-grid {
     grid-template-columns: 1fr 1fr;
+  }
+
+  .contact {
+    background: transparent;
   }
 }
 
