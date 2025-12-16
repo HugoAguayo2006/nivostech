@@ -42,6 +42,11 @@ function Servicios() {
           <div className="services-grid">
             {/* ===== PLAN 1 ===== */}
             <div className="service-card">
+              <img 
+                src="/images/nivos_planes.webp" 
+                alt="Planes de NIVOSTECH"
+                className="service-card-image"
+              />
               <h2>Plan 1: Landing Extendida</h2>
               <p className="service-description">
                 <strong>
@@ -71,38 +76,23 @@ function Servicios() {
                   </li>
                   <li>Soporte técnico inicial (7–14 días)</li>
                 </ul>
-
-                <p
-                  style={{
-                    fontSize: "1.5rem",
-                    color: "#4A90E2",
-                    fontWeight: "bold",
-                    marginTop: "1rem",
-                  }}
-                >
-                  Precio: $9,000
-                </p>
               </div>
 
               <Link
                 to="/servicios/plan-1"
                 className="service-link"
-                style={{
-                  display: "inline-block",
-                  padding: "0.75rem 1.5rem",
-                  backgroundColor: "#4A90E2",
-                  color: "white",
-                  textDecoration: "none",
-                  borderRadius: "8px",
-                  fontWeight: "bold",
-                }}
               >
-                Ver más →
+                Ver más
               </Link>
             </div>
 
             {/* ===== PLAN 2 ===== */}
             <div className="service-card">
+              <img 
+                src="/images/nivos_planes2.webp" 
+                alt="Planes de NIVOSTECH"
+                className="service-card-image"
+              />
               <h2>Plan 2: Sitio Profesional</h2>
               <p className="service-description">
                 <strong>
@@ -131,33 +121,13 @@ function Servicios() {
                   <li>Gestión de productos, servicios, usuarios o contenido</li>
                   <li>Endpoints protegidos con autenticación</li>
                 </ul>
-
-                <p
-                  style={{
-                    fontSize: "1.5rem",
-                    color: "#4A90E2",
-                    fontWeight: "bold",
-                    marginTop: "1rem",
-                  }}
-                >
-                  Precio: $14,000
-                </p>
               </div>
 
               <Link
                 to="/servicios/plan-2"
                 className="service-link"
-                style={{
-                  display: "inline-block",
-                  padding: "0.75rem 1.5rem",
-                  backgroundColor: "#4A90E2",
-                  color: "white",
-                  textDecoration: "none",
-                  borderRadius: "8px",
-                  fontWeight: "bold",
-                }}
               >
-                Ver más →
+                Ver más
               </Link>
             </div>
           </div>
