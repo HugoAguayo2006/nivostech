@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import { PROYECTOS } from "../data.js";
 import "../components/Projects/Projects.css";
 
-const FILTERS = ["Todos", "Institucional"];
+const FILTERS = ["Todos", "Institucional", "Tecnológico", "Organización", "Web App"];
 
 export default function Proyectos() {
   const [active, setActive] = useState("Todos");
@@ -22,7 +22,7 @@ export default function Proyectos() {
   const openProject = (project) => {
     setSelected(project);
     setOpen(true);
-    document.body.classList.add("modal-open"); // 🔥 oculta navbar
+    document.body.classList.add("modal-open"); // 🔥 oculta navbar (por CSS global)
   };
 
   const closeProject = () => {
@@ -31,7 +31,7 @@ export default function Proyectos() {
     document.body.classList.remove("modal-open"); // 🔥 muestra navbar
   };
 
-  /* ====== ESC PARA CERRAR ====== */
+  /* ====== ESC PARA CERRAR MODAL ====== */
   useEffect(() => {
     const onKey = (e) => {
       if (e.key === "Escape") closeProject();
@@ -81,7 +81,7 @@ export default function Proyectos() {
                 <div className="metric-label">Proyectos</div>
               </div>
               <div className="metric">
-                <div className="metric-num">+500</div>
+                <div className="metric-num">+5000</div>
                 <div className="metric-label">Personas alcanzadas</div>
               </div>
               <div className="metric">
@@ -186,90 +186,142 @@ export default function Proyectos() {
   );
 }
 
-/* ====== MODAL COMPONENT ====== */
+/* ====== MODAL COMPONENT (con Lightbox) ====== */
 function ProjectModal({ project, onClose }) {
+  const [zoomImage, setZoomImage] = useState(null);
+
+  // ESC: si hay imagen en lightbox, cierra lightbox; si no, cierra modal
+  useEffect(() => {
+    const onKey = (e) => {
+      if (e.key !== "Escape") return;
+      if (zoomImage) setZoomImage(null);
+      else onClose();
+    };
+
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [zoomImage, onClose]);
+
   return (
-    <div className="modal-backdrop" onMouseDown={onClose}>
-      <div className="modal" onMouseDown={(e) => e.stopPropagation()}>
-        <div className="modal-header">
-          <div>
-            <div className="modal-kicker">
-              <span className="badge">{project.type}</span>
-              <span className="badge soft">{project.year}</span>
-              <span className="badge soft">{project.tag}</span>
+    <>
+      <div className="modal-backdrop" onMouseDown={onClose}>
+        <div className="modal" onMouseDown={(e) => e.stopPropagation()}>
+          <div className="modal-header">
+            <div>
+              <div className="modal-kicker">
+                <span className="badge">{project.type}</span>
+                <span className="badge soft">{project.year}</span>
+                <span className="badge soft">{project.tag}</span>
+              </div>
+
+              <h3 className="modal-title">{project.title}</h3>
+              <p className="modal-sub">{project.short}</p>
             </div>
 
-            <h3 className="modal-title">{project.title}</h3>
-            <p className="modal-sub">{project.short}</p>
+            <button
+              className="modal-close"
+              onClick={onClose}
+              aria-label="Cerrar"
+            >
+              ✕
+            </button>
           </div>
 
-          <button className="modal-close" onClick={onClose} aria-label="Cerrar">
-            ✕
-          </button>
-        </div>
-
-        <div className="modal-body">
-          <div className="modal-left">
-            <div className="modal-cover">
-              <img src={project.cover} alt={project.title} />
-            </div>
-
-            {project.gallery?.length > 0 && (
-              <div className="modal-gallery">
-                {project.gallery.map((src) => (
-                  <img key={src} src={src} alt="" loading="lazy" />
-                ))}
-              </div>
-            )}
-          </div>
-
-          <div className="modal-right">
-            <div className="case-block">
-              <h4>El reto</h4>
-              <p>{project.reto}</p>
-            </div>
-
-            <div className="case-block">
-              <h4>La solución</h4>
-              <p>{project.solucion}</p>
-            </div>
-
-            <div className="case-block">
-              <h4>Resultados</h4>
-              <ul>
-                {project.resultados?.map((r) => (
-                  <li key={r}>{r}</li>
-                ))}
-              </ul>
-            </div>
-
-            <div className="case-block">
-              <h4>Stack</h4>
-              <div className="modal-stack">
-                {project.stack.map((s) => (
-                  <span key={s} className="stack-pill">
-                    {s}
-                  </span>
-                ))}
-              </div>
-            </div>
-
-            <div className="modal-actions">
-              <a
-                className="projects-btn primary"
-                href={project.liveUrl}
-                target="_blank"
-                rel="noreferrer"
+          <div className="modal-body">
+            <div className="modal-left">
+              {/* ✅ CLICK PARA ABRIR IMAGEN GRANDE */}
+              <div
+                className="modal-cover clickable"
+                onClick={() => setZoomImage(project.cover)}
               >
-                Visitar sitio
-              </a>
-              <button className="projects-btn ghost" onClick={onClose}>
-                Cerrar
-              </button>
+                <img src={project.cover} alt={project.title} />
+              </div>
+
+              {project.gallery?.length > 0 && (
+                <div className="modal-gallery">
+                  {project.gallery.map((src) => (
+                    <img
+                      key={src}
+                      src={src}
+                      alt=""
+                      loading="lazy"
+                      className="clickable"
+                      onClick={() => setZoomImage(src)}
+                    />
+                  ))}
+                </div>
+              )}
+            </div>
+
+            <div className="modal-right">
+              <div className="case-block">
+                <h4>El reto</h4>
+                <p>{project.reto}</p>
+              </div>
+
+              <div className="case-block">
+                <h4>La solución</h4>
+                <p>{project.solucion}</p>
+              </div>
+
+              <div className="case-block">
+                <h4>Resultados</h4>
+                <ul>
+                  {project.resultados?.map((r) => (
+                    <li key={r}>{r}</li>
+                  ))}
+                </ul>
+              </div>
+
+              <div className="case-block">
+                <h4>Stack</h4>
+                <div className="modal-stack">
+                  {project.stack.map((s) => (
+                    <span key={s} className="stack-pill">
+                      {s}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
+              <div className="modal-actions">
+                {project.liveUrl ? (
+                  <a
+                    className="projects-btn primary"
+                    href={project.liveUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    Visitar sitio
+                  </a>
+                ) : (
+                  <span className="private-note">
+                    Proyecto privado (sin enlace público)
+                  </span>
+                )}
+
+                <button className="projects-btn ghost" onClick={onClose}>
+                  Cerrar
+                </button>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
+
+      {/* ====== LIGHTBOX ====== */}
+      {zoomImage && (
+        <div className="lightbox-backdrop" onClick={() => setZoomImage(null)}>
+          <img src={zoomImage} alt="Vista ampliada" />
+          <button
+            className="lightbox-close"
+            onClick={() => setZoomImage(null)}
+            aria-label="Cerrar imagen"
+          >
+            ✕
+          </button>
+        </div>
+      )}
+    </>
   );
 }
