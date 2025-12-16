@@ -245,12 +245,40 @@ a {
   height: 20px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 760px) {
   .hero {
     min-height: auto;     /* 🔥 CLAVE */
     padding-bottom: 2rem;
     
   }
+    .hero-title {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-note{
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-tag{
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-btn {
+  display: block;
+  max-width: 280px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+
+ 
+
 }
 
 /* ===== HERO: MOBILE + TABLET (iPad) ===== */
@@ -293,7 +321,9 @@ a {
     padding-top: 110px;
     
   }
+
 }
+
 
 /* ====== DESKTOP ====== */
 @media (min-width: 900px) {
@@ -341,7 +371,50 @@ a {
     border-radius: 18px;
     
   }
+
+  
+  
 }
+
+
+
+/* ====== SOLO Surface Duo (≈540px) ====== */
+@media (min-width: 520px) and (max-width: 620px) {
+
+  /* centra todo el contenido del hero */
+  .hero-content {
+    display: flex;
+    flex-direction: column;   /* ✅ ESTO era lo que faltaba */
+    align-items: center;      /* centra hijos horizontalmente */
+  }
+
+  /* centra el “pill” de arriba */
+  .hero-inner {
+    align-self: center;
+    margin: 0 auto;
+    width: fit-content;
+    text-align: center;
+  }
+
+  /* centra el título */
+  .hero-title {
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  /* centra botones */
+  .hero-actions {
+    display: flex;
+    justify-content: center;
+  }
+
+  /* centra nota */
+  .hero-note {
+    text-align: center;
+    margin: 0.75rem auto 0;
+  }
+}
+
 
 
 
