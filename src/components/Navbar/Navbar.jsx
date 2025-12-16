@@ -107,15 +107,25 @@ const Navbar = () => {
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
         >
-          <button
+          <Link
+            to="/servicios"
             className={`nav-link dropdown-toggle ${
               location.pathname.startsWith("/servicios") ? "active" : ""
             }`}
-            onClick={handleMobileServicesClick}
+            onClick={(e) => {
+              // En móviles, si el dropdown está cerrado, abrirlo en lugar de navegar
+              if (window.innerWidth <= 768 && !isServicesOpen) {
+                e.preventDefault();
+                setIsServicesOpen(true);
+              } else {
+                // Si ya está abierto en móvil, cerrar el menú móvil
+                setIsMobileMenuOpen(false);
+              }
+            }}
           >
             Servicios
             <span className="dropdown-arrow">▼</span>
-          </button>
+          </Link>
 
           {isServicesOpen && (
             <div 
@@ -131,7 +141,7 @@ const Navbar = () => {
                   setIsMobileMenuOpen(false);
                 }}
               >
-                Plan 1
+                Landing Extendida
               </Link>
               <Link
                 to="/servicios/plan-2"
@@ -141,7 +151,7 @@ const Navbar = () => {
                   setIsMobileMenuOpen(false);
                 }}
               >
-                Plan 2
+                Sitio Profesional
               </Link>
             </div>
           )}

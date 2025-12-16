@@ -16,9 +16,8 @@ function AppRoutes() {
       <Routes location={location} key={location.pathname}>
         <Route path="/" element={<Home />} />
         <Route path="/nosotros" element={<Nosotros />} />
+        <Route path="/servicios/:planId" element={<Servicios />} />
         <Route path="/servicios" element={<Servicios />} />
-        <Route path="/servicios/plan-1" element={<Servicios />} />
-        <Route path="/servicios/plan-2" element={<Servicios />} />
         <Route path="/contacto" element={<Contacto />} />
       </Routes>
     </PageTransition>
