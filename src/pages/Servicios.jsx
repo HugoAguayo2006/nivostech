@@ -126,7 +126,7 @@ function Servicios() {
             {/* ===== PLAN 3 ===== */}
             <div className="service-card">
               <img 
-                src="/images/nivos_planes.webp" 
+                src="/images/nivos_planes4.webp" 
                 alt="Planes de NIVOSTECH"
                 className="service-card-image"
               />
