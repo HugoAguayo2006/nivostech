@@ -8,28 +8,33 @@
 }
 
 /* ✅ IMPORTANTES para que el fondo cubra todo en cualquier dispositivo */
+/* ====== BASE GLOBAL ====== */
 html,
 body {
-  height: 100%;
-  min-height: 100%;
-  
-  background: #020617; /* ✅ fallback si no carga la imagen */
+  margin: 0;
+  padding: 0;
+  background-color: #020617; /* fallback */
 }
 
+/* ====== BODY ====== */
 body {
+  min-height: 100vh; /* 🔑 CLAVE: cubre todo el scroll */
+
   background-image: url("/imagen_mejorada_4k.webp");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 
-  /* ✅ En móvil evita glitches del fixed, sin romper desktop */
+  /* Evita glitches en mobile */
   background-attachment: scroll;
+
   color: #f5f5f5;
 
-  /* ✅ Safe areas (notch / barras) para TODOS */
+  /* Safe areas (notch / barras) */
   padding-top: env(safe-area-inset-top);
   padding-bottom: env(safe-area-inset-bottom);
 }
+
 
 /* ✅ En desktop sí usamos fixed (se ve pro) */
 @media (min-width: 900px) {
