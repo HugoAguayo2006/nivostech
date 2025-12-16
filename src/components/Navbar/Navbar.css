@@ -113,6 +113,10 @@
   margin-left: 0; /* ⬅️ sin margen extra para evitar desbordes */
 }
 
+.logo-right {
+  display: none; /* Oculto por defecto (solo desktop) */
+}
+
 
 /* ====== BOTÓN HABURGUESA ====== */
 .mobile-menu-toggle {
@@ -384,6 +388,11 @@
     max-height: 3rem;
   }
 
+  /* Mostrar logo-right en móvil e iPad */
+  .logo-right {
+    display: block;
+  }
+
   .mobile-menu-toggle {
     display: flex;
     order: 3;
@@ -540,6 +549,11 @@
     max-height: 2.5rem;
   }
 
+  /* Asegurar que logo-right se muestre en móviles */
+  .logo-right {
+    display: block;
+  }
+
   .mobile-menu-toggle {
     width: 1.75rem;
     height: 1.75rem;
@@ -661,6 +675,11 @@
     max-height: 2rem;
   }
 
+  /* Asegurar que logo-right se muestre en móviles pequeños */
+  .logo-right {
+    display: block;
+  }
+
   .mobile-menu-toggle {
     width: 1.5rem;
     height: 1.5rem;
@@ -688,6 +707,11 @@
   .navbar {
     padding: 0.8rem 1.8rem;
     gap: 1.2rem;
+  }
+
+  /* Ocultar logo-right en desktop */
+  .logo-right {
+    display: none !important;
   }
 
   .mobile-menu-toggle {
