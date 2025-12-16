@@ -105,7 +105,7 @@ function Home() {
       <div
         style={{
           width: "100%",
-          height: "5px",
+          height: "0px",
           background:
             "rgba(255,255,255,0.8)",
             // "linear-gradient(to right, transparent, rgba(255,255,255,0.8), transparent)",
