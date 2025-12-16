@@ -1104,3 +1104,31 @@ body.modal-open {
 }
 
 
+.notfound {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 1rem;
+}
+
+.notfound h1 {
+  font-size: clamp(4rem, 10vw, 8rem);
+  color: #38bdf8; /* azul tech */
+}
+
+.notfound p {
+  color: #cbd5f5;
+  max-width: 420px;
+}
+
+.btn-primary {
+  margin-top: 1rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #38bdf8, #2563eb);
+  color: white;
+  text-decoration: none;
+}

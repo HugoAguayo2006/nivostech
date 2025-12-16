@@ -1,9 +1,4 @@
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-  useLocation,
-} from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 
 import Navbar from "./components/Navbar/Navbar";
@@ -15,6 +10,7 @@ import Nosotros from "./pages/Nosotros";
 import Servicios from "./pages/Servicios";
 import Contacto from "./pages/Contacto";
 import Proyectos from "./pages/Proyectos";
+import NotFound from "./pages/NotFound"; // ✅ crea esta página
 
 function AppRoutes() {
   const location = useLocation();
@@ -28,14 +24,17 @@ function AppRoutes() {
         <Route path="/servicios/:planId" element={<Servicios />} />
         <Route path="/proyectos" element={<Proyectos />} />
         <Route path="/contacto" element={<Contacto />} />
+
+        {/* ✅ 404 */}
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </PageTransition>
   );
 }
 
-function App() {
+export default function App() {
   return (
-    <Router>
+    <>
       {/* ===== SEO GLOBAL ===== */}
       <Helmet>
         <html lang="es" />
@@ -79,8 +78,6 @@ function App() {
       <ScrollToTop />
       <Navbar />
       <AppRoutes />
-    </Router>
+    </>
   );
 }
-
-export default App;
