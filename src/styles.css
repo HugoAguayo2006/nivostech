@@ -981,3 +981,21 @@ h2 {
     text-align: left;
   }
 }
+
+
+/* ====== CONTROL GLOBAL DEL NAVBAR CUANDO MODAL ESTÁ ABIERTO ====== */
+
+.navbar {
+  transition: opacity 200ms ease, transform 200ms ease;
+}
+
+body.modal-open .navbar {
+  opacity: 0;
+  transform: translateY(-12px);
+  pointer-events: none;
+}
+
+body.modal-open {
+  overflow: hidden;
+}
+

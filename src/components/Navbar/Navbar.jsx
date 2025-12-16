@@ -94,6 +94,14 @@ const Navbar = () => {
         </Link>
 
         <Link
+          to="/proyectos"
+          className={isActive("/nosotros") ? "nav-link active" : "nav-link"}
+          onClick={() => setIsMobileMenuOpen(false)}
+        >
+          Nuestros Proyectos
+        </Link>
+
+        <Link
           to="/nosotros"
           className={isActive("/nosotros") ? "nav-link active" : "nav-link"}
           onClick={() => setIsMobileMenuOpen(false)}
