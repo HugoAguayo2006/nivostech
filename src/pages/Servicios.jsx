@@ -58,13 +58,7 @@ function Servicios() {
                 <p>
                   <strong>Incluye:</strong>
                 </p>
-                <ul
-                  style={{
-                    textAlign: "left",
-                    marginLeft: "1.5rem",
-                    marginBottom: "1rem",
-                  }}
-                >
+                <ul>
                   <li>
                     Diseño completo de 5 páginas (Home, Nosotros, Contacto, Blog
                     estático, Galería)
@@ -104,13 +98,7 @@ function Servicios() {
                 <p>
                   <strong>Incluye:</strong>
                 </p>
-                <ul
-                  style={{
-                    textAlign: "left",
-                    marginLeft: "1.5rem",
-                    marginBottom: "1rem",
-                  }}
-                >
+                <ul>
                   <li>Todo lo del plan frontend + funcionalidades avanzadas</li>
                   <li>
                     Backend y base de datos (API personalizada,
