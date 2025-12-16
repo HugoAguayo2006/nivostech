@@ -122,7 +122,6 @@ function Servicios() {
                 Ver más
               </Link>
             </div>
-          </div>
 
             {/* ===== PLAN 3 ===== */}
             <div className="service-card">
@@ -131,7 +130,7 @@ function Servicios() {
                 alt="Planes de NIVOSTECH"
                 className="service-card-image"
               />
-              <h2>Plan 1: Landing Extendida</h2>
+              <h2>Plan 3: Sitio + Redes Sociales</h2>
               <p className="service-description">
                 <strong>
                   Ideal para negocios que solo necesitan presencia profesional.
@@ -163,6 +162,7 @@ function Servicios() {
                 Ver más
               </Link>
             </div>
+          </div>
         </section>
 
         <WhatsAppFloat />
