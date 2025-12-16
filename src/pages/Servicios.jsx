@@ -3,6 +3,7 @@ import { Helmet } from "react-helmet-async";
 import WhatsAppFloat from "../WhatsAppFloat";
 import Plan1 from "./planes/Plan1";
 import Plan2 from "./planes/Plan2";
+import Plan3 from "./planes/Plan3";
 
 function Servicios() {
   const { planId } = useParams();
@@ -17,7 +18,7 @@ function Servicios() {
   }
 
   if (planId === "plan-3") {
-    return <Plan2 />;
+    return <Plan3 />;
   }
 
   // Página general de servicios
@@ -133,7 +134,7 @@ function Servicios() {
               <h2>Plan 3: Sitio + Redes Sociales</h2>
               <p className="service-description">
                 <strong>
-                  Ideal para negocios que solo necesitan presencia profesional.
+                  Ideal para negocios que quieren presencia digital completa.
                 </strong>
               </p>
 
@@ -142,21 +143,17 @@ function Servicios() {
                   <strong>Incluye:</strong>
                 </p>
                 <ul>
-                  <li>
-                    Diseño completo de 5 páginas (Home, Nosotros, Contacto, Blog
-                    estático, Galería)
-                  </li>
-                  <li>Desarrollo 100% frontend</li>
-                  <li>Sitio rápido, responsivo y optimizado</li>
-                  <li>
-                    Integración de WhatsApp, Google Maps, correo y redes sociales
-                  </li>
-                  <li>Soporte técnico inicial (7–14 días)</li>
+                  <li>Página web completa (Plan 1) incluida gratis</li>
+                  <li>Gestión profesional de redes sociales</li>
+                  <li>Creación y publicación de contenido</li>
+                  <li>Análisis de métricas y reportes mensuales</li>
+                  <li>Estrategia de crecimiento y engagement</li>
+                  <li>Pago mensual: $2,500 por 10 meses</li>
                 </ul>
               </div>
 
               <Link
-                to="/servicios/plan-1"
+                to="/servicios/plan-3"
                 className="service-link"
               >
                 Ver más
