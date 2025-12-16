@@ -750,6 +750,8 @@ h2 {
   overflow: hidden;
   font-family: 'Zen Dots', cursive;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
 }
 
 .service-card::before {
@@ -861,8 +863,9 @@ h2 {
   font-family: 'Zen Dots', cursive;
   transition: all 0.3s ease;
   box-shadow: 0 4px 15px rgba(0, 212, 255, 0.3);
-  margin-top: 1rem;
+  margin-top: auto;
   border: 2px solid transparent;
+  align-self: center;
 }
 
 .service-link:hover {
