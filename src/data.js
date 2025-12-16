@@ -153,6 +153,40 @@ export const PROYECTOS = [
   ],
   category: "Tecnológico",
   liveUrl: "",
+},
+{
+  id: "sc",
+  title: "Smart Cities – Movilidad Urbana",
+  type: "Web App",
+  tag: "Plataforma Digital",
+  year: "2025",
+  cover: "/proyectos/sc-cover.webp",
+  gallery: [
+    "/proyectos/sc-1.webp",
+    "/proyectos/sc-2.webp",
+    "/proyectos/sc-3.webp"
+  ],
+  short: "Plataforma web para fomentar el uso del transporte público y la movilidad urbana inteligente.",
+  reto:
+    "Promover el uso del transporte público a través de una plataforma digital intuitiva que ayude a los usuarios a tomar mejores decisiones de movilidad, reducir costos y disminuir el impacto ambiental.",
+  solucion:
+    "Desarrollo de una web app interactiva que integra visualización de rutas, control de gastos, recompensas por movilidad sostenible y consumo de APIs externas, con una experiencia clara y accesible para el usuario.",
+  resultados: [
+    "Interfaz clara que incentiva el uso del transporte público",
+    "Visualización eficiente de rutas y opciones de movilidad",
+    "Sistema de puntos para fomentar hábitos sostenibles",
+    "Arquitectura escalable para integración de nuevos servicios urbanos"
+  ],
+  stack: [
+    "React",
+    "Vite",
+    "Tailwind CSS",
+    "MongoDB",
+    "Python",
+    "REST APIs"
+  ],
+  category: "Smart Cities",
+  liveUrl: "https://www.youtube.com/watch?v=0lQdrmrLZg4"
 }
 
   

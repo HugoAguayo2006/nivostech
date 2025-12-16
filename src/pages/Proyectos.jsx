@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import { PROYECTOS } from "../data.js";
 import "../components/Projects/Projects.css";
 
-const FILTERS = ["Todos", "Institucional", "Tecnológico", "Organización"];
+const FILTERS = ["Todos", "Institucional", "Tecnológico", "Organización", "Web App"];
 
 export default function Proyectos() {
   const [active, setActive] = useState("Todos");
