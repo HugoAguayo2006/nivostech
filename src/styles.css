@@ -170,6 +170,7 @@ a {
   font-size: clamp(2.4rem, 4vw, 3.6rem);
   font-weight: 800;
   line-height: 1.1;
+  margin-top: -1rem;
   margin-bottom: 1.5rem;
 }
 
@@ -193,7 +194,7 @@ a {
 }
 
 .hero-note {
-  margin-top: 0.7rem;
+  margin-top: 1.5rem;
   font-size: 0.8rem;
   color: #d4d4d8;
 }

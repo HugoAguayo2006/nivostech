@@ -1,6 +1,7 @@
 import WhatsAppFloat from "../WhatsAppFloat";
 import { useRef } from "react";
 import emailjs from "emailjs-com";
+import { Link } from "react-router-dom";
 
 const projectImages = [
   "/img/proyecto1.webp",
@@ -52,24 +53,13 @@ function Home() {
               para tu negocio.
             </h1>
 
-            <button
-              className="hero-btn"
-              onClick={() => {
-                const contacto = document.getElementById("contacto");
-                if (contacto) contacto.scrollIntoView({ behavior: "smooth" });
-              }}
-            >
+            <Link to="/contacto" className="hero-btn">
               Agendar reunión
-            </button>
-            <button
-              className="hero-btn"
-              onClick={() => {
-                const contacto = document.getElementById("contacto");
-                if (contacto) contacto.scrollIntoView({ behavior: "smooth" });
-              }}
-            >
+            </Link>
+
+            <Link to="/proyectos" className="hero-btn">
               Nuestros Proyectos
-            </button>
+            </Link>
 
             <p className="hero-note">
               * Reunión de 15 minutos para entender tus necesidades.
