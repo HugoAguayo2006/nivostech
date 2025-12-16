@@ -531,8 +531,8 @@ h2 {
   border-radius: 999px;
   border: none;
   cursor: pointer;
-  background: #4ade80;
-  color: #052e16;
+  background:  #332aea;
+  color: #ffffff;
   font-weight: 600;
 }
 
@@ -883,7 +883,7 @@ h2 {
 .info-card h3 {
   font-size: 1.2rem;
   margin-bottom: 0.75rem;
-  color: #4ade80;
+  color: #ffffff;
 }
 
 .info-card p {
@@ -1080,6 +1080,27 @@ body.modal-open .navbar {
 
 body.modal-open {
   overflow: hidden;
+}
+
+.btn-submit {
+  padding: 0.75rem 1.5rem;
+  background: linear-gradient(135deg, #2563eb, #1e40af);
+  color: #ffffff;
+  border: none;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-submit:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(37, 99, 235, 0.35);
+}
+
+.btn-submit:active {
+  transform: scale(0.97);
 }
 
 
