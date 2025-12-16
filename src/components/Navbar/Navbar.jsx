@@ -95,7 +95,7 @@ const Navbar = () => {
 
         <Link
           to="/proyectos"
-          className={isActive("/nosotros") ? "nav-link active" : "nav-link"}
+          className={isActive("/proyectos") ? "nav-link active" : "nav-link"}
           onClick={() => setIsMobileMenuOpen(false)}
         >
           Nuestros Proyectos

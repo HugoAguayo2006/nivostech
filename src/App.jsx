@@ -39,7 +39,7 @@ function App() {
       {/* ===== SEO GLOBAL ===== */}
       <Helmet>
         <html lang="es" />
-        <title>NIVOS TECH | Innovación y desarrollo tecnológico</title>
+        <title>NIVOSTECH</title>
 
         <meta
           name="description"

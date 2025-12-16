@@ -6,6 +6,9 @@
     <!-- Viewport -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+    <!-- Canonical base (la ruta específica se maneja con Helmet) -->
+    <link rel="canonical" href="https://www.nivostech.com/" />
+
     <!-- Title -->
     <title>NIVOS TECH | Innovación y desarrollo tecnológico</title>
 
@@ -35,7 +38,47 @@
     />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://www.nivostech.com/" />
-    <meta property="og:image" content="https://www.nivostech.com/og-image.webp" />
+    <meta
+      property="og:image"
+      content="https://www.nivostech.com/og-image.webp"
+    />
+
+    <!-- Twitter (recomendado) -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="NIVOS TECH" />
+    <meta
+      name="twitter:description"
+      content="Innovación, desarrollo web y soluciones tecnológicas a la medida."
+    />
+    <meta
+      name="twitter:image"
+      content="https://www.nivostech.com/og-image.webp"
+    />
+
+    <!-- ===== Schema.org JSON-LD (LocalBusiness) ===== -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "NIVOSTECH",
+        "url": "https://www.nivostech.com",
+        "description": "Estudio de desarrollo web y soluciones tecnológicas. Creamos sitios modernos, rápidos y optimizados para SEO.",
+        "areaServed": "MX",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Guadalajara",
+          "addressRegion": "Jalisco",
+          "addressCountry": "MX"
+        },
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "telephone": "+52-33-1039-2675",
+          "contactType": "customer service",
+          "areaServed": "MX",
+          "availableLanguage": ["es"]
+        }
+      }
+    </script>
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />

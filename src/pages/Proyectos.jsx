@@ -1,5 +1,7 @@
 // src/pages/Proyectos.jsx
 import { useMemo, useState, useEffect } from "react";
+import { Helmet } from "react-helmet-async";
+import { Link } from "react-router-dom";
 import { PROYECTOS } from "../data.js";
 import "../components/Projects/Projects.css";
 
@@ -40,134 +42,147 @@ export default function Proyectos() {
   }, [open]);
 
   return (
-    <section className="projects-page">
-      {/* ====== HERO ====== */}
-      <header className="projects-hero">
-        <div className="projects-hero-bg" />
-        <div className="projects-hero-content">
-          <div className="projects-pill">Portafolio</div>
+    <>
+      {/* ================= SEO ================= */}
+      <Helmet>
+        <title>Proyectos | NIVOSTECH</title>
+        <meta
+          name="description"
+          content="Explora el portafolio de NIVOSTECH: sitios web con diseño premium, alto performance y enfoque en resultados. Da clic en cada proyecto para ver el caso completo."
+        />
+        <link rel="canonical" href="https://www.nivostech.com/proyectos" />
+      </Helmet>
 
-          <h1 className="projects-title">
-            Nuestros <span>Proyectos</span>
-          </h1>
+      <section className="projects-page">
+        {/* ====== HERO ====== */}
+        <header className="projects-hero">
+          <div className="projects-hero-bg" />
+          <div className="projects-hero-content">
+            <div className="projects-pill">Portafolio</div>
 
-          <p className="projects-subtitle">
-            Sitios web reales con diseño premium, performance y enfoque en
-            resultados. Aquí no solo mostramos “bonito”: mostramos decisiones.
-          </p>
+            <h1 className="projects-title">
+              Nuestros <span>Proyectos</span>
+            </h1>
 
-          <div className="projects-hero-actions">
-            <a className="projects-btn ghost" href="/contacto">
-              Agendar reunión
-            </a>
+            <p className="projects-subtitle">
+              Sitios web reales con diseño premium, performance y enfoque en
+              resultados. Aquí no solo mostramos “bonito”: mostramos decisiones.
+            </p>
+
+            <div className="projects-hero-actions">
+              <Link className="projects-btn ghost" to="/contacto">
+                Agendar reunión
+              </Link>
+            </div>
+
+            <div className="projects-metrics">
+              <div className="metric">
+                <div className="metric-num">+{PROYECTOS.length}</div>
+                <div className="metric-label">Proyectos</div>
+              </div>
+              <div className="metric">
+                <div className="metric-num">+500</div>
+                <div className="metric-label">Personas alcanzadas</div>
+              </div>
+              <div className="metric">
+                <div className="metric-num">+2</div>
+                <div className="metric-label">Años de experiencia</div>
+              </div>
+            </div>
+          </div>
+        </header>
+
+        {/* ====== FILTERS ====== */}
+        <div className="projects-toolbar" id="grid">
+          <div className="projects-filters">
+            {FILTERS.map((f) => (
+              <button
+                key={f}
+                className={`filter-chip ${active === f ? "is-active" : ""}`}
+                onClick={() => setActive(f)}
+                type="button"
+              >
+                {f}
+              </button>
+            ))}
           </div>
 
-          <div className="projects-metrics">
-            <div className="metric">
-              <div className="metric-num">+{PROYECTOS.length}</div>
-              <div className="metric-label">Proyectos</div>
-            </div>
-            <div className="metric">
-              <div className="metric-num">+500</div>
-              <div className="metric-label">Personas alcanzadas</div>
-            </div>
-            <div className="metric">
-              <div className="metric-num">+2</div>
-              <div className="metric-label">Años de experiencia</div>
-            </div>
+          <div className="projects-hint">
+            Tip: haz clic en un proyecto para ver el caso completo.
           </div>
         </div>
-      </header>
 
-      {/* ====== FILTERS ====== */}
-      <div className="projects-toolbar" id="grid">
-        <div className="projects-filters">
-          {FILTERS.map((f) => (
-            <button
-              key={f}
-              className={`filter-chip ${active === f ? "is-active" : ""}`}
-              onClick={() => setActive(f)}
-              type="button"
-            >
-              {f}
-            </button>
-          ))}
-        </div>
+        {/* ====== GRID ====== */}
+        <div className="projects-grid">
+          {list.map((p) => (
+            <article key={p.id} className="project-card">
+              <button
+                className="project-card-btn"
+                onClick={() => openProject(p)}
+                type="button"
+              >
+                <div className="project-media">
+                  <img
+                    src={p.cover}
+                    alt={p.title}
+                    loading="lazy"
+                    className="project-img"
+                  />
 
-        <div className="projects-hint">
-          Tip: haz clic en un proyecto para ver el caso completo.
-        </div>
-      </div>
-
-      {/* ====== GRID ====== */}
-      <div className="projects-grid">
-        {list.map((p) => (
-          <article key={p.id} className="project-card">
-            <button
-              className="project-card-btn"
-              onClick={() => openProject(p)}
-              type="button"
-            >
-              <div className="project-media">
-                <img
-                  src={p.cover}
-                  alt={p.title}
-                  loading="lazy"
-                  className="project-img"
-                />
-
-                <div className="project-overlay">
-                  <div className="project-overlay-top">
-                    <span className="badge">{p.type}</span>
-                    <span className="badge soft">{p.year}</span>
-                  </div>
-
-                  <div className="project-overlay-bottom">
-                    <div className="project-name">{p.title}</div>
-                    <div className="project-short">{p.short}</div>
-
-                    <div className="project-stack">
-                      {p.stack.slice(0, 4).map((s) => (
-                        <span key={s} className="stack-pill">
-                          {s}
-                        </span>
-                      ))}
+                  <div className="project-overlay">
+                    <div className="project-overlay-top">
+                      <span className="badge">{p.type}</span>
+                      <span className="badge soft">{p.year}</span>
                     </div>
 
-                    <div className="project-cta">
-                      Ver caso <span className="arrow">→</span>
+                    <div className="project-overlay-bottom">
+                      <div className="project-name">{p.title}</div>
+                      <div className="project-short">{p.short}</div>
+
+                      <div className="project-stack">
+                        {p.stack.slice(0, 4).map((s) => (
+                          <span key={s} className="stack-pill">
+                            {s}
+                          </span>
+                        ))}
+                      </div>
+
+                      <div className="project-cta">
+                        Ver caso <span className="arrow">→</span>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            </button>
-          </article>
-        ))}
-      </div>
+              </button>
+            </article>
+          ))}
+        </div>
 
-      {/* ====== CTA FINAL ====== */}
-      <div className="projects-final">
-        <div className="final-card">
-          <h2 className="final-title">¿Tu proyecto puede ser el siguiente?</h2>
-          <p className="final-sub">
-            Lo armamos con diseño serio, velocidad real y estructura para crecer.
-          </p>
-          <div className="final-actions">
-            <a className="projects-btn primary" href="/contacto">
-              Contáctanos
-            </a>
-            <a className="projects-btn ghost" href="/servicios">
-              Ver servicios
-            </a>
+        {/* ====== CTA FINAL ====== */}
+        <div className="projects-final">
+          <div className="final-card">
+            <h2 className="final-title">¿Tu proyecto puede ser el siguiente?</h2>
+            <p className="final-sub">
+              Lo armamos con diseño serio, velocidad real y estructura para
+              crecer.
+            </p>
+            <div className="final-actions">
+              <Link className="projects-btn primary" to="/contacto">
+                Contáctanos
+              </Link>
+              <Link className="projects-btn ghost" to="/servicios">
+                Ver servicios
+              </Link>
+            </div>
           </div>
         </div>
-      </div>
 
-      {/* ====== MODAL ====== */}
-      {open && selected && (
-        <ProjectModal project={selected} onClose={closeProject} />
-      )}
-    </section>
+        {/* ====== MODAL ====== */}
+        {open && selected && (
+          <ProjectModal project={selected} onClose={closeProject} />
+        )}
+      </section>
+    </>
   );
 }
 
@@ -188,11 +203,7 @@ function ProjectModal({ project, onClose }) {
             <p className="modal-sub">{project.short}</p>
           </div>
 
-          <button
-            className="modal-close"
-            onClick={onClose}
-            aria-label="Cerrar"
-          >
+          <button className="modal-close" onClick={onClose} aria-label="Cerrar">
             ✕
           </button>
         </div>
