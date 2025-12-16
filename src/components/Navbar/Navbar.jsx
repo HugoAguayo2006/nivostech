@@ -115,25 +115,37 @@ const Navbar = () => {
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
         >
-          <Link
-            to="/servicios"
-            className={`nav-link dropdown-toggle ${
-              location.pathname.startsWith("/servicios") ? "active" : ""
-            }`}
-            onClick={(e) => {
-              // En móviles, si el dropdown está cerrado, abrirlo en lugar de navegar
-              if (window.innerWidth <= 768 && !isServicesOpen) {
-                e.preventDefault();
-                setIsServicesOpen(true);
-              } else {
-                // Si ya está abierto en móvil, cerrar el menú móvil
-                setIsMobileMenuOpen(false);
-              }
-            }}
-          >
-            Servicios
-            <span className="dropdown-arrow">▼</span>
-          </Link>
+          <div className="dropdown-toggle-wrapper">
+            <Link
+              to="/servicios"
+              className={`nav-link dropdown-link ${
+                location.pathname.startsWith("/servicios") ? "active" : ""
+              }`}
+              onClick={(e) => {
+                // Si se hace clic en la flecha, prevenir navegación y abrir dropdown
+                if (e.target.closest('.dropdown-arrow')) {
+                  e.preventDefault();
+                  setIsServicesOpen(!isServicesOpen);
+                } else {
+                  // Si se hace clic en el texto, navegar normalmente
+                  setIsServicesOpen(false);
+                  setIsMobileMenuOpen(false);
+                }
+              }}
+            >
+              Servicios
+              <span 
+                className={`dropdown-arrow ${isServicesOpen ? 'open' : ''}`}
+                onClick={(e) => {
+                  e.preventDefault();
+                  e.stopPropagation();
+                  setIsServicesOpen(!isServicesOpen);
+                }}
+              >
+                ▼
+              </span>
+            </Link>
+          </div>
 
           {isServicesOpen && (
             <div 

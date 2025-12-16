@@ -218,7 +218,7 @@
 }
 
 /* Hover específico para Servicios */
-.nav-dropdown:hover .dropdown-toggle {
+.nav-dropdown:hover .dropdown-link {
   color: #ffffff !important;
   background: #332aea !important;
 }
@@ -229,8 +229,8 @@
   background: #332aea;
 }
 /* Servicios: hover y cuando esté activo */
-.nav-dropdown:hover .dropdown-toggle,
-.nav-dropdown .dropdown-toggle.active {
+.nav-dropdown:hover .dropdown-link,
+.nav-dropdown .dropdown-link.active {
   color: #ffffff !important;
   background:  #332aea !important;
 }
@@ -246,7 +246,12 @@
   z-index: 1001;
 }
 
-.dropdown-toggle {
+.dropdown-toggle-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.dropdown-link {
   display: flex;
   align-items: center;
   gap: 0.4rem;
@@ -255,10 +260,23 @@
 .dropdown-arrow {
   font-size: 0.7rem;
   transition: transform 0.3s ease;
+  display: inline-block;
+  line-height: 1;
+  cursor: pointer;
+  margin-left: 0.2rem;
+}
+
+.dropdown-arrow:hover {
+  opacity: 0.8;
 }
 
 .nav-dropdown:hover .dropdown-arrow,
 .nav-dropdown:has(.dropdown-menu:hover) .dropdown-arrow {
+  transform: rotate(180deg);
+}
+
+/* Rotar flecha cuando el dropdown está abierto */
+.dropdown-arrow.open {
   transform: rotate(180deg);
 }
 
@@ -399,7 +417,7 @@
     gap: 1.5rem;
     overflow: hidden;
     transition: max-height 0.4s ease, padding-top 0.4s ease, padding-bottom 0.4s ease;
-    z-index: 999;
+    z-index: 1000;
     border-top: none;
     border-top-left-radius: 25px;
     border-top-right-radius: 25px;
@@ -413,6 +431,8 @@
     padding-top: 2rem;
     padding-bottom: 2rem;
     overflow-y: auto;
+    pointer-events: all;
+    z-index: 1000;
   }
 
   .nav-link {
@@ -430,16 +450,29 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    pointer-events: all;
+    z-index: 1001;
   }
 
-  .dropdown-toggle {
+  .dropdown-toggle-wrapper {
     width: 100%;
+    display: flex;
     justify-content: center;
     align-items: center;
+  }
+
+  .dropdown-link {
+    width: 100%;
+    text-align: center;
     padding: 1rem 2rem;
     font-size: 1.1rem;
-    text-align: center;
-    display: flex;
+    pointer-events: all;
+    justify-content: center;
+  }
+
+  .dropdown-arrow {
+    pointer-events: all;
+    font-size: 1.1rem;
   }
 
   .dropdown-arrow {
@@ -455,12 +488,19 @@
     left: auto;
     border-radius: 12px;
     align-self: center;
+    pointer-events: all;
+    z-index: 1002;
+    display: block;
+    visibility: visible;
+    opacity: 1;
   }
 
   .dropdown-item {
     padding: 0.8rem 1.5rem;
     font-size: 1rem;
     text-align: center;
+    pointer-events: all;
+    cursor: pointer;
   }
 
   .cta-button {
@@ -527,12 +567,15 @@
     border-bottom-left-radius: 25px;
     border-bottom-right-radius: 25px;
     margin-top: -1px;
+    z-index: 1000;
   }
 
   .nav-links.mobile-open {
     max-height: calc(100vh - 1.2rem - 65px);
     padding-top: 1.5rem;
     padding-bottom: 2rem;
+    pointer-events: all;
+    z-index: 1000;
   }
 
   .nav-link {
@@ -546,29 +589,45 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    pointer-events: all;
+    z-index: 1001;
   }
 
-  .dropdown-toggle {
+  .dropdown-toggle-wrapper {
     width: 100%;
+    display: flex;
     justify-content: center;
     align-items: center;
+  }
+
+  .dropdown-link {
+    width: 100%;
+    text-align: center;
     padding: 0.9rem 1.5rem;
     font-size: 1rem;
-    text-align: center;
-    display: flex;
+    pointer-events: all;
+    justify-content: center;
   }
 
   .dropdown-arrow {
-    margin-left: 0.3rem;
+    pointer-events: all;
+    font-size: 1rem;
   }
 
   .dropdown-menu {
     align-self: center;
+    pointer-events: all;
+    z-index: 1002;
+    display: block;
+    visibility: visible;
+    opacity: 1;
   }
 
   .dropdown-item {
     padding: 0.7rem 1.2rem;
     font-size: 0.95rem;
+    pointer-events: all;
+    cursor: pointer;
   }
 
   .cta-button {
@@ -689,12 +748,21 @@
     z-index: 1001 !important;
   }
 
-  .dropdown-toggle {
+  .dropdown-toggle-wrapper {
+    display: flex !important;
+    align-items: center !important;
     width: auto !important;
+  }
+
+  .dropdown-link {
     padding: 0.5rem 0.75rem !important;
     font-size: 0.88rem !important;
-    text-align: left !important;
     white-space: nowrap !important;
+    gap: 0.4rem !important;
+  }
+
+  .dropdown-arrow {
+    font-size: 0.88rem !important;
   }
 
   .dropdown-menu {
@@ -732,8 +800,13 @@
     font-size: 0.95rem !important;
   }
 
-  .dropdown-toggle {
+  .dropdown-link {
     padding: 0.5rem 1rem !important;
+    font-size: 0.95rem !important;
+    gap: 0.4rem !important;
+  }
+
+  .dropdown-arrow {
     font-size: 0.95rem !important;
   }
 

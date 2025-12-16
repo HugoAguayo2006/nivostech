@@ -106,8 +106,7 @@ function Servicios() {
                 <ul>
                   <li>Todo lo del plan frontend + funcionalidades avanzadas</li>
                   <li>
-                    Backend y base de datos (API personalizada,
-                    PostgreSQL/MySQL/MongoDB)
+                    Backend y base de datos
                   </li>
                   <li>Panel administrativo o dashboard</li>
                   <li>Blog totalmente administrable</li>
