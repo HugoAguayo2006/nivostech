@@ -321,9 +321,7 @@ a {
     padding-top: 110px;
     
   }
-
 }
-
 
 /* ====== DESKTOP ====== */
 @media (min-width: 900px) {
@@ -371,50 +369,7 @@ a {
     border-radius: 18px;
     
   }
-
-  
-  
 }
-
-
-
-/* ====== SOLO Surface Duo (≈540px) ====== */
-@media (min-width: 520px) and (max-width: 620px) {
-
-  /* centra todo el contenido del hero */
-  .hero-content {
-    display: flex;
-    flex-direction: column;   /* ✅ ESTO era lo que faltaba */
-    align-items: center;      /* centra hijos horizontalmente */
-  }
-
-  /* centra el “pill” de arriba */
-  .hero-inner {
-    align-self: center;
-    margin: 0 auto;
-    width: fit-content;
-    text-align: center;
-  }
-
-  /* centra el título */
-  .hero-title {
-    margin: 0 auto;
-    text-align: center;
-  }
-
-  /* centra botones */
-  .hero-actions {
-    display: flex;
-    justify-content: center;
-  }
-
-  /* centra nota */
-  .hero-note {
-    text-align: center;
-    margin: 0.75rem auto 0;
-  }
-}
-
 
 
 
@@ -576,8 +531,8 @@ h2 {
   border-radius: 999px;
   border: none;
   cursor: pointer;
-  background: #4ade80;
-  color: #052e16;
+  background:  #332aea;
+  color: #ffffff;
   font-weight: 600;
 }
 
@@ -928,7 +883,7 @@ h2 {
 .info-card h3 {
   font-size: 1.2rem;
   margin-bottom: 0.75rem;
-  color: #4ade80;
+  color: #ffffff;
 }
 
 .info-card p {
@@ -1127,3 +1082,53 @@ body.modal-open {
   overflow: hidden;
 }
 
+.btn-submit {
+  padding: 0.75rem 1.5rem;
+  background: linear-gradient(135deg, #2563eb, #1e40af);
+  color: #ffffff;
+  border: none;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-submit:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(37, 99, 235, 0.35);
+}
+
+.btn-submit:active {
+  transform: scale(0.97);
+}
+
+
+.notfound {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 1rem;
+}
+
+.notfound h1 {
+  font-size: clamp(4rem, 10vw, 8rem);
+  color: #38bdf8; /* azul tech */
+}
+
+.notfound p {
+  color: #cbd5f5;
+  max-width: 420px;
+}
+
+.btn-primary {
+  margin-top: 1rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #38bdf8, #2563eb);
+  color: white;
+  text-decoration: none;
+}

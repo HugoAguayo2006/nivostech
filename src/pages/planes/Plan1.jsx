@@ -1,5 +1,10 @@
 import { Helmet } from "react-helmet-async";
+import { Link } from "react-router-dom";
 import WhatsAppFloat from "../../WhatsAppFloat";
+import "./PlanPage.css";
+
+const WHATSAPP_LINK =
+  "https://wa.me/523310392675?text=Hola%20NIVOSTECH%2C%20me%20interesa%20el%20Plan%201%20(Landing%20Extendida).%20%C2%BFC%C3%B3mo%20empezamos%3F";
 
 function Plan1() {
   return (
@@ -9,165 +14,253 @@ function Plan1() {
         <title>Plan 1: Landing Extendida | Servicios | NIVOSTECH</title>
         <meta
           name="description"
-          content="Plan 1 de NIVOSTECH: Landing Extendida (5 páginas) ideal para negocios que buscan presencia profesional. Incluye diseño, frontend, optimización, WhatsApp, Google Maps y soporte inicial."
+          content="Plan 1 de NIVOSTECH: Landing Extendida ideal para negocios que buscan presencia profesional. Incluye diseño, frontend, optimización, WhatsApp, Google Maps y soporte inicial."
         />
-        <link
-          rel="canonical"
-          href="https://www.nivostech.com/servicios/plan-1"
-        />
+        <link rel="canonical" href="https://www.nivostech.com/servicios/plan-1" />
       </Helmet>
 
       <div className="page">
-        <section className="page-section">
-          <div className="page-header">
-            <h1 className="page-title">
-              Plan 1: Landing Extendida (Frontend 5 páginas)
-            </h1>
-            <p className="page-subtitle">
-              Ideal para negocios que solo necesitan presencia profesional.
-            </p>
-          </div>
+        <section className="plan">
+          {/* ====== HERO ====== */}
+          <header className="plan-hero">
+            <div className="plan-hero__bg" aria-hidden="true" />
+            <div className="plan-hero__inner">
+              <div className="plan-hero__left">
+                <div className="plan-badges">
+                  <span className="badge badge--glow">Más vendido</span>
+                  <span className="badge">Frontend</span>
+                </div>
 
-          <div className="page-content">
-            <div className="content-card">
-              <h2>¿Qué incluye?</h2>
-              <ul className="feature-list">
-                <li>
-                  <strong>Diseño completo de 5 páginas:</strong>
-                  <ul style={{ marginTop: "0.5rem", marginLeft: "1.5rem" }}>
+                <h1 className="plan-title">Plan 1: Landing Extendida</h1>
+                <p className="plan-subtitle">
+                  Para negocios que necesitan una presencia profesional, rápida y moderna
+                  (sin panel admin ni base de datos).
+                </p>
+
+                <div className="plan-kpis">
+                  <div className="kpi">
+                    <span className="kpi-label">Entrega</span>
+                    <span className="kpi-value">3–4 semanas</span>
+                  </div>
+                  <div className="kpi">
+                    <span className="kpi-label">Soporte</span>
+                    <span className="kpi-value">7–14 días</span>
+                  </div>
+                  <div className="kpi">
+                    <span className="kpi-label">Optimización</span>
+                    <span className="kpi-value">Responsive + velocidad</span>
+                  </div>
+                </div>
+
+                <div className="plan-cta">
+                  <a className="btn btn--primary" href={WHATSAPP_LINK} target="_blank" rel="noreferrer">
+                    Cotizar por WhatsApp
+                  </a>
+                  <Link className="btn btn--ghost" to="/servicios">
+                    Volver a Servicios
+                  </Link>
+                </div>
+
+                <p className="plan-note">
+                  * Precio con descuento por tiempo limitado. Factura disponible (requiere CSF).
+                </p>
+              </div>
+
+              {/* ====== PRICE CARD ====== */}
+              <aside className="price-card">
+                <div className="price-card__top">
+                  <h2 className="price-title">Inversión</h2>
+                  <div className="price-row">
+                    <span className="price-label">Lista</span>
+                    <span className="price-old">$11,700</span>
+                  </div>
+                  <div className="price-row price-row--main">
+                    <span className="price-label">Hoy</span>
+                    <span className="price-main">$9,000</span>
+                  </div>
+                  <div className="price-chip">-30%</div>
+                </div>
+
+                <div className="price-split">
+                  <div className="split-card">
+                    <div className="split-title">Pago 1</div>
+                    <div className="split-desc">Anticipo 50%</div>
+                    <div className="split-amount">$4,500</div>
+                  </div>
+                  <div className="split-card">
+                    <div className="split-title">Pago 2</div>
+                    <div className="split-desc">Liquidación 50%</div>
+                    <div className="split-amount">$4,500</div>
+                  </div>
+                </div>
+
+                <div className="price-actions">
+                  <a className="btn btn--primary btn--full" href={WHATSAPP_LINK} target="_blank" rel="noreferrer">
+                    Quiero este plan
+                  </a>
+                  <a className="btn btn--soft btn--full" href="#incluye">
+                    Ver qué incluye
+                  </a>
+                </div>
+
+                <div className="price-foot">
+                  <div className="mini">
+                    <span className="mini-dot" />
+                    Transferencia bancaria
+                  </div>
+                  <div className="mini">
+                    <span className="mini-dot" />
+                    Dominio del cliente
+                  </div>
+                </div>
+              </aside>
+            </div>
+          </header>
+
+          {/* ====== CONTENT ====== */}
+          <div className="plan-wrap">
+            {/* ====== INCLUYE / NO INCLUYE ====== */}
+            <div className="grid-2" id="incluye">
+              <section className="card">
+                <h2 className="card-title">
+                  <span className="icon icon--ok" aria-hidden="true">✓</span>
+                  ¿Qué incluye?
+                </h2>
+
+                <div className="list-block">
+                  <div className="list-title">Diseño completo (5 páginas)</div>
+                  <ul className="list">
                     <li>Home</li>
                     <li>Nosotros</li>
                     <li>Contacto</li>
                     <li>Blog estático (sin base de datos)</li>
                     <li>Galería</li>
                   </ul>
-                </li>
-                <li>Desarrollo 100% frontend</li>
-                <li>Sitio rápido, responsivo y optimizado</li>
-                <li>Animaciones ligeras para mejorar la experiencia</li>
-                <li>
-                  <strong>Integración de:</strong>
-                  <ul style={{ marginTop: "0.5rem", marginLeft: "1.5rem" }}>
-                    <li>WhatsApp</li>
-                    <li>Google Maps</li>
-                    <li>Enlaces de correo</li>
-                    <li>Redes sociales</li>
-                  </ul>
-                </li>
-                <li>Carga inicial de contenido proporcionado por el cliente</li>
-                <li>Optimización visual y de estructura</li>
-                <li>Publicación en dominio propio del cliente</li>
-                <li>Soporte técnico inicial (7–14 días)</li>
-              </ul>
-            </div>
-
-            <div className="content-card">
-              <h2>No incluye:</h2>
-              <ul className="feature-list">
-                <li>Panel administrativo</li>
-                <li>Base de datos</li>
-                <li>Gestión de usuarios</li>
-                <li>Blog editable</li>
-                <li>Dashboard</li>
-                <li>Almacenamiento propio de información</li>
-              </ul>
-            </div>
-
-            <div className="content-card">
-              <h2>Precios</h2>
-              <div style={{ marginBottom: "1rem" }}>
-                <p>
-                  <strong>Precio de lista:</strong>{" "}
-                  <span style={{ fontSize: "1.5rem", color: "#4A90E2" }}>
-                    $11,700
-                  </span>
-                </p>
-                <p>
-                  <strong>Descuento 30%:</strong>
-                </p>
-                <p
-                  style={{
-                    fontSize: "2rem",
-                    color: "#4A90E2",
-                    fontWeight: "bold",
-                    margin: "0.5rem 0",
-                  }}
-                >
-                  $9,000
-                </p>
-              </div>
-
-              <div
-                style={{
-                  display: "grid",
-                  gridTemplateColumns: "1fr 1fr",
-                  gap: "1rem",
-                  marginTop: "1.5rem",
-                }}
-              >
-                <div
-                  style={{
-                    border: "1px solid #4A90E2",
-                    padding: "1rem",
-                    borderRadius: "8px",
-                  }}
-                >
-                  <h3 style={{ marginTop: 0 }}>PAGO 1</h3>
-                  <p>Anticipo del 50%</p>
-                  <p
-                    style={{
-                      fontSize: "1.5rem",
-                      color: "#4A90E2",
-                      fontWeight: "bold",
-                    }}
-                  >
-                    $4,500
-                  </p>
                 </div>
 
-                <div
-                  style={{
-                    border: "1px solid #4A90E2",
-                    padding: "1rem",
-                    borderRadius: "8px",
-                  }}
-                >
-                  <h3 style={{ marginTop: 0 }}>PAGO 2</h3>
-                  <p>Liquidación del 50%</p>
-                  <p
-                    style={{
-                      fontSize: "1.5rem",
-                      color: "#4A90E2",
-                      fontWeight: "bold",
-                    }}
-                  >
-                    $4,500
-                  </p>
+                <ul className="checks">
+                  <li>Desarrollo 100% frontend</li>
+                  <li>Sitio rápido, responsivo y optimizado</li>
+                  <li>Animaciones ligeras (sin afectar rendimiento)</li>
+                  <li>Integración de WhatsApp, Google Maps, correo y redes</li>
+                  <li>Carga inicial de contenido proporcionado por el cliente</li>
+                  <li>Optimización visual y de estructura</li>
+                  <li>Publicación en dominio propio del cliente</li>
+                  <li>Soporte técnico inicial (7–14 días)</li>
+                </ul>
+              </section>
+
+              <section className="card card--danger">
+                <h2 className="card-title">
+                  <span className="icon icon--x" aria-hidden="true">✕</span>
+                  No incluye
+                </h2>
+
+                <ul className="cross">
+                  <li>Panel administrativo</li>
+                  <li>Base de datos</li>
+                  <li>Gestión de usuarios</li>
+                  <li>Blog editable</li>
+                  <li>Dashboard</li>
+                  <li>Almacenamiento propio de información</li>
+                </ul>
+
+                <div className="hint">
+                  ¿Lo necesitas? Entonces te conviene el plan con backend / admin.
                 </div>
-              </div>
+              </section>
             </div>
 
-            <div className="content-card">
-              <h2>Plan de Acción</h2>
-              <ul className="feature-list">
-                <li>Pago en transferencia</li>
-                <li>
-                  Para comenzar se necesita INE y constancia de situación fiscal
-                  (en caso de requerir factura)
-                </li>
-                <li>Tiempo de entrega: 3-4 semanas</li>
-              </ul>
-            </div>
+            {/* ====== PROCESO ====== */}
+            <section className="card">
+              <h2 className="card-title">Plan de acción</h2>
+
+              <div className="timeline">
+                <div className="step">
+                  <div className="step-dot" />
+                  <div className="step-body">
+                    <div className="step-title">1) Inicio</div>
+                    <div className="step-text">
+                      Anticipo (50%) + recolección de contenido (logo, textos, fotos, links).
+                    </div>
+                  </div>
+                </div>
+
+                <div className="step">
+                  <div className="step-dot" />
+                  <div className="step-body">
+                    <div className="step-title">2) Diseño + estructura</div>
+                    <div className="step-text">
+                      Definimos secciones, estilo visual y navegación para que todo sea claro y comercial.
+                    </div>
+                  </div>
+                </div>
+
+                <div className="step">
+                  <div className="step-dot" />
+                  <div className="step-body">
+                    <div className="step-title">3) Desarrollo</div>
+                    <div className="step-text">
+                      Construimos el frontend, responsive, optimización y ajustes finos.
+                    </div>
+                  </div>
+                </div>
+
+                <div className="step">
+                  <div className="step-dot" />
+                  <div className="step-body">
+                    <div className="step-title">4) Publicación</div>
+                    <div className="step-text">
+                      Montaje en tu dominio y pruebas finales. Liquidación (50%).
+                    </div>
+                  </div>
+                </div>
+
+                <div className="step">
+                  <div className="step-dot" />
+                  <div className="step-body">
+                    <div className="step-title">5) Soporte</div>
+                    <div className="step-text">
+                      Soporte inicial 7–14 días para asegurar que todo quede perfecto.
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="reqs">
+                <div className="reqs-title">Para comenzar se necesita:</div>
+                <ul className="reqs-list">
+                  <li>Pago en transferencia</li>
+                  <li>INE</li>
+                  <li>Constancia de situación fiscal (si requieres factura)</li>
+                </ul>
+              </div>
+            </section>
+
+            {/* ====== CTA FINAL ====== */}
+            <section className="cta-final">
+              <div className="cta-final__card">
+                <h3>¿Listo para lanzar tu web?</h3>
+                <p>
+                  Te damos un sitio premium, rápido y claro para convertir visitas en clientes.
+                </p>
+                <div className="cta-final__actions">
+                  <a className="btn btn--primary" href={WHATSAPP_LINK} target="_blank" rel="noreferrer">
+                    Agendar por WhatsApp
+                  </a>
+                  <Link className="btn btn--ghost" to="/servicios">
+                    Ver otros planes
+                  </Link>
+                </div>
+              </div>
+            </section>
           </div>
         </section>
 
         <WhatsAppFloat />
 
         <footer className="footer">
-          <p>
-            © {new Date().getFullYear()} NIVO · Diseño y desarrollo de páginas
-            web.
-          </p>
+          <p>© {new Date().getFullYear()} NIVO · Diseño y desarrollo de páginas web.</p>
         </footer>
       </div>
     </>

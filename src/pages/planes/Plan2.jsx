@@ -1,5 +1,10 @@
 import { Helmet } from "react-helmet-async";
+import { Link } from "react-router-dom";
 import WhatsAppFloat from "../../WhatsAppFloat";
+import "./PlanPage.css";
+
+const WHATSAPP_LINK =
+  "https://wa.me/523310392675?text=Hola%20NIVOSTECH%2C%20me%20interesa%20el%20Plan%202%20(Sitio%20Profesional%20con%20backend%20y%20base%20de%20datos).%20%C2%BFC%C3%B3mo%20empezamos%3F";
 
 function Plan2() {
   return (
@@ -9,169 +14,287 @@ function Plan2() {
         <title>Plan 2: Sitio Profesional | Servicios | NIVOSTECH</title>
         <meta
           name="description"
-          content="Plan 2 de NIVOSTECH: Sitio Profesional con frontend + backend + base de datos. Incluye API personalizada, panel/dashbord, blog administrable, autenticación y escalabilidad."
+          content="Plan 2 de NIVOSTECH: Sitio Profesional con frontend + backend + base de datos. Incluye API personalizada, panel/dashboard, blog administrable, autenticación y escalabilidad."
         />
-        <link
-          rel="canonical"
-          href="https://www.nivostech.com/servicios/plan-2"
-        />
+        <link rel="canonical" href="https://www.nivostech.com/servicios/plan-2" />
       </Helmet>
 
       <div className="page">
-        <section className="page-section">
-          <div className="page-header">
-            <h1 className="page-title">
-              Plan 2: Sitio Profesional (Frontend + Backend + Base de Datos)
-            </h1>
-            <p className="page-subtitle">
-              Ideal para negocios que necesitan un sistema más completo.
-            </p>
-          </div>
+        <section className="plan">
+          {/* ====== HERO ====== */}
+          <header className="plan-hero">
+            <div className="plan-hero__bg" aria-hidden="true" />
+            <div className="plan-hero__inner">
+              <div className="plan-hero__left">
+                <div className="plan-badges">
+                  <span className="badge badge--glow">Profesional</span>
+                  <span className="badge">Frontend + Backend</span>
+                  <span className="badge">Base de datos</span>
+                </div>
 
-          <div className="page-content">
-            <div className="content-card">
-              <h2>¿Qué incluye?</h2>
-              <p style={{ marginBottom: "1rem" }}>
-                <strong>
-                  Todo lo del plan frontend + funcionalidades avanzadas:
-                </strong>
-              </p>
+                <h1 className="plan-title">Plan 2: Sitio Profesional</h1>
+                <p className="plan-subtitle">
+                  Ideal si necesitas un sistema completo: administración, contenido editable,
+                  blog real, formularios conectados y escalabilidad.
+                </p>
 
-              <ul className="feature-list">
-                <li>
-                  <strong>Backend y base de datos:</strong>
-                  <ul style={{ marginTop: "0.5rem", marginLeft: "1.5rem" }}>
-                    <li>API personalizada</li>
-                    <li>
-                      Base de datos (PostgreSQL / MySQL / MongoDB según necesidad)
-                    </li>
-                    <li>Panel administrativo o dashboard (según acuerdo)</li>
-                    <li>Blog totalmente administrable</li>
-                    <li>Gestión de productos, servicios, usuarios o contenido</li>
-                    <li>Endpoints protegidos con autenticación (JWT o similar)</li>
+                <div className="plan-kpis">
+                  <div className="kpi">
+                    <span className="kpi-label">Entrega</span>
+                    <span className="kpi-value">3–4 semanas</span>
+                  </div>
+                  <div className="kpi">
+                    <span className="kpi-label">Incluye</span>
+                    <span className="kpi-value">Panel / Dashboard</span>
+                  </div>
+                  <div className="kpi">
+                    <span className="kpi-label">Seguridad</span>
+                    <span className="kpi-value">Auth + endpoints</span>
+                  </div>
+                </div>
+
+                <div className="plan-cta">
+                  <a
+                    className="btn btn--primary"
+                    href={WHATSAPP_LINK}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    Cotizar por WhatsApp
+                  </a>
+                  <Link className="btn btn--ghost" to="/servicios">
+                    Volver a Servicios
+                  </Link>
+                </div>
+
+                <p className="plan-note">
+                  * Este plan es para proyectos que requieren guardar/administrar información y crecer a futuro.
+                </p>
+              </div>
+
+              {/* ====== PRICE CARD ====== */}
+              <aside className="price-card">
+                <div className="price-card__top">
+                  <h2 className="price-title">Inversión</h2>
+
+                  <div className="price-row">
+                    <span className="price-label">Lista</span>
+                    <span className="price-old">$18,200</span>
+                  </div>
+
+                  <div className="price-row price-row--main">
+                    <span className="price-label">Hoy</span>
+                    <span className="price-main">$14,000</span>
+                  </div>
+
+                  <div className="price-chip">-30%</div>
+                </div>
+
+                <div className="price-split">
+                  <div className="split-card">
+                    <div className="split-title">Pago 1</div>
+                    <div className="split-desc">Anticipo 50%</div>
+                    <div className="split-amount">$7,000</div>
+                  </div>
+
+                  <div className="split-card">
+                    <div className="split-title">Pago 2</div>
+                    <div className="split-desc">Liquidación 50%</div>
+                    <div className="split-amount">$7,000</div>
+                  </div>
+                </div>
+
+                <div className="price-actions">
+                  <a
+                    className="btn btn--primary btn--full"
+                    href={WHATSAPP_LINK}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    Quiero este plan
+                  </a>
+                  <a className="btn btn--soft btn--full" href="#incluye">
+                    Ver qué incluye
+                  </a>
+                </div>
+
+                <div className="price-foot">
+                  <div className="mini">
+                    <span className="mini-dot" />
+                    Transferencia bancaria
+                  </div>
+                  <div className="mini">
+                    <span className="mini-dot" />
+                    Escalable a futuro
+                  </div>
+                </div>
+              </aside>
+            </div>
+          </header>
+
+          {/* ====== CONTENT ====== */}
+          <div className="plan-wrap">
+            {/* ====== INCLUYE / NO INCLUYE ====== */}
+            <div className="grid-2" id="incluye">
+              <section className="card">
+                <h2 className="card-title">
+                  <span className="icon icon--ok" aria-hidden="true">
+                    ✓
+                  </span>
+                  ¿Qué incluye?
+                </h2>
+
+                <div className="list-block">
+                  <div className="list-title">
+                    Todo lo del plan frontend + funciones avanzadas
+                  </div>
+                  <ul className="list">
+                    <li>Experiencia premium (diseño, responsive y optimización)</li>
+                    <li>Integraciones (WhatsApp, Maps, correo, redes)</li>
+                    <li>Estructura clara orientada a conversión</li>
                   </ul>
-                </li>
+                </div>
 
-                <li>
-                  <strong>Integraciones:</strong>
-                  <ul style={{ marginTop: "0.5rem", marginLeft: "1.5rem" }}>
-                    <li>WhatsApp</li>
-                    <li>Google Maps</li>
-                    <li>Correo SMTP (para formularios reales)</li>
-                    <li>Formularios conectados a base de datos</li>
-                    <li>
-                      Envío de mensajes automáticos o notificaciones (si aplica)
-                    </li>
-                  </ul>
-                </li>
-              </ul>
+                <ul className="checks">
+                  <li>API personalizada para tu proyecto</li>
+                  <li>Base de datos (PostgreSQL / MySQL / MongoDB según necesidad)</li>
+                  <li>Panel administrativo o dashboard (según acuerdo)</li>
+                  <li>Blog totalmente administrable</li>
+                  <li>Gestión de productos, servicios, usuarios o contenido</li>
+                  <li>Endpoints protegidos con autenticación (JWT o similar)</li>
+                  <li>Formularios reales (SMTP) y/o guardados en base de datos</li>
+                  <li>Notificaciones / automatizaciones (si aplica)</li>
+                </ul>
+              </section>
+
+              <section className="card card--danger">
+                <h2 className="card-title">
+                  <span className="icon icon--x" aria-hidden="true">
+                    ✕
+                  </span>
+                  No incluye
+                </h2>
+
+                <ul className="cross">
+                  <li>Pagos en línea (Stripe u otro) *a menos que se cotice aparte*</li>
+                  <li>Apps móviles nativas</li>
+                  <li>Integraciones enterprise complejas (ERP/CRM) *sin cotización*</li>
+                  <li>Infraestructura dedicada (servidores propios) *sin acuerdo*</li>
+                </ul>
+
+                <div className="hint">
+                  Si tu sistema requiere pagos / roles avanzados / módulos extra, se cotiza como extensión.
+                </div>
+              </section>
             </div>
 
-            <div className="content-card">
-              <h2>Ventajas del plan:</h2>
-              <ul className="feature-list">
-                <li>Contenido editable por el cliente</li>
-                <li>Escalabilidad para futuras funciones</li>
+            {/* ====== VENTAJAS ====== */}
+            <section className="card">
+              <h2 className="card-title">Ventajas del plan</h2>
+
+              <ul className="checks">
+                <li>Contenido editable por el cliente (sin depender de nosotros)</li>
+                <li>Escalabilidad para futuras funciones y módulos</li>
                 <li>Seguridad y panel privado</li>
                 <li>Mantenimiento más sólido y profesional</li>
               </ul>
-            </div>
+            </section>
 
-            <div className="content-card">
-              <h2>Precios</h2>
-              <div style={{ marginBottom: "1rem" }}>
-                <p>
-                  <strong>Precio de lista:</strong>{" "}
-                  <span style={{ fontSize: "1.5rem", color: "#4A90E2" }}>
-                    $18,200
-                  </span>
-                </p>
-                <p>
-                  <strong>Descuento 30%:</strong>
-                </p>
-                <p
-                  style={{
-                    fontSize: "2rem",
-                    color: "#4A90E2",
-                    fontWeight: "bold",
-                    margin: "0.5rem 0",
-                  }}
-                >
-                  $14,000
-                </p>
-              </div>
+            {/* ====== PROCESO ====== */}
+            <section className="card">
+              <h2 className="card-title">Plan de acción</h2>
 
-              <div
-                style={{
-                  display: "grid",
-                  gridTemplateColumns: "1fr 1fr",
-                  gap: "1rem",
-                  marginTop: "1.5rem",
-                }}
-              >
-                <div
-                  style={{
-                    border: "1px solid #4A90E2",
-                    padding: "1rem",
-                    borderRadius: "8px",
-                  }}
-                >
-                  <h3 style={{ marginTop: 0 }}>PAGO 1</h3>
-                  <p>Anticipo del 50%</p>
-                  <p
-                    style={{
-                      fontSize: "1.5rem",
-                      color: "#4A90E2",
-                      fontWeight: "bold",
-                    }}
-                  >
-                    $7,000
-                  </p>
+              <div className="timeline">
+                <div className="step">
+                  <div className="step-dot" />
+                  <div className="step-body">
+                    <div className="step-title">1) Inicio</div>
+                    <div className="step-text">
+                      Anticipo (50%) + definición de módulos (qué se administra y qué se guarda).
+                    </div>
+                  </div>
                 </div>
 
-                <div
-                  style={{
-                    border: "1px solid #4A90E2",
-                    padding: "1rem",
-                    borderRadius: "8px",
-                  }}
-                >
-                  <h3 style={{ marginTop: 0 }}>PAGO 2</h3>
-                  <p>Liquidación del 50%</p>
-                  <p
-                    style={{
-                      fontSize: "1.5rem",
-                      color: "#4A90E2",
-                      fontWeight: "bold",
-                    }}
-                  >
-                    $7,000
-                  </p>
+                <div className="step">
+                  <div className="step-dot" />
+                  <div className="step-body">
+                    <div className="step-title">2) Arquitectura</div>
+                    <div className="step-text">
+                      Modelamos base de datos, endpoints, roles y reglas de seguridad.
+                    </div>
+                  </div>
+                </div>
+
+                <div className="step">
+                  <div className="step-dot" />
+                  <div className="step-body">
+                    <div className="step-title">3) Desarrollo</div>
+                    <div className="step-text">
+                      Frontend + backend + panel/admin + conexión a BD.
+                    </div>
+                  </div>
+                </div>
+
+                <div className="step">
+                  <div className="step-dot" />
+                  <div className="step-body">
+                    <div className="step-title">4) Pruebas</div>
+                    <div className="step-text">
+                      Pruebas de flujo, seguridad, formularios, carga y validaciones.
+                    </div>
+                  </div>
+                </div>
+
+                <div className="step">
+                  <div className="step-dot" />
+                  <div className="step-body">
+                    <div className="step-title">5) Publicación</div>
+                    <div className="step-text">
+                      Deploy y ajustes finales. Liquidación (50%).
+                    </div>
+                  </div>
                 </div>
               </div>
-            </div>
 
-            <div className="content-card">
-              <h2>Plan de Acción</h2>
-              <ul className="feature-list">
-                <li>Pago en transferencia</li>
-                <li>
-                  Para comenzar se necesita INE y constancia de situación fiscal
-                  (en caso de requerir factura)
-                </li>
-                <li>Tiempo de entrega: 3-4 semanas</li>
-              </ul>
-            </div>
+              <div className="reqs">
+                <div className="reqs-title">Para comenzar se necesita:</div>
+                <ul className="reqs-list">
+                  <li>Pago en transferencia</li>
+                  <li>INE</li>
+                  <li>Constancia de situación fiscal (si requieres factura)</li>
+                </ul>
+              </div>
+            </section>
+
+            {/* ====== CTA FINAL ====== */}
+            <section className="cta-final">
+              <div className="cta-final__card">
+                <h3>¿Quieres un sistema que puedas administrar?</h3>
+                <p>
+                  Este plan es ideal si vas a manejar contenido, usuarios, productos o información real con seguridad.
+                </p>
+                <div className="cta-final__actions">
+                  <a
+                    className="btn btn--primary"
+                    href={WHATSAPP_LINK}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    Agendar por WhatsApp
+                  </a>
+                  <Link className="btn btn--ghost" to="/servicios">
+                    Ver otros planes
+                  </Link>
+                </div>
+              </div>
+            </section>
           </div>
         </section>
 
         <WhatsAppFloat />
 
         <footer className="footer">
-          <p>
-            © {new Date().getFullYear()} NIVO · Diseño y desarrollo de páginas
-            web.
-          </p>
+          <p>© {new Date().getFullYear()} NIVO · Diseño y desarrollo de páginas web.</p>
         </footer>
       </div>
     </>
