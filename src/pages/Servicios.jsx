@@ -16,6 +16,10 @@ function Servicios() {
     return <Plan2 />;
   }
 
+  if (planId === "plan-3") {
+    return <Plan2 />;
+  }
+
   // Página general de servicios
   return (
     <>
@@ -119,6 +123,46 @@ function Servicios() {
               </Link>
             </div>
           </div>
+
+            {/* ===== PLAN 3 ===== */}
+            <div className="service-card">
+              <img 
+                src="/images/nivos_planes.webp" 
+                alt="Planes de NIVOSTECH"
+                className="service-card-image"
+              />
+              <h2>Plan 1: Landing Extendida</h2>
+              <p className="service-description">
+                <strong>
+                  Ideal para negocios que solo necesitan presencia profesional.
+                </strong>
+              </p>
+
+              <div style={{ marginTop: "1rem", marginBottom: "1rem" }}>
+                <p>
+                  <strong>Incluye:</strong>
+                </p>
+                <ul>
+                  <li>
+                    Diseño completo de 5 páginas (Home, Nosotros, Contacto, Blog
+                    estático, Galería)
+                  </li>
+                  <li>Desarrollo 100% frontend</li>
+                  <li>Sitio rápido, responsivo y optimizado</li>
+                  <li>
+                    Integración de WhatsApp, Google Maps, correo y redes sociales
+                  </li>
+                  <li>Soporte técnico inicial (7–14 días)</li>
+                </ul>
+              </div>
+
+              <Link
+                to="/servicios/plan-1"
+                className="service-link"
+              >
+                Ver más
+              </Link>
+            </div>
         </section>
 
         <WhatsAppFloat />
