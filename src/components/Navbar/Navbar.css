@@ -23,6 +23,8 @@
   
 }
 
+
+
 .navbar:hover {
   background: rgba(15, 23, 42, 0.95);
   box-shadow: 0 6px 30px rgba(0, 0, 0, 0.3);
@@ -102,7 +104,12 @@
   object-fit: contain;
 }
 
-/* ====== BOTÓN HAMBURGUESA ====== */
+.logo-left {
+  margin-left: 2.5rem; /* ⬅️ separa hacia la derecha */
+}
+
+
+/* ====== BOTÓN HABURGUESA ====== */
 .mobile-menu-toggle {
   display: none;
   flex-direction: column;
@@ -199,15 +206,24 @@
   cursor: pointer;
 }
 
-.nav-link:hover {
-  color: #00d4ff;
-  background: rgba(0, 212, 255, 0.1);
+/* Hover específico para Servicios */
+.nav-dropdown:hover .dropdown-toggle {
+  color: #ffffff !important;
+  background: #332aea !important;
 }
 
+
 .nav-link.active {
-  color: #00d4ff;
-  background: rgba(0, 212, 255, 0.15);
+  color: #ffffff;
+  background: #332aea;
 }
+/* Servicios: hover y cuando esté activo */
+.nav-dropdown:hover .dropdown-toggle,
+.nav-dropdown .dropdown-toggle.active {
+  color: #ffffff !important;
+  background:  #332aea !important;
+}
+
 
 /* ====== DROPDOWN ====== */
 .nav-dropdown {
@@ -274,8 +290,8 @@
 }
 
 .dropdown-item:hover {
-  background: rgba(0, 212, 255, 0.15);
-  color: #00d4ff;
+  background:#332aea ;
+  color: #ffffff;
 }
 
 .dropdown-item:first-child {
@@ -607,8 +623,10 @@
     padding: 0 !important;
     overflow: visible !important;
     flex-direction: row !important;
-    gap: 0.5rem !important;
+    gap: 5.5rem !important;
   }
+
+  /* HUGO */
 
   .cta-button {
     position: static !important;

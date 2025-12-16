@@ -69,8 +69,8 @@ const Navbar = () => {
       
       <nav className={`navbar ${isMobileMenuOpen ? 'mobile-menu-open' : ''}`}>
         <Link to="/" className="logo">
-          <img src="/logos/logonivos3.png" alt="Nivos" className="logo-left" />
-          <img src="/logos/logonivos4.png" alt="Nivos" className="logo-right" />
+          <img src="/logos/logonivos3.webp" alt="Nivos" className="logo-left" />
+          {/*<img src="/logos/logonivos4.png" alt="Nivos" className="logo-right" />*/}
         </Link>
 
         {/* Botón hamburguesa para móvil */}
@@ -94,6 +94,14 @@ const Navbar = () => {
         </Link>
 
         <Link
+          to="/proyectos"
+          className={isActive("/proyectos") ? "nav-link active" : "nav-link"}
+          onClick={() => setIsMobileMenuOpen(false)}
+        >
+          Nuestros Proyectos
+        </Link>
+
+        <Link
           to="/nosotros"
           className={isActive("/nosotros") ? "nav-link active" : "nav-link"}
           onClick={() => setIsMobileMenuOpen(false)}
@@ -107,15 +115,25 @@ const Navbar = () => {
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
         >
-          <button
+          <Link
+            to="/servicios"
             className={`nav-link dropdown-toggle ${
               location.pathname.startsWith("/servicios") ? "active" : ""
             }`}
-            onClick={handleMobileServicesClick}
+            onClick={(e) => {
+              // En móviles, si el dropdown está cerrado, abrirlo en lugar de navegar
+              if (window.innerWidth <= 768 && !isServicesOpen) {
+                e.preventDefault();
+                setIsServicesOpen(true);
+              } else {
+                // Si ya está abierto en móvil, cerrar el menú móvil
+                setIsMobileMenuOpen(false);
+              }
+            }}
           >
             Servicios
             <span className="dropdown-arrow">▼</span>
-          </button>
+          </Link>
 
           {isServicesOpen && (
             <div 
@@ -131,7 +149,7 @@ const Navbar = () => {
                   setIsMobileMenuOpen(false);
                 }}
               >
-                Plan 1
+                Landing Extendida
               </Link>
               <Link
                 to="/servicios/plan-2"
@@ -141,7 +159,18 @@ const Navbar = () => {
                   setIsMobileMenuOpen(false);
                 }}
               >
-                Plan 2
+                Sitio Profesional
+              </Link>
+
+              <Link
+                to="/servicios/plan-3"
+                className="dropdown-item"
+                onClick={() => {
+                  setIsServicesOpen(false);
+                  setIsMobileMenuOpen(false);
+                }}
+              >
+                Sitio + Redes Sociales
               </Link>
             </div>
           )}

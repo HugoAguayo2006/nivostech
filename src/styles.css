@@ -245,12 +245,47 @@ a {
   height: 20px;
 }
 
+<<<<<<< HEAD
 @media (max-width: 768px) {
+=======
+@media (max-width: 760px) {
+>>>>>>> 96029a6101be69e9d96b886e07d7d609c2132519
   .hero {
     min-height: auto;     /* 🔥 CLAVE */
     padding-bottom: 2rem;
     
   }
+<<<<<<< HEAD
+=======
+    .hero-title {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-note{
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-tag{
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-btn {
+  display: block;
+  max-width: 280px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+
+ 
+
+>>>>>>> 96029a6101be69e9d96b886e07d7d609c2132519
 }
 
 /* ===== HERO: MOBILE + TABLET (iPad) ===== */
@@ -293,8 +328,15 @@ a {
     padding-top: 110px;
     
   }
+<<<<<<< HEAD
 }
 
+=======
+
+}
+
+
+>>>>>>> 96029a6101be69e9d96b886e07d7d609c2132519
 /* ====== DESKTOP ====== */
 @media (min-width: 900px) {
   .hero {
@@ -341,10 +383,59 @@ a {
     border-radius: 18px;
     
   }
+<<<<<<< HEAD
+=======
+
+  
+  
+>>>>>>> 96029a6101be69e9d96b886e07d7d609c2132519
 }
 
 
 
+<<<<<<< HEAD
+=======
+/* ====== SOLO Surface Duo (≈540px) ====== */
+@media (min-width: 520px) and (max-width: 620px) {
+
+  /* centra todo el contenido del hero */
+  .hero-content {
+    display: flex;
+    flex-direction: column;   /* ✅ ESTO era lo que faltaba */
+    align-items: center;      /* centra hijos horizontalmente */
+  }
+
+  /* centra el “pill” de arriba */
+  .hero-inner {
+    align-self: center;
+    margin: 0 auto;
+    width: fit-content;
+    text-align: center;
+  }
+
+  /* centra el título */
+  .hero-title {
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  /* centra botones */
+  .hero-actions {
+    display: flex;
+    justify-content: center;
+  }
+
+  /* centra nota */
+  .hero-note {
+    text-align: center;
+    margin: 0.75rem auto 0;
+  }
+}
+
+
+
+
+>>>>>>> 96029a6101be69e9d96b886e07d7d609c2132519
 
 /* ====== SECCIONES GENERALES ====== */
 section {
@@ -545,6 +636,12 @@ h2 {
   margin: 0 auto;
 }
 
+.page-section:has(.services-grid) {
+  max-width: 100%;
+  padding-left: 3rem;
+  padding-right: 3rem;
+}
+
 .page-header {
   text-align: center;
   margin-bottom: 3rem;
@@ -658,54 +755,176 @@ h2 {
 /* ====== SERVICIOS ====== */
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
-  margin-top: 2rem;
+  margin-top: 3rem;
+  width: 100%;
+  padding: 0;
+}
+
+@media (max-width: 1400px) {
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 .service-card {
-  background: rgba(15, 23, 42, 0.9);
-  border-radius: 16px;
-  padding: 2rem;
-  border: 1px solid rgba(148, 163, 184, 0.4);
-  transition: all 0.3s ease;
+  background: linear-gradient(135deg, rgba(15, 23, 42, 0.95) 0%, rgba(30, 41, 59, 0.95) 100%);
+  border-radius: 24px;
+  padding: 2.5rem;
+  border: 2px solid rgba(148, 163, 184, 0.2);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   text-align: center;
+  position: relative;
+  overflow: hidden;
+  font-family: 'Zen Dots', cursive;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+}
+
+.service-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, transparent, #00d4ff, transparent);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.service-card:hover::before {
+  opacity: 1;
 }
 
 .service-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4);
-  border-color: rgba(74, 222, 128, 0.5);
+  transform: translateY(-8px);
+  box-shadow: 0 16px 40px rgba(0, 212, 255, 0.15), 0 8px 24px rgba(0, 0, 0, 0.4);
+  border-color: rgba(0, 212, 255, 0.4);
+  background: linear-gradient(135deg, rgba(15, 23, 42, 1) 0%, rgba(30, 41, 59, 1) 100%);
 }
 
 .service-card h2 {
-  font-size: 1.8rem;
-  margin-bottom: 1rem;
-  color: #4ade80;
+  font-size: 1.9rem;
+  margin-bottom: 1.2rem;
+  color: #00f0ff;
+  font-family: 'Zen Dots', cursive;
+  font-weight: 400;
+  text-shadow: 0 0 30px rgba(0, 240, 255, 0.5), 0 0 15px rgba(0, 240, 255, 0.4);
+  letter-spacing: 0.5px;
 }
 
 .service-description {
-  font-size: 1rem;
-  color: #cbd5f5;
-  margin-bottom: 1.5rem;
-  line-height: 1.6;
+  font-size: 1.05rem;
+  color: #e2e8f0;
+  margin-bottom: 1.8rem;
+  line-height: 1.7;
+  font-family: 'Zen Dots', cursive;
+  text-shadow: 0 0 10px rgba(226, 232, 240, 0.3);
+}
+
+.service-card strong {
+  color: #00f0ff;
+  font-weight: 400;
+  font-family: 'Zen Dots', cursive;
+  text-shadow: 0 0 15px rgba(0, 240, 255, 0.4);
+}
+
+.service-card .service-description strong {
+  color: #e2e8f0 !important;
+  font-weight: 400;
+  font-family: 'Zen Dots', cursive;
+  text-shadow: 0 0 10px rgba(226, 232, 240, 0.3);
+}
+
+.service-card ul {
+  text-align: left;
+  margin-left: 0;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  font-family: 'Zen Dots', cursive;
+  list-style: none;
+  padding-left: 0;
+}
+
+.service-card li {
+  color: #f1f5f9;
+  margin-bottom: 1rem;
+  line-height: 1.7;
+  font-size: 1.05rem;
+  position: relative;
+  padding-left: 2rem;
+  text-shadow: 0 0 8px rgba(241, 245, 249, 0.2);
+}
+
+.service-card li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #00f0ff;
+  font-size: 1.3rem;
+  font-weight: bold;
+  text-shadow: 0 0 15px rgba(0, 240, 255, 0.8), 0 0 8px rgba(0, 240, 255, 0.6);
+  line-height: 1.5;
+}
+
+.service-card p {
+  font-family: 'Zen Dots', cursive;
+}
+
+.service-card p strong {
+  color: #00d4ff;
+  font-weight: 400;
+  font-family: 'Zen Dots', cursive;
 }
 
 .service-link {
   display: inline-block;
-  padding: 0.75rem 1.5rem;
-  background: #4f46e5;
-  color: #f9fafb;
+  padding: 0.85rem 2rem;
+  background: linear-gradient(135deg, #00d4ff 0%, #0099cc 100%);
+  color: #0f172a;
   text-decoration: none;
-  border-radius: 999px;
-  font-weight: 600;
+  border-radius: 12px;
+  font-weight: 400;
+  font-family: 'Zen Dots', cursive;
   transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 212, 255, 0.3);
+  margin-top: auto;
+  border: 2px solid transparent;
+  align-self: center;
 }
 
 .service-link:hover {
-  background: #4338ca;
-  transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(79, 70, 229, 0.4);
+  background: linear-gradient(135deg, #00e5ff 0%, #00d4ff 100%);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0, 212, 255, 0.5);
+  border-color: rgba(0, 212, 255, 0.6);
+}
+
+.service-card-image {
+  width: 100%;
+  max-width: 100%;
+  height: 250px;
+  border-radius: 16px;
+  margin-bottom: 1.5rem;
+  display: block;
+  object-fit: cover;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover .service-card-image {
+  transform: scale(1.02);
+  box-shadow: 0 6px 20px rgba(0, 212, 255, 0.15);
 }
 
 /* ====== CONTACTO INFO ====== */
@@ -908,3 +1127,21 @@ h2 {
     text-align: left;
   }
 }
+
+
+/* ====== CONTROL GLOBAL DEL NAVBAR CUANDO MODAL ESTÁ ABIERTO ====== */
+
+.navbar {
+  transition: opacity 200ms ease, transform 200ms ease;
+}
+
+body.modal-open .navbar {
+  opacity: 0;
+  transform: translateY(-12px);
+  pointer-events: none;
+}
+
+body.modal-open {
+  overflow: hidden;
+}
+
