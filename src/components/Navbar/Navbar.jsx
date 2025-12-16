@@ -70,7 +70,7 @@ const Navbar = () => {
       <nav className={`navbar ${isMobileMenuOpen ? 'mobile-menu-open' : ''}`}>
         <Link to="/" className="logo">
           <img src="/logos/logonivos3.png" alt="Nivos" className="logo-left" />
-          <img src="/logos/logonivos1.png" alt="Nivos" className="logo-right" />
+          <img src="/logos/logonivos4.png" alt="Nivos" className="logo-right" />
         </Link>
 
         {/* Botón hamburguesa para móvil */}
