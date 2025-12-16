@@ -73,6 +73,13 @@ a {
   margin-top: -7rem; /* 🔼 sube todo */
 }
 
+/* Anular margin-top negativo en móvil e iPad */
+@media (max-width: 1366px) {
+  .hero {
+    margin-top: 0;
+  }
+}
+
 /* ✅ Backdrop fijo para que SIEMPRE se vea el fondo incluso con overlays */
 .hero::before {
   content: "";
@@ -186,6 +193,9 @@ a {
   box-shadow: 0 12px 30px rgba(79, 70, 229, 0.4);
   transition: transform 0.15s ease, box-shadow 0.15s ease;
   margin-right: 15px;
+  display: inline-block;
+  text-decoration: none;
+  white-space: nowrap;
 }
 
 .hero-btn:hover {
@@ -604,7 +614,8 @@ h2 {
   .hero {
     padding: 0 1.5rem;
     align-items: flex-start;
-    padding-top: 3rem;
+    padding-top: 1rem;
+    margin-top: 0;
   }
 
   section {
@@ -624,6 +635,21 @@ h2 {
   .hero-media {
     flex: 1;
     width: 100%;
+  }
+
+  .hero-btn {
+    display: block;
+    width: 100%;
+    text-align: center;
+    margin-right: 0;
+    margin-bottom: 0.75rem;
+    padding: 0.75rem 1.5rem;
+    font-size: 0.9rem;
+    white-space: normal;
+  }
+
+  .hero-btn:last-child {
+    margin-bottom: 0;
   }
 
   .hero-video {
@@ -769,5 +795,60 @@ h2 {
 @media (max-width: 768px) {
   .about-left {
     text-align: left;
+  }
+  
+  /* Ajuste adicional para tablets (iPad) */
+  .hero {
+    padding-top: 1.5rem;
+  }
+  
+  .hero-btn {
+    display: inline-block;
+    width: auto;
+    margin-right: 0.75rem;
+    margin-bottom: 0;
+    padding: 0.8rem 1.6rem;
+    font-size: 0.9rem;
+  }
+  
+  .hero-btn:last-child {
+    margin-right: 0;
+  }
+}
+
+/* Ajuste específico para móviles pequeños */
+@media (max-width: 640px) {
+  .hero {
+    padding-top: 1.5rem;
+    margin-top: 0;
+  }
+  
+  .hero-tag {
+    font-size: 0.75rem;
+    padding: 0.3rem 0.8rem;
+  }
+  
+  .hero-btn {
+    padding: 0.7rem 1.2rem;
+    font-size: 0.85rem;
+  }
+}
+
+/* Ajuste para móviles muy pequeños */
+@media (max-width: 480px) {
+  .hero {
+    padding-top: 2rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  
+  .hero-tag {
+    font-size: 0.7rem;
+    padding: 0.25rem 0.7rem;
+  }
+  
+  .hero-btn {
+    padding: 0.65rem 1rem;
+    font-size: 0.8rem;
   }
 }
