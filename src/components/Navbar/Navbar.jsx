@@ -161,6 +161,17 @@ const Navbar = () => {
               >
                 Sitio Profesional
               </Link>
+
+              <Link
+                to="/servicios/plan-3"
+                className="dropdown-item"
+                onClick={() => {
+                  setIsServicesOpen(false);
+                  setIsMobileMenuOpen(false);
+                }}
+              >
+                Sitio + Redes Sociales
+              </Link>
             </div>
           )}
         </div>
