@@ -76,31 +76,23 @@ function Plan2() {
               <aside className="price-card">
                 <div className="price-card__top">
                   <h2 className="price-title">Inversión</h2>
-
-                  <div className="price-row">
-                    <span className="price-label">Lista</span>
-                    <span className="price-old">$18,200</span>
-                  </div>
-
                   <div className="price-row price-row--main">
-                    <span className="price-label">Hoy</span>
-                    <span className="price-main">$14,000</span>
+                    <span className="price-label">Precio</span>
+                    <span className="price-main">$15,000</span>
                   </div>
-
-                  <div className="price-chip">-30%</div>
                 </div>
 
                 <div className="price-split">
                   <div className="split-card">
                     <div className="split-title">Pago 1</div>
                     <div className="split-desc">Anticipo 50%</div>
-                    <div className="split-amount">$7,000</div>
+                    <div className="split-amount">$7,500</div>
                   </div>
 
                   <div className="split-card">
                     <div className="split-title">Pago 2</div>
                     <div className="split-desc">Liquidación 50%</div>
-                    <div className="split-amount">$7,000</div>
+                    <div className="split-amount">$7,500</div>
                   </div>
                 </div>
 

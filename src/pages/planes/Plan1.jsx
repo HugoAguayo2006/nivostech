@@ -62,7 +62,7 @@ function Plan1() {
                 </div>
 
                 <p className="plan-note">
-                  * Precio con descuento por tiempo limitado. Factura disponible (requiere CSF).
+                  * Factura disponible (requiere CSF).
                 </p>
               </div>
 
@@ -70,15 +70,10 @@ function Plan1() {
               <aside className="price-card">
                 <div className="price-card__top">
                   <h2 className="price-title">Inversión</h2>
-                  <div className="price-row">
-                    <span className="price-label">Lista</span>
-                    <span className="price-old">$11,700</span>
-                  </div>
                   <div className="price-row price-row--main">
-                    <span className="price-label">Hoy</span>
+                    <span className="price-label">Precio</span>
                     <span className="price-main">$9,000</span>
                   </div>
-                  <div className="price-chip">-30%</div>
                 </div>
 
                 <div className="price-split">
