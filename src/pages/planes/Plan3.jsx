@@ -298,7 +298,7 @@ function Plan3() {
                 <p>
                   Este plan te da constancia en redes + un sitio profesional incluido para cerrar ventas.
                 </p>
-                <div className="cta-final__actions">
+                <div className="cta-final__actions" style={{ display: "flex", justifyContent: "center", gap: "1rem", flexWrap: "wrap" }}>
                   <a
                     className="btn btn--primary"
                     href={WHATSAPP_LINK}
