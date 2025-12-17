@@ -193,7 +193,7 @@ function PlanMenu() {
                 <p style={{ marginBottom: "1.5rem", fontSize: "1.1rem", lineHeight: "1.6" }}>
                   Si necesitas panel administrativo para gestionar el menú,
                   sistema de pedidos online, reservas de mesas o base de datos,
-                  entonces el <strong>Sitio Profesional</strong> es ideal para ti.
+                  entonces contáctanos para una cotización personalizada.
                 </p>
 
                 <div style={{ marginBottom: "1rem", textAlign: "center" }}>
@@ -211,9 +211,9 @@ function PlanMenu() {
                 </div>
 
                 <div style={{ textAlign: "center", marginTop: "auto", paddingTop: "1.5rem" }}>
-                  <Link className="btn btn--primary" to="/servicios/plan-2">
-                    Ver Plan Sitio Profesional
-                  </Link>
+                  <a className="btn btn--primary" href={WHATSAPP_LINK} target="_blank" rel="noreferrer">
+                    Contactar por WhatsApp
+                  </a>
                 </div>
               </section>
             </div>
