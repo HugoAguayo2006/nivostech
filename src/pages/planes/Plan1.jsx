@@ -122,7 +122,7 @@ function Plan1() {
             {/* ====== INCLUYE / NO INCLUYE ====== */}
             <div className="grid-2" id="incluye">
               <section className="card">
-                <h2 className="card-title">
+                <h2 className="card-title" style={{ justifyContent: "center" }}>
                   <span className="icon icon--ok" aria-hidden="true">✓</span>
                   ¿Qué incluye?
                 </h2>
@@ -150,23 +150,34 @@ function Plan1() {
                 </ul>
               </section>
 
-              <section className="card card--danger">
-                <h2 className="card-title">
-                  <span className="icon icon--x" aria-hidden="true">✕</span>
-                  No incluye
+              <section className="card" style={{ display: "flex", flexDirection: "column", minHeight: "100%" }}>
+                <h2 className="card-title" style={{ justifyContent: "center" }}>
+                  ¿Necesitas más funcionalidades?
                 </h2>
 
-                <ul className="cross">
-                  <li>Panel administrativo</li>
-                  <li>Base de datos</li>
-                  <li>Gestión de usuarios</li>
-                  <li>Blog editable</li>
-                  <li>Dashboard</li>
-                  <li>Almacenamiento propio de información</li>
-                </ul>
+                <p style={{ marginBottom: "1.5rem", fontSize: "1.1rem", lineHeight: "1.6" }}>
+                  Si necesitas panel administrativo, base de datos, blog editable, gestión de usuarios o dashboard, 
+                  entonces el <strong>Sitio Profesional</strong> es ideal para ti.
+                </p>
 
-                <div className="hint">
-                  ¿Lo necesitas? Entonces te conviene el plan con backend / admin.
+                <div style={{ marginBottom: "1rem", textAlign: "center" }}>
+                  <img 
+                    src="/images/nivos_planes2.webp" 
+                    alt="Plan 2: Sitio Profesional"
+                    style={{ 
+                      maxWidth: "100%", 
+                      height: "auto", 
+                      borderRadius: "12px",
+                      display: "block",
+                      margin: "0 auto"
+                    }}
+                  />
+                </div>
+
+                <div style={{ textAlign: "center", marginTop: "auto", paddingTop: "1.5rem" }}>
+                  <Link className="btn btn--primary" to="/servicios/plan-2">
+                    Ver Plan Sitio Profesional
+                  </Link>
                 </div>
               </section>
             </div>
