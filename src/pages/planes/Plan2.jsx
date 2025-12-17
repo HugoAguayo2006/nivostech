@@ -137,7 +137,7 @@ function Plan2() {
             {/* ====== INCLUYE / NO INCLUYE ====== */}
             <div className="grid-2" id="incluye">
               <section className="card">
-                <h2 className="card-title">
+                <h2 className="card-title" style={{ justifyContent: "center" }}>
                   <span className="icon icon--ok" aria-hidden="true">
                     ✓
                   </span>
@@ -167,29 +167,39 @@ function Plan2() {
                 </ul>
               </section>
 
-              <section className="card card--danger">
-                <h2 className="card-title">
-                  <span className="icon icon--x" aria-hidden="true">
-                    ✕
-                  </span>
-                  No incluye
+              <section className="card" style={{ display: "flex", flexDirection: "column", minHeight: "100%" }}>
+                <h2 className="card-title" style={{ justifyContent: "center" }}>
+                  ¿Necesitas más funcionalidades?
                 </h2>
 
-                <ul className="cross">
-                  <li>Pagos en línea (Stripe u otro) *a menos que se cotice aparte*</li>
-                  <li>Apps móviles nativas</li>
-                  <li>Integraciones enterprise complejas (ERP/CRM) *sin cotización*</li>
-                  <li>Infraestructura dedicada (servidores propios) *sin acuerdo*</li>
-                </ul>
+                <p style={{ marginBottom: "1.5rem", fontSize: "1.1rem", lineHeight: "1.6" }}>
+                  Si necesitas manejo de redes sociales y tener presencia digital entonces el plan <strong>Sitio + Redes Sociales</strong> o una cotización personalizada es ideal para ti.
+                </p>
 
-                <div className="hint">
-                  Si tu sistema requiere pagos / roles avanzados / módulos extra, se cotiza como extensión.
+                <div style={{ marginBottom: "1rem", textAlign: "center" }}>
+                  <img 
+                    src="/images/nivos_planes4.webp" 
+                    alt="Plan 3: Sitio + Redes Sociales"
+                    style={{ 
+                      maxWidth: "100%", 
+                      height: "auto", 
+                      borderRadius: "12px",
+                      display: "block",
+                      margin: "0 auto"
+                    }}
+                  />
+                </div>
+
+                <div style={{ textAlign: "center", marginTop: "auto", paddingTop: "1.5rem" }}>
+                  <Link className="btn btn--primary" to="/servicios/plan-3">
+                    Ver Plan Sitio + Redes Sociales
+                  </Link>
                 </div>
               </section>
             </div>
 
             {/* ====== VENTAJAS ====== */}
-            <section className="card">
+            <section className="card" style={{ marginTop: "2rem" }}>
               <h2 className="card-title">Ventajas del plan</h2>
 
               <ul className="checks">
@@ -201,7 +211,7 @@ function Plan2() {
             </section>
 
             {/* ====== PROCESO ====== */}
-            <section className="card">
+            <section className="card" style={{ marginTop: "2rem" }}>
               <h2 className="card-title">Plan de acción</h2>
 
               <div className="timeline">
@@ -273,7 +283,7 @@ function Plan2() {
                 <p>
                   Este plan es ideal si vas a manejar contenido, usuarios, productos o información real con seguridad.
                 </p>
-                <div className="cta-final__actions">
+                <div className="cta-final__actions" style={{ display: "flex", justifyContent: "center", gap: "1rem", flexWrap: "wrap" }}>
                   <a
                     className="btn btn--primary"
                     href={WHATSAPP_LINK}
