@@ -104,8 +104,8 @@ function Plan3() {
                   </div>
                   <div className="split-card">
                     <div className="split-title">Bonus</div>
-                    <div className="split-desc">Web tipo Plan 1</div>
-                    <div className="split-amount">$0</div>
+                    <div className="split-desc">Web tipo Plan Landing Extendida</div>
+                    <div className="split-amount">GRATIS</div>
                   </div>
                 </div>
 
@@ -192,7 +192,7 @@ function Plan3() {
             </div>
 
             {/* ====== VENTAJAS ====== */}
-            <section className="card">
+            <section className="card" style={{ marginTop: "2rem", marginBottom: "2rem" }}>
               <h2 className="card-title">Ventajas del plan</h2>
               <ul className="checks">
                 <li>Página web profesional incluida sin costo adicional</li>
@@ -205,8 +205,19 @@ function Plan3() {
             </section>
 
             {/* ====== BONUS DESTACADO (look premium usando el mismo estilo) ====== */}
-            <section className="card">
-              <h2 className="card-title">🎁 BONUS incluido</h2>
+            <section className="card" style={{ marginBottom: "2rem" }}>
+              <h2 style={{
+                fontSize: "1.9rem",
+                marginBottom: "1.2rem",
+                color: "#00f0ff",
+                fontFamily: "'Zen Dots', cursive",
+                fontWeight: 400,
+                textShadow: "0 0 30px rgba(0, 240, 255, 0.5), 0 0 15px rgba(0, 240, 255, 0.4)",
+                letterSpacing: "0.5px",
+                textAlign: "center"
+              }}>
+                BONUS incluido
+              </h2>
               <div className="hint" style={{ marginTop: 0 }}>
                 <strong>Tu página web va GRATIS</strong>. Normalmente vale <strong>$9,000</strong>,
                 pero al contratar el manejo de redes, se incluye dentro del paquete.
