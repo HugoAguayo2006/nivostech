@@ -179,22 +179,30 @@ function Servicios() {
               </p>
 
               <div style={{ marginTop: "1rem", marginBottom: "1rem" }}>
-                <p>
-                  <strong>Incluye:</strong>
-                </p>
-                <ul>
-                  <li>
-                    Diseño completo de 5 páginas (Home, Nosotros, Menú Digital Interactivo, Contacto, Galería)
-                  </li>
-                  <li>Menú digital interactivo con categorías y filtros</li>
-                  <li>Desarrollo 100% frontend</li>
-                  <li>Sitio rápido, responsivo y optimizado</li>
-                  <li>
-                    Integración de WhatsApp para pedidos, Google Maps, correo y redes sociales
-                  </li>
-                  <li>Soporte técnico inicial (7–14 días)</li>
-                </ul>
+                <strong>Incluye:</strong>
+
+<ul>
+  <li>Menú digital interactivo con categorías y filtros</li>
+  <li>Carga inicial del menú (platos, precios, descripciones y fotos)</li>
+  <li>Desarrollo 100% frontend (rápido, ligero y optimizado)</li>
+  <li>Sitio responsivo y optimizado para velocidad</li>
+  <li>
+    Integración de WhatsApp, Google Maps, redes sociales y correo
+  </li>
+  <li>Publicación en dominio del cliente</li>
+  <li>Soporte técnico inicial (7–14 días)</li>
+  <li>
+    Cambios mensuales opcionales: <strong>$300/mes</strong> (actualizar precios,
+    platillos, fotos o secciones del menú)
+  </li>
+</ul>
+
+
+
+                  
               </div>
+
+              
 
               <Link
                 to="/servicios/plan-menu"
@@ -203,7 +211,15 @@ function Servicios() {
                 Ver más
               </Link>
             </div>
+            
           </div>
+          <p style={{ marginTop: "0.8rem", fontSize: "0.95rem", opacity: 0.9 }}>
+            <strong>Dominio:</strong> el costo del dominio no está incluido.  
+            Si el cliente ya cuenta con un dominio, se utilizará sin problema.  
+            En caso contrario, podemos apoyar con la compra y configuración
+            (costo adicional).
+          </p>
+
         </section>
 
         <WhatsAppFloat />

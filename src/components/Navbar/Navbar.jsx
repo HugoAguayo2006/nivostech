@@ -193,7 +193,7 @@ const Navbar = () => {
                   setIsMobileMenuOpen(false);
                 }}
               >
-                Plan Menú
+                Menú para restaurante
               </Link>
             </div>
           )}
