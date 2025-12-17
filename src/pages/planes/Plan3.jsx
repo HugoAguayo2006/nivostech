@@ -163,7 +163,7 @@ function Plan3() {
                   <ul className="list">
                     <li>Creación de contenido (posts, imágenes, videos)</li>
                     <li>Publicación y programación</li>
-                    <li>Gestión multi-plataforma (FB, IG, etc.)</li>
+                    <li>Gestión multi-plataforma (FaceBook, Instagram, etc.)</li>
                     <li>Respuesta a comentarios y mensajes</li>
                     <li>Análisis de métricas + reportes mensuales</li>
                     <li>Estrategia de crecimiento y engagement</li>
