@@ -71,7 +71,9 @@ function Home() {
                 </Link>
               </div>
 
-              
+              <p className="hero-note">
+                * Reunión con NIVOSTECH presencial o en línea.
+              </p>
             </div>
 
             {/* VIDEO DERECHA */}
