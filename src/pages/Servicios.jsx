@@ -4,6 +4,7 @@ import WhatsAppFloat from "../WhatsAppFloat";
 import Plan1 from "./planes/Plan1";
 import Plan2 from "./planes/Plan2";
 import Plan3 from "./planes/Plan3";
+import PlanMenu from "./planes/PlanMenu";
 
 function Servicios() {
   const { planId } = useParams();
@@ -19,6 +20,10 @@ function Servicios() {
 
   if (planId === "plan-3") {
     return <Plan3 />;
+  }
+
+  if (planId === "plan-menu") {
+    return <PlanMenu />;
   }
 
   // Página general de servicios
@@ -153,6 +158,46 @@ function Servicios() {
 
               <Link
                 to="/servicios/plan-3"
+                className="service-link"
+              >
+                Ver más
+              </Link>
+            </div>
+
+            {/* ===== PLAN MENÚ ===== */}
+            <div className="service-card" style={{ marginTop: "2rem", gridColumn: "1 / -1" }}>
+              <img 
+                src="/images/interior_restaurante.webp" 
+                alt="Plan Menú de NIVOSTECH"
+                className="service-card-image"
+              />
+              <h2>Plan Menú</h2>
+              <p className="service-description">
+                <strong>
+                  Ideal para restaurantes y negocios gastronómicos que necesitan un menú digital interactivo.
+                </strong>
+              </p>
+
+              <div style={{ marginTop: "1rem", marginBottom: "1rem" }}>
+                <p>
+                  <strong>Incluye:</strong>
+                </p>
+                <ul>
+                  <li>
+                    Diseño completo de 5 páginas (Home, Nosotros, Menú Digital Interactivo, Contacto, Galería)
+                  </li>
+                  <li>Menú digital interactivo con categorías y filtros</li>
+                  <li>Desarrollo 100% frontend</li>
+                  <li>Sitio rápido, responsivo y optimizado</li>
+                  <li>
+                    Integración de WhatsApp para pedidos, Google Maps, correo y redes sociales
+                  </li>
+                  <li>Soporte técnico inicial (7–14 días)</li>
+                </ul>
+              </div>
+
+              <Link
+                to="/servicios/plan-menu"
                 className="service-link"
               >
                 Ver más
