@@ -183,7 +183,7 @@ function Plan1() {
             </div>
 
             {/* ====== PROCESO ====== */}
-            <section className="card">
+            <section className="card" style={{ marginTop: "2rem" }}>
               <h2 className="card-title">Plan de acción</h2>
 
               <div className="timeline">
@@ -255,7 +255,7 @@ function Plan1() {
                 <p>
                   Te damos un sitio premium, rápido y claro para convertir visitas en clientes.
                 </p>
-                <div className="cta-final__actions">
+                <div className="cta-final__actions" style={{ display: "flex", justifyContent: "center", gap: "1rem", flexWrap: "wrap" }}>
                   <a className="btn btn--primary" href={WHATSAPP_LINK} target="_blank" rel="noreferrer">
                     Agendar por WhatsApp
                   </a>
