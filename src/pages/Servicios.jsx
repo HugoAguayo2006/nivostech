@@ -142,7 +142,7 @@ function Servicios() {
                   <strong>Incluye:</strong>
                 </p>
                 <ul>
-                  <li>Página web completa (Plan 1) incluida gratis</li>
+                  <li>Página web completa (Plan Landing Extendida) incluida gratis</li>
                   <li>Gestión profesional de redes sociales</li>
                   <li>Creación y publicación de contenido</li>
                   <li>Análisis de métricas y reportes mensuales</li>
