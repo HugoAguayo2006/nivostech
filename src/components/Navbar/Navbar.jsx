@@ -184,6 +184,17 @@ const Navbar = () => {
               >
                 Sitio + Redes Sociales
               </Link>
+
+              <Link
+                to="/servicios/plan-menu"
+                className="dropdown-item"
+                onClick={() => {
+                  setIsServicesOpen(false);
+                  setIsMobileMenuOpen(false);
+                }}
+              >
+                Plan Menú
+              </Link>
             </div>
           )}
         </div>
