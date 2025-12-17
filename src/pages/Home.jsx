@@ -71,9 +71,7 @@ function Home() {
                 </Link>
               </div>
 
-              <p className="hero-note">
-                * Reunión de 15 minutos para entender tus necesidades.
-              </p>
+              
             </div>
 
             {/* VIDEO DERECHA */}
