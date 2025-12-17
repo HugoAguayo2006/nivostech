@@ -142,7 +142,7 @@ function Plan3() {
             {/* ====== INCLUYE / NO INCLUYE ====== */}
             <div className="grid-2" id="incluye">
               <section className="card">
-                <h2 className="card-title">
+                <h2 className="card-title" style={{ justifyContent: "center" }}>
                   <span className="icon icon--ok" aria-hidden="true">✓</span>
                   ¿Qué incluye?
                 </h2>
@@ -172,21 +172,34 @@ function Plan3() {
                 </div>
               </section>
 
-              <section className="card card--danger">
-                <h2 className="card-title">
-                  <span className="icon icon--x" aria-hidden="true">✕</span>
-                  No incluye
+              <section className="card" style={{ display: "flex", flexDirection: "column", minHeight: "100%" }}>
+                <h2 className="card-title" style={{ justifyContent: "center" }}>
+                  ¿Necesitas campañas pagadas?
                 </h2>
 
-                <ul className="cross">
-                  <li>Campañas pagadas (Meta Ads/Google Ads) sin cotización adicional</li>
-                  <li>Producción profesional en estudio (sesiones, modelos, locación) sin acuerdo</li>
-                  <li>Rediseño de marca completo (naming / brandbook) sin cotización</li>
-                  <li>Administración de e-commerce / inventarios avanzados (no aplica en este plan)</li>
-                </ul>
+                <p style={{ marginBottom: "1.5rem", fontSize: "1.1rem", lineHeight: "1.6", textAlign: "center" }}>
+                  Si requieres campañas pagadas o publicidad pagada (Meta Ads, Google Ads, etc.), 
+                  contáctanos para una cotización personalizada.
+                </p>
 
-                <div className="hint">
-                  Si quieres anuncios pagados o producción pro, lo armamos como extensión.
+                <div style={{ marginBottom: "1rem", textAlign: "center" }}>
+                  <img 
+                    src="/images/redes_sociales_tecnologico.webp" 
+                    alt="Campañas pagadas y publicidad"
+                    style={{ 
+                      maxWidth: "100%", 
+                      height: "auto", 
+                      borderRadius: "12px",
+                      display: "block",
+                      margin: "0 auto"
+                    }}
+                  />
+                </div>
+
+                <div style={{ textAlign: "center", marginTop: "auto", paddingTop: "1.5rem" }}>
+                  <a className="btn btn--primary" href={WHATSAPP_LINK} target="_blank" rel="noreferrer">
+                    Contactar por WhatsApp
+                  </a>
                 </div>
               </section>
             </div>
@@ -219,7 +232,7 @@ function Plan3() {
                 BONUS incluido
               </h2>
               <div className="hint" style={{ marginTop: 0 }}>
-                <strong>Tu página web va GRATIS</strong>. Normalmente vale <strong>$9,000</strong>,
+                <strong>Tu página web va GRATIS</strong>. Inicialmente tiene costo,
                 pero al contratar el manejo de redes, se incluye dentro del paquete.
               </div>
             </section>
@@ -244,7 +257,7 @@ function Plan3() {
                   <div className="step-body">
                     <div className="step-title">2) Web (primeras 3–4 semanas)</div>
                     <div className="step-text">
-                      Diseñamos y entregamos tu web (tipo Plan 1) mientras iniciamos el calendario de redes.
+                      Diseñamos y entregamos tu web (tipo Plan Landing Extendida) mientras iniciamos el calendario de redes.
                     </div>
                   </div>
                 </div>
