@@ -185,7 +185,7 @@ export const PROYECTOS = [
     "Python",
     "REST APIs"
   ],
-  category: "Smart Cities",
+  category: "Web App",
   liveUrl: "https://www.youtube.com/watch?v=0lQdrmrLZg4"
 }
 
