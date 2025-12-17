@@ -150,7 +150,7 @@ function Plan3() {
                 <div className="list-block">
                   <div className="list-title">BONUS: Página web incluida GRATIS</div>
                   <ul className="list">
-                    <li>Landing Extendida (5 páginas) tipo Plan 1</li>
+                    <li>Landing Extendida tipo Plan 1</li>
                     <li>100% frontend, rápida, responsiva y optimizada</li>
                     <li>Integración de WhatsApp, Google Maps, correo y redes</li>
                     <li>Soporte inicial (7–14 días)</li>
@@ -163,7 +163,7 @@ function Plan3() {
                   <ul className="list">
                     <li>Creación de contenido (posts, imágenes, videos)</li>
                     <li>Publicación y programación</li>
-                    <li>Gestión multi-plataforma (FB, IG, LinkedIn, etc.)</li>
+                    <li>Gestión multi-plataforma (FB, IG, etc.)</li>
                     <li>Respuesta a comentarios y mensajes</li>
                     <li>Análisis de métricas + reportes mensuales</li>
                     <li>Estrategia de crecimiento y engagement</li>
