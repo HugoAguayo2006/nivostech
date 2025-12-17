@@ -7,6 +7,7 @@
   position: relative;
   padding: 5.5rem 1.5rem 2.5rem;
   overflow: hidden;
+  border-radius: 22px;
 }
 
 .plan-hero__bg {
@@ -18,6 +19,7 @@
     linear-gradient(to bottom, rgba(2, 6, 23, 0.35), rgba(2, 6, 23, 0.8));
   pointer-events: none;
   filter: saturate(1.1);
+  border-radius: 22px;
 }
 
 .plan-hero__inner {
@@ -28,6 +30,7 @@
   grid-template-columns: 1.2fr 0.8fr;
   gap: 1.25rem;
   align-items: start;
+  border-radius: 22px;
 }
 
 .plan-badges {
