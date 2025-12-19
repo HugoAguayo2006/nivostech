@@ -15,6 +15,7 @@
   gap: 1rem;
   width: 100%;
   margin: 0;
+  margin-right: auto;
   padding: 0;
 }
 
@@ -72,11 +73,13 @@
 @media (min-width: 768px) {
   .stats-section {
     padding: 4rem 2rem;
+    padding-left: 0.5rem;
   }
 
   .stats-grid {
     grid-template-columns: repeat(4, 1fr);
     gap: 2rem;
+    margin-left: -1rem;
   }
 
   .stat-card {
@@ -93,13 +96,27 @@
   }
 }
 
+/* Ajustes específicos para iPad */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .stats-section {
+    padding-left: 1.5rem;
+  }
+
+  .stats-grid {
+    gap: 1.5rem;
+    margin-left: 0;
+  }
+}
+
 @media (min-width: 1024px) {
   .stats-section {
     padding: 5rem 2rem;
+    padding-left: 0.5rem;
   }
 
   .stats-grid {
     gap: 2.5rem;
+    margin-left: -1rem;
   }
 
   .stat-card {
