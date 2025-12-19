@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import WhatsAppFloat from "../../WhatsAppFloat";
 import "./PlanPage.css";
 
-// comentario prueba
+// comentario prueba2
 const WHATSAPP_LINK =
   "https://wa.me/523310392675?text=Hola%20NIVOSTECH%2C%20me%20interesa%20el%20Plan%201%20(Landing%20Extendida).%20%C2%BFC%C3%B3mo%20empezamos%3F";
 
