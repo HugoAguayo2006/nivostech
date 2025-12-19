@@ -1,0 +1,126 @@
+.testimonials-section {
+  padding: 3rem 1rem;
+  background: rgba(2, 6, 23, 0.6);
+  backdrop-filter: blur(10px);
+}
+
+.testimonials-container {
+  width: 100%;
+}
+
+.testimonials-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.testimonials-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #f9fafb;
+  margin-bottom: 1rem;
+}
+
+.testimonials-subtitle {
+  font-size: 1rem;
+  color: rgba(249, 250, 251, 0.8);
+}
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+.testimonial-card {
+  background: rgba(15, 23, 42, 0.7);
+  border: 1px solid rgba(148, 163, 184, 0.1);
+  border-radius: 12px;
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(148, 163, 184, 0.3);
+  box-shadow: 0 12px 30px -10px rgba(0, 0, 0, 0.3);
+}
+
+.testimonial-rating {
+  margin-bottom: 1rem;
+}
+
+.testimonial-star {
+  color: #fbbf24;
+  font-size: 1.25rem;
+  margin-right: 0.25rem;
+}
+
+.testimonial-text {
+  font-size: 1rem;
+  color: rgba(249, 250, 251, 0.9);
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+  font-style: italic;
+}
+
+.testimonial-author {
+  border-top: 1px solid rgba(148, 163, 184, 0.1);
+  padding-top: 1rem;
+}
+
+.testimonial-author-name {
+  font-weight: 600;
+  color: #f9fafb;
+  margin-bottom: 0.25rem;
+}
+
+.testimonial-author-company {
+  font-size: 0.875rem;
+  color: rgba(249, 250, 251, 0.6);
+}
+
+@media (min-width: 480px) {
+  .testimonials-section {
+    padding: 4rem 1.5rem;
+  }
+
+  .testimonials-title {
+    font-size: 2.25rem;
+  }
+
+  .testimonial-card {
+    padding: 2rem;
+    border-radius: 16px;
+  }
+}
+
+@media (min-width: 768px) {
+  .testimonials-section {
+    padding: 5rem 2rem;
+  }
+
+  .testimonials-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .testimonials-section {
+    padding: 6rem 3rem;
+  }
+
+  .testimonials-title {
+    font-size: 3rem;
+  }
+
+  .testimonials-subtitle {
+    font-size: 1.125rem;
+  }
+
+  .testimonials-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.5rem;
+  }
+}
+

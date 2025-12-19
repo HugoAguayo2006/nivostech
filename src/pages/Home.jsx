@@ -3,12 +3,14 @@ import { Helmet } from "react-helmet-async";
 import emailjs from "emailjs-com";
 import { Link } from "react-router-dom";
 import WhatsAppFloat from "../WhatsAppFloat";
-
-const projectImages = [
-  "/img/proyecto1.webp",
-  "/img/proyecto2.webp",
-  "/img/proyecto3.webp",
-];
+import StatsSection from "../components/landing/StatsSection";
+import ServicesSection from "../components/landing/ServicesSection";
+import FeaturedProjects from "../components/landing/FeaturedProjects";
+import WhyChooseUs from "../components/landing/WhyChooseUs";
+import WorkProcess from "../components/landing/WorkProcess";
+import AboutPreview from "../components/landing/AboutPreview";
+import TechStack from "../components/landing/TechStack";
+import Testimonials from "../components/landing/Testimonials";
 
 function Home() {
   const formRef = useRef(null);
@@ -103,6 +105,30 @@ function Home() {
             background: "rgba(255,255,255,0.8)",
           }}
         />
+
+        {/* ESTADÍSTICAS */}
+        <StatsSection />
+
+        {/* SERVICIOS */}
+        <ServicesSection />
+
+        {/* PROYECTOS DESTACADOS */}
+        <FeaturedProjects />
+
+        {/* POR QUÉ ELEGIRNOS */}
+        <WhyChooseUs />
+
+        {/* PROCESO DE TRABAJO */}
+        <WorkProcess />
+
+        {/* SOBRE NOSOTROS PREVIEW */}
+        <AboutPreview />
+
+        {/* TECNOLOGÍAS */}
+        <TechStack />
+
+        {/* TESTIMONIOS */}
+        <Testimonials />
 
         {/* CONTACTO */}
         <section id="contacto" className="contact">
