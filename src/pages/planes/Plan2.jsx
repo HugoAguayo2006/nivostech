@@ -11,7 +11,7 @@ function Plan2() {
     <>
       {/* ================= SEO (PLAN 2) ================= */}
       <Helmet>
-        <title>Plan 2: Sitio Profesional | Servicios | NIVOSTECH</title>
+        <title>Plan 2: Sitio web complejo | Servicios | NIVOSTECH</title>
         <meta
           name="description"
           content="Plan 2 de NIVOSTECH: Sitio Profesional con frontend + backend + base de datos. Incluye API personalizada, panel/dashboard, blog administrable, autenticación y escalabilidad."
@@ -32,7 +32,7 @@ function Plan2() {
                   <span className="badge">Base de datos</span>
                 </div>
 
-                <h1 className="plan-title">Plan 2: Sitio Profesional</h1>
+                <h1 className="plan-title">Plan 2: Sitio web complejo</h1>
                 <p className="plan-subtitle">
                   Ideal si necesitas un sistema completo: administración, contenido editable,
                   blog real, formularios conectados y escalabilidad.
@@ -41,16 +41,25 @@ function Plan2() {
                 <div className="plan-kpis">
                   <div className="kpi">
                     <span className="kpi-label">Entrega</span>
-                    <span className="kpi-value">3–4 semanas</span>
+                    <span className="kpi-value">5–6 semanas</span>
+                  </div>
+                  <div className="kpi">
+                    <span className="kpi-label">Soporte</span>
+                    <span className="kpi-value">7–14 días</span>
+                  </div>
+                  <div className="kpi">
+                    <span className="kpi-label">Optimización</span>
+                    <span className="kpi-value">Responsive + velocidad</span>
                   </div>
                   <div className="kpi">
                     <span className="kpi-label">Incluye</span>
-                    <span className="kpi-value">Panel / Dashboard</span>
+                    <span className="kpi-value">Sitios web sencillo / Dashboard (administrador)</span>
                   </div>
                   <div className="kpi">
                     <span className="kpi-label">Seguridad</span>
                     <span className="kpi-value">Auth + endpoints</span>
                   </div>
+                  
                 </div>
 
                 <div className="plan-cta">
@@ -68,7 +77,7 @@ function Plan2() {
                 </div>
 
                 <p className="plan-note">
-                  * Este plan es para proyectos que requieren guardar/administrar información y crecer a futuro.
+                  * Este plan es para proyectos que requieren guardar/administrar información, pagos desde la web y crecer a futuro.
                 </p>
               </div>
 
@@ -78,7 +87,7 @@ function Plan2() {
                   <h2 className="price-title">Inversión</h2>
                   <div className="price-row price-row--main">
                     <span className="price-label">Precio</span>
-                    <span className="price-main">$15,000</span>
+                    <span className="price-main">$15,080</span>
                   </div>
                 </div>
 
@@ -86,13 +95,13 @@ function Plan2() {
                   <div className="split-card">
                     <div className="split-title">Pago 1</div>
                     <div className="split-desc">Anticipo 50%</div>
-                    <div className="split-amount">$7,500</div>
+                    <div className="split-amount">$7,540</div>
                   </div>
 
                   <div className="split-card">
                     <div className="split-title">Pago 2</div>
                     <div className="split-desc">Liquidación 50%</div>
-                    <div className="split-amount">$7,500</div>
+                    <div className="split-amount">$7,540</div>
                   </div>
                 </div>
 
@@ -115,6 +124,11 @@ function Plan2() {
                     <span className="mini-dot" />
                     Transferencia bancaria
                   </div>
+                  <div className="mini">
+                    <span className="mini-dot" />
+                    Dominio del cliente
+                  </div>
+              
                   <div className="mini">
                     <span className="mini-dot" />
                     Escalable a futuro
@@ -149,13 +163,15 @@ function Plan2() {
 
                 <ul className="checks">
                   <li>API personalizada para tu proyecto</li>
-                  <li>Base de datos (PostgreSQL / MySQL / MongoDB según necesidad)</li>
-                  <li>Panel administrativo o dashboard (según acuerdo)</li>
-                  <li>Blog totalmente administrable</li>
-                  <li>Gestión de productos, servicios, usuarios o contenido</li>
-                  <li>Endpoints protegidos con autenticación (JWT o similar)</li>
-                  <li>Formularios reales (SMTP) y/o guardados en base de datos</li>
-                  <li>Notificaciones / automatizaciones (si aplica)</li>
+<li>Base de datos (PostgreSQL / MySQL / MongoDB según necesidad)</li>
+<li>Panel administrativo o dashboard (según acuerdo)</li>
+<li>Blog totalmente administrable</li>
+<li>Gestión de productos, servicios, usuarios o contenido</li>
+<li>Integración de pagos en línea con Stripe (pagos únicos, suscripciones o enlaces de pago)</li>
+<li>Endpoints protegidos con autenticación (JWT o similar)</li>
+<li>Formularios reales (SMTP) y/o guardados en base de datos</li>
+<li>Notificaciones / automatizaciones (si aplica)</li>
+
                 </ul>
               </section>
 

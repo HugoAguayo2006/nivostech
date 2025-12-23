@@ -5,25 +5,31 @@ export default function ServicesSection() {
   const services = [
     {
       id: "plan-1",
-      title: "Plan 1: Landing Extendida",
+      title: "Plan 1: Sitio web simple",
       description: "Ideal para negocios que solo necesitan presencia profesional.",
       features: [
-        "5 páginas completas",
-        "100% frontend",
-        "Rápido y optimizado",
-        "Soporte técnico incluido",
+        "Presencia profesional en internet",
+
+"Página rápida y fácil de usar",
+
+"Diseño adaptable a cualquier dispositivo",
+
+"Opción económica para empezar",
+
+"Base lista para crecer en el futuro"
       ],
       link: "/servicios/plan-1",
     },
     {
       id: "plan-2",
-      title: "Plan 2: Sitio Profesional",
+      title: "Plan 2: Sitio web complejo",
       description: "Ideal para negocios que necesitan un sistema más completo.",
       features: [
-        "Backend y base de datos",
-        "Panel administrativo",
-        "Blog administrable",
-        "Funcionalidades avanzadas",
+        "Base de datos para guardar información",
+"Panel privado para administrar el sitio",
+"Blog fácil de actualizar",
+"Funciones avanzadas según las necesidades del negocio",
+
       ],
       link: "/servicios/plan-2",
     },
@@ -32,13 +38,15 @@ export default function ServicesSection() {
       title: "Plan 3: Sitio + Redes Sociales",
       description: "Ideal para negocios que quieren presencia digital completa.",
       features: [
-        "Página web incluida",
-        "Gestión de redes sociales",
-        "Contenido profesional",
-        "Reportes mensuales",
+"Página web incluida",
+"Administración de redes sociales",
+"Creación de contenido profesional",
+"Reportes mensuales de resultados",
+
       ],
       link: "/servicios/plan-3",
     },
+    
   ];
 
   return (

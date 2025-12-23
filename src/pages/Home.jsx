@@ -9,8 +9,10 @@ import FeaturedProjects from "../components/landing/FeaturedProjects";
 import WhyChooseUs from "../components/landing/WhyChooseUs";
 import WorkProcess from "../components/landing/WorkProcess";
 import AboutPreview from "../components/landing/AboutPreview";
-import TechStack from "../components/landing/TechStack";
+{/*import TechStack from "../components/landing/TechStack";
+ ================= no se usa las tecnologias ================= */}
 import Testimonials from "../components/landing/Testimonials";
+import MENU from "../components/landing/RestaurantSection";
 
 function Home() {
   const formRef = useRef(null);
@@ -112,6 +114,8 @@ function Home() {
         {/* SERVICIOS */}
         <ServicesSection />
 
+        <MENU/>
+
         {/* PROYECTOS DESTACADOS */}
         <FeaturedProjects />
 
@@ -124,8 +128,8 @@ function Home() {
         {/* SOBRE NOSOTROS PREVIEW */}
         <AboutPreview />
 
-        {/* TECNOLOGÍAS */}
-        <TechStack />
+        {/* TECNOLOGÍAS 
+        <TechStack />*/}
 
         {/* TESTIMONIOS */}
         <Testimonials />

@@ -132,6 +132,10 @@ function Plan3() {
                     <span className="mini-dot" />
                     Reportes mensuales
                   </div>
+                  <div className="mini">
+                    <span className="mini-dot" />
+                    Dominio del cliente
+                  </div>
                 </div>
               </aside>
             </div>
@@ -150,11 +154,10 @@ function Plan3() {
                 <div className="list-block">
                   <div className="list-title">BONUS: Página web incluida GRATIS</div>
                   <ul className="list">
-                    <li>Landing Extendida tipo Plan 1</li>
-                    <li>100% frontend, rápida, responsiva y optimizada</li>
+                    <li>Landing Extendida tipo Plan 1, extendible a Plan 2</li>
                     <li>Integración de WhatsApp, Google Maps, correo y redes</li>
                     <li>Soporte inicial (7–14 días)</li>
-                    <li>Entrega estimada: 3–4 semanas</li>
+                    <li>Entrega estimada: 5–6 semanas</li>
                   </ul>
                 </div>
 
@@ -255,7 +258,7 @@ function Plan3() {
                 <div className="step">
                   <div className="step-dot" />
                   <div className="step-body">
-                    <div className="step-title">2) Web (primeras 3–4 semanas)</div>
+                    <div className="step-title">2) Web (primeras 5–6 semanas)</div>
                     <div className="step-text">
                       Diseñamos y entregamos tu web (tipo Plan Landing Extendida) mientras iniciamos el calendario de redes.
                     </div>

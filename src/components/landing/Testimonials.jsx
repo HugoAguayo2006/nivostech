@@ -3,23 +3,27 @@ import "./Testimonials.css";
 export default function Testimonials() {
   const testimonials = [
     {
-      name: "Cliente Satisfecho",
-      company: "Negocio Local",
-      text: "NIVOSTECH nos ayudó a crear una página web profesional que realmente representa nuestro negocio. El proceso fue muy claro y el resultado superó nuestras expectativas.",
-      rating: 5,
-    },
-    {
-      name: "Emprendedor",
-      company: "Startup",
-      text: "La atención al detalle y el enfoque en resultados es impresionante. Nuestro sitio web no solo se ve bien, también funciona perfectamente en todos los dispositivos.",
-      rating: 5,
-    },
-    {
-      name: "Pequeña Empresa",
-      company: "Comercio",
-      text: "El soporte técnico y la comunicación durante todo el proceso fueron excelentes. Recomendamos totalmente a NIVOSTECH para cualquier proyecto web.",
-      rating: 5,
-    },
+  name: "Dirección Académica",
+  company: "Instituto Nueva Galicia",
+  text: "NIVOSTECH logró transmitir la esencia y valores de nuestra institución en un sitio web claro, moderno y funcional. El acompañamiento fue constante y siempre mostraron disposición para ajustar cada detalle según nuestras necesidades.",
+  rating: 5,
+},
+
+{
+  name: "Coordinación Administrativa",
+  company: "Colegio Colonial",
+  text: "El desarollo de nuestro sitio web mejoró notablemente la comunicación con padres de familia y alumnos. La información ahora es clara, accesible y fácil de encontrar. Estamos muy satisfechos con el resultado.",
+  rating: 5,
+},
+
+{
+  name: "Colaboradora y fundadora",
+  company: "Discípulos Guadalajara",
+  text: "El soporte técnico y la comunicación durante todo el desarrollo fueron excelentes. Recomendamos ampliamente a NIVOSTECH para cualquier proyecto digital.",
+  rating: 5,
+},
+
+
   ];
 
   return (

@@ -85,7 +85,7 @@ function PlanMenu() {
 
                   <div className="price-row">
                     <span className="price-label">Inicio</span>
-                    <span className="price-main">$3,500</span>
+                    <span className="price-main">$3,000</span>
                   </div>
 
                   <div className="price-row">
@@ -100,12 +100,12 @@ function PlanMenu() {
                   <div className="split-card">
                     <div className="split-title">Pago 1</div>
                     <div className="split-desc">Anticipo 50%</div>
-                    <div className="split-amount">$1,750</div>
+                    <div className="split-amount">$1,500</div>
                   </div>
                   <div className="split-card">
                     <div className="split-title">Pago 2</div>
                     <div className="split-desc">Liquidación 50%</div>
-                    <div className="split-amount">$1,750</div>
+                    <div className="split-amount">$1,500</div>
                   </div>
                 </div>
 

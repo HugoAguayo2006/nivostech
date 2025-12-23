@@ -161,7 +161,7 @@ const Navbar = () => {
                   setIsMobileMenuOpen(false);
                 }}
               >
-                Landing Extendida
+                Sitio web simple 
               </Link>
               <Link
                 to="/servicios/plan-2"
@@ -171,7 +171,7 @@ const Navbar = () => {
                   setIsMobileMenuOpen(false);
                 }}
               >
-                Sitio Profesional
+                Sitio web complejo
               </Link>
 
               <Link

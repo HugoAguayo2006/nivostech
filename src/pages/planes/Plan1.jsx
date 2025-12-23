@@ -12,7 +12,7 @@ function Plan1() {
     <>
       {/* ================= SEO (PLAN 1) ================= */}
       <Helmet>
-        <title>Plan 1: Landing Extendida | Servicios | NIVOSTECH</title>
+        <title>Plan 1: Sitio web simple | Servicios | NIVOSTECH</title>
         <meta
           name="description"
           content="Plan 1 de NIVOSTECH: Landing Extendida ideal para negocios que buscan presencia profesional. Incluye diseño, frontend, optimización, WhatsApp, Google Maps y soporte inicial."
@@ -32,7 +32,7 @@ function Plan1() {
                   <span className="badge">Frontend</span>
                 </div>
 
-                <h1 className="plan-title">Plan 1: Landing Extendida</h1>
+                <h1 className="plan-title">Plan 1: Sitio web simple </h1>
                 <p className="plan-subtitle">
                   Para negocios que necesitan una presencia profesional, rápida y moderna
                   (sin panel admin ni base de datos).
@@ -73,7 +73,7 @@ function Plan1() {
                   <h2 className="price-title">Inversión</h2>
                   <div className="price-row price-row--main">
                     <span className="price-label">Precio</span>
-                    <span className="price-main">$9,000</span>
+                    <span className="price-main">$9,048</span>
                   </div>
                 </div>
 
@@ -81,12 +81,12 @@ function Plan1() {
                   <div className="split-card">
                     <div className="split-title">Pago 1</div>
                     <div className="split-desc">Anticipo 50%</div>
-                    <div className="split-amount">$4,500</div>
+                    <div className="split-amount">$4,524</div>
                   </div>
                   <div className="split-card">
                     <div className="split-title">Pago 2</div>
                     <div className="split-desc">Liquidación 50%</div>
-                    <div className="split-amount">$4,500</div>
+                    <div className="split-amount">$4,524</div>
                   </div>
                 </div>
 
@@ -108,6 +108,10 @@ function Plan1() {
                     <span className="mini-dot" />
                     Dominio del cliente
                   </div>
+                  <div className="mini">
+                    <span className="mini-dot" />
+                    Escalable a futuro
+                  </div>
                 </div>
               </aside>
             </div>
@@ -124,13 +128,13 @@ function Plan1() {
                 </h2>
 
                 <div className="list-block">
-                  <div className="list-title">Diseño completo (5 páginas)</div>
+                  <div className="list-title">Diseño completo</div>
                   <ul className="list">
                     <li>Home</li>
                     <li>Nosotros</li>
                     <li>Contacto</li>
-                    <li>Blog estático (sin base de datos)</li>
                     <li>Galería</li>
+                    <li>Otras secciones</li>
                   </ul>
                 </div>
 
@@ -172,11 +176,22 @@ function Plan1() {
 
                 <div style={{ textAlign: "center", marginTop: "auto", paddingTop: "1.5rem" }}>
                   <Link className="btn btn--primary" to="/servicios/plan-2">
-                    Ver Plan Sitio Profesional
+                    Ver Plan Sitio web complejo
                   </Link>
                 </div>
               </section>
             </div>
+
+            {/* ====== VENTAJAS ====== */}
+            <section className="card" style={{ marginTop: "2rem" }}>
+              <h2 className="card-title">Ventajas del plan</h2>
+
+              <ul className="checks">
+                <li>Este plan puede escalarse posteriormente a un sitio web con panel administrativo,
+  base de datos y funcionalidades avanzadas.</li>
+              </ul>
+            </section>
+
 
             {/* ====== PROCESO ====== */}
             <section className="card" style={{ marginTop: "2rem" }}>
