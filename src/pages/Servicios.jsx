@@ -171,7 +171,7 @@ function Servicios() {
                 alt="Plan Menú de NIVOSTECH"
                 className="service-card-image"
               />
-              <h2>Plan Menú</h2>
+              <h2>Plan Menú Digital</h2>
               <p className="service-description">
                 <strong>
                   Ideal para restaurantes y negocios gastronómicos que necesitan un menú digital interactivo.

@@ -2,12 +2,45 @@ import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 import WhatsAppFloat from "../../WhatsAppFloat";
 import "./PlanPage.css";
+import { PROYECTOS } from "../../data.js";
+import { useEffect, useState } from "react";
+
+const EJEMPLOS_IDS = ["ing", "peh"];
 
 // comentario prueba2
 const WHATSAPP_LINK =
   "https://wa.me/523310392675?text=Hola%20NIVOSTECH%2C%20me%20interesa%20el%20Plan%201%20(Landing%20Extendida).%20%C2%BFC%C3%B3mo%20empezamos%3F";
 
 function Plan1() {
+  // ====== EJEMPLOS (filtra por IDs) ======
+  const ejemplos = (PROYECTOS || []).filter((p) => EJEMPLOS_IDS.includes(p.id));
+
+  // ====== MODAL (igual que Proyectos) ======
+  const [open, setOpen] = useState(false);
+  const [selected, setSelected] = useState(null);
+
+  const openProject = (project) => {
+    setSelected(project);
+    setOpen(true);
+    document.body.classList.add("modal-open"); // oculta navbar (si ya lo usas en global)
+  };
+
+  const closeProject = () => {
+    setOpen(false);
+    setSelected(null);
+    document.body.classList.remove("modal-open");
+  };
+
+  // ESC para cerrar modal
+  useEffect(() => {
+    const onKey = (e) => {
+      if (e.key === "Escape") closeProject();
+    };
+
+    if (open) window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [open]);
+
   return (
     <>
       {/* ================= SEO (PLAN 1) ================= */}
@@ -57,14 +90,13 @@ function Plan1() {
                   <a className="btn btn--primary" href={WHATSAPP_LINK} target="_blank" rel="noreferrer">
                     Cotizar por WhatsApp
                   </a>
+
                   <Link className="btn btn--ghost" to="/servicios">
                     Volver a Servicios
                   </Link>
                 </div>
 
-                <p className="plan-note">
-                  * Factura disponible (requiere CSF).
-                </p>
+                <p className="plan-note">* Factura disponible (requiere CSF).</p>
               </div>
 
               {/* ====== PRICE CARD ====== */}
@@ -119,11 +151,54 @@ function Plan1() {
 
           {/* ====== CONTENT ====== */}
           <div className="plan-wrap">
+            {/* ====== EJEMPLOS ====== */}
+            <section className="card ejemplos" id="ejemplos">
+              <div className="ejemplos-head">
+                <h2 className="card-title" style={{ margin: 0 }}>
+                  Ejemplos del Plan 1
+                </h2>
+
+                <Link className="btn btn--ghost" to="/proyectos">
+                  Ver todos <span className="arrow" aria-hidden="true">→</span>
+                </Link>
+              </div>
+
+              <div className="ejemplos-grid">
+                {ejemplos.map((p) => (
+                  <article key={p.id} className="ejemplo-card">
+                    <button className="ejemplo-card-btn" type="button" onClick={() => openProject(p)}>
+                      <div className="ejemplo-cover">
+                        <img src={p.cover} alt={p.title} loading="lazy" />
+                      </div>
+
+                      <div className="ejemplo-body">
+                        <div className="ejemplo-top">
+                          <span className="ejemplo-tag">{p.tag || p.type}</span>
+                          <span className="ejemplo-year">{p.year}</span>
+                        </div>
+
+                        <div className="ejemplo-title">{p.title}</div>
+                        {p.short ? <div className="ejemplo-desc">{p.short}</div> : null}
+                      </div>
+                    </button>
+                  </article>
+                ))}
+              </div>
+
+              {ejemplos.length === 0 ? (
+                <p style={{ marginTop: "0.75rem", color: "rgba(226,232,240,.75)" }}>
+                  Aún no has seleccionado ejemplos para este plan.
+                </p>
+              ) : null}
+            </section>
+
             {/* ====== INCLUYE / NO INCLUYE ====== */}
             <div className="grid-2" id="incluye">
               <section className="card">
                 <h2 className="card-title" style={{ justifyContent: "center" }}>
-                  <span className="icon icon--ok" aria-hidden="true">✓</span>
+                  <span className="icon icon--ok" aria-hidden="true">
+                    ✓
+                  </span>
                   ¿Qué incluye?
                 </h2>
 
@@ -156,20 +231,20 @@ function Plan1() {
                 </h2>
 
                 <p style={{ marginBottom: "1.5rem", fontSize: "1.1rem", lineHeight: "1.6" }}>
-                  Si necesitas panel administrativo, base de datos, blog editable, gestión de usuarios o dashboard, 
+                  Si necesitas panel administrativo, base de datos, blog editable, gestión de usuarios o dashboard,
                   entonces el <strong>Sitio Profesional</strong> es ideal para ti.
                 </p>
 
                 <div style={{ marginBottom: "1rem", textAlign: "center" }}>
-                  <img 
-                    src="/images/nivos_planes2.webp" 
+                  <img
+                    src="/images/nivos_planes2.webp"
                     alt="Plan 2: Sitio Profesional"
-                    style={{ 
-                      maxWidth: "100%", 
-                      height: "auto", 
+                    style={{
+                      maxWidth: "100%",
+                      height: "auto",
                       borderRadius: "12px",
                       display: "block",
-                      margin: "0 auto"
+                      margin: "0 auto",
                     }}
                   />
                 </div>
@@ -187,11 +262,12 @@ function Plan1() {
               <h2 className="card-title">Ventajas del plan</h2>
 
               <ul className="checks">
-                <li>Este plan puede escalarse posteriormente a un sitio web con panel administrativo,
-  base de datos y funcionalidades avanzadas.</li>
+                <li>
+                  Este plan puede escalarse posteriormente a un sitio web con panel administrativo, base de datos y
+                  funcionalidades avanzadas.
+                </li>
               </ul>
             </section>
-
 
             {/* ====== PROCESO ====== */}
             <section className="card" style={{ marginTop: "2rem" }}>
@@ -263,10 +339,11 @@ function Plan1() {
             <section className="cta-final">
               <div className="cta-final__card">
                 <h3>¿Listo para lanzar tu web?</h3>
-                <p>
-                  Te damos un sitio premium, rápido y claro para convertir visitas en clientes.
-                </p>
-                <div className="cta-final__actions" style={{ display: "flex", justifyContent: "center", gap: "1rem", flexWrap: "wrap" }}>
+                <p>Te damos un sitio premium, rápido y claro para convertir visitas en clientes.</p>
+                <div
+                  className="cta-final__actions"
+                  style={{ display: "flex", justifyContent: "center", gap: "1rem", flexWrap: "wrap" }}
+                >
                   <a className="btn btn--primary" href={WHATSAPP_LINK} target="_blank" rel="noreferrer">
                     Agendar por WhatsApp
                   </a>
@@ -277,6 +354,9 @@ function Plan1() {
               </div>
             </section>
           </div>
+
+          {/* ====== MODAL (igual que Proyectos) ====== */}
+          {open && selected && <ProjectModal project={selected} onClose={closeProject} />}
         </section>
 
         <WhatsAppFloat />
@@ -290,3 +370,122 @@ function Plan1() {
 }
 
 export default Plan1;
+
+/* ====== MODAL COMPONENT (copiado de Proyectos.jsx) ====== */
+function ProjectModal({ project, onClose }) {
+  const [zoomImage, setZoomImage] = useState(null);
+
+  useEffect(() => {
+    const onKey = (e) => {
+      if (e.key !== "Escape") return;
+      if (zoomImage) setZoomImage(null);
+      else onClose();
+    };
+
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [zoomImage, onClose]);
+
+  return (
+    <>
+      <div className="modal-backdrop" onMouseDown={onClose}>
+        <div className="modal" onMouseDown={(e) => e.stopPropagation()}>
+          <div className="modal-header">
+            <div>
+              <div className="modal-kicker">
+                <span className="badge">{project.type}</span>
+                <span className="badge soft">{project.year}</span>
+                <span className="badge soft">{project.tag}</span>
+              </div>
+
+              <h3 className="modal-title">{project.title}</h3>
+              <p className="modal-sub">{project.short}</p>
+            </div>
+
+            <button className="modal-close" onClick={onClose} aria-label="Cerrar">
+              ✕
+            </button>
+          </div>
+
+          <div className="modal-body">
+            <div className="modal-left">
+              <div className="modal-cover clickable" onClick={() => setZoomImage(project.cover)}>
+                <img src={project.cover} alt={project.title} />
+              </div>
+
+              {project.gallery?.length > 0 && (
+                <div className="modal-gallery">
+                  {project.gallery.map((src) => (
+                    <img
+                      key={src}
+                      src={src}
+                      alt=""
+                      loading="lazy"
+                      className="clickable"
+                      onClick={() => setZoomImage(src)}
+                    />
+                  ))}
+                </div>
+              )}
+            </div>
+
+            <div className="modal-right">
+              <div className="case-block">
+                <h4>El reto</h4>
+                <p>{project.reto}</p>
+              </div>
+
+              <div className="case-block">
+                <h4>La solución</h4>
+                <p>{project.solucion}</p>
+              </div>
+
+              <div className="case-block">
+                <h4>Resultados</h4>
+                <ul>
+                  {project.resultados?.map((r) => (
+                    <li key={r}>{r}</li>
+                  ))}
+                </ul>
+              </div>
+
+              <div className="case-block">
+                <h4>Stack</h4>
+                <div className="modal-stack">
+                  {project.stack.map((s) => (
+                    <span key={s} className="stack-pill">
+                      {s}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
+              <div className="modal-actions">
+                {project.liveUrl ? (
+                  <a className="projects-btn primary" href={project.liveUrl} target="_blank" rel="noreferrer">
+                    Visitar sitio
+                  </a>
+                ) : (
+                  <span className="private-note">Proyecto privado (sin enlace público)</span>
+                )}
+
+                <button className="projects-btn ghost" onClick={onClose}>
+                  Cerrar
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {zoomImage && (
+        <div className="lightbox-backdrop" onClick={() => setZoomImage(null)}>
+          <img src={zoomImage} alt="Vista ampliada" />
+          <button className="lightbox-close" onClick={() => setZoomImage(null)} aria-label="Cerrar imagen">
+            ✕
+          </button>
+        </div>
+      )}
+    </>
+  );
+}

@@ -2,11 +2,44 @@ import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 import WhatsAppFloat from "../../WhatsAppFloat";
 import "./PlanPage.css";
+import { PROYECTOS } from "../../data.js";
+import { useEffect, useState } from "react";
+
+const EJEMPLOS_IDS = ["colonial", "smart-mirror", "omega"];
 
 const WHATSAPP_LINK =
   "https://wa.me/523310392675?text=Hola%20NIVOSTECH%2C%20me%20interesa%20el%20Plan%202%20(Sitio%20Profesional%20con%20backend%20y%20base%20de%20datos).%20%C2%BFC%C3%B3mo%20empezamos%3F";
 
 function Plan2() {
+  // ====== EJEMPLOS (filtra por IDs) ======
+  const ejemplos = (PROYECTOS || []).filter((p) => EJEMPLOS_IDS.includes(p.id));
+
+  // ====== MODAL (igual que Proyectos) ======
+  const [open, setOpen] = useState(false);
+  const [selected, setSelected] = useState(null);
+
+  const openProject = (project) => {
+    setSelected(project);
+    setOpen(true);
+    document.body.classList.add("modal-open");
+  };
+
+  const closeProject = () => {
+    setOpen(false);
+    setSelected(null);
+    document.body.classList.remove("modal-open");
+  };
+
+  // ESC para cerrar modal
+  useEffect(() => {
+    const onKey = (e) => {
+      if (e.key === "Escape") closeProject();
+    };
+
+    if (open) window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [open]);
+
   return (
     <>
       {/* ================= SEO (PLAN 2) ================= */}
@@ -19,7 +52,7 @@ function Plan2() {
         <link rel="canonical" href="https://www.nivostech.com/servicios/plan-2" />
       </Helmet>
 
-      <div className="page">
+       <div className="page">
         <section className="plan">
           {/* ====== HERO ====== */}
           <header className="plan-hero">
@@ -59,7 +92,6 @@ function Plan2() {
                     <span className="kpi-label">Seguridad</span>
                     <span className="kpi-value">Auth + endpoints</span>
                   </div>
-                  
                 </div>
 
                 <div className="plan-cta">
@@ -128,7 +160,7 @@ function Plan2() {
                     <span className="mini-dot" />
                     Dominio del cliente
                   </div>
-              
+
                   <div className="mini">
                     <span className="mini-dot" />
                     Escalable a futuro
@@ -140,6 +172,47 @@ function Plan2() {
 
           {/* ====== CONTENT ====== */}
           <div className="plan-wrap">
+            {/* ====== EJEMPLOS ====== */}
+            <section className="card ejemplos" id="ejemplos">
+              <div className="ejemplos-head">
+                <h2 className="card-title" style={{ margin: 0 }}>
+                  Ejemplos del Plan 2
+                </h2>
+              </div>
+
+              <div className="ejemplos-grid">
+                {ejemplos.map((p) => (
+                  <article key={p.id} className="ejemplo-card">
+                    <button
+                      className="ejemplo-card-btn"
+                      type="button"
+                      onClick={() => openProject(p)}
+                    >
+                      <div className="ejemplo-cover">
+                        <img src={p.cover} alt={p.title} loading="lazy" />
+                      </div>
+
+                      <div className="ejemplo-body">
+                        <div className="ejemplo-top">
+                          <span className="ejemplo-tag">{p.tag || p.type}</span>
+                          <span className="ejemplo-year">{p.year}</span>
+                        </div>
+
+                        <div className="ejemplo-title">{p.title}</div>
+                        {p.short ? <div className="ejemplo-desc">{p.short}</div> : null}
+                      </div>
+                    </button>
+                  </article>
+                ))}
+              </div>
+
+              {ejemplos.length === 0 ? (
+                <p style={{ marginTop: "0.75rem", color: "rgba(226,232,240,.75)" }}>
+                  Aún no has seleccionado ejemplos para este plan.
+                </p>
+              ) : null}
+            </section>
+
             {/* ====== INCLUYE / NO INCLUYE ====== */}
             <div className="grid-2" id="incluye">
               <section className="card">
@@ -163,37 +236,40 @@ function Plan2() {
 
                 <ul className="checks">
                   <li>API personalizada para tu proyecto</li>
-<li>Base de datos (PostgreSQL / MySQL / MongoDB según necesidad)</li>
-<li>Panel administrativo o dashboard (según acuerdo)</li>
-<li>Blog totalmente administrable</li>
-<li>Gestión de productos, servicios, usuarios o contenido</li>
-<li>Integración de pagos en línea con Stripe (pagos únicos, suscripciones o enlaces de pago)</li>
-<li>Endpoints protegidos con autenticación (JWT o similar)</li>
-<li>Formularios reales (SMTP) y/o guardados en base de datos</li>
-<li>Notificaciones / automatizaciones (si aplica)</li>
-
+                  <li>Base de datos (PostgreSQL / MySQL / MongoDB según necesidad)</li>
+                  <li>Panel administrativo o dashboard (según acuerdo)</li>
+                  <li>Blog totalmente administrable</li>
+                  <li>Gestión de productos, servicios, usuarios o contenido</li>
+                  <li>Integración de pagos en línea con Stripe (pagos únicos, suscripciones o enlaces de pago)</li>
+                  <li>Endpoints protegidos con autenticación (JWT o similar)</li>
+                  <li>Formularios reales (SMTP) y/o guardados en base de datos</li>
+                  <li>Notificaciones / automatizaciones (si aplica)</li>
                 </ul>
               </section>
 
-              <section className="card" style={{ display: "flex", flexDirection: "column", minHeight: "100%" }}>
+              <section
+                className="card"
+                style={{ display: "flex", flexDirection: "column", minHeight: "100%" }}
+              >
                 <h2 className="card-title" style={{ justifyContent: "center" }}>
                   ¿Necesitas más funcionalidades?
                 </h2>
 
                 <p style={{ marginBottom: "1.5rem", fontSize: "1.1rem", lineHeight: "1.6" }}>
-                  Si necesitas manejo de redes sociales y tener presencia digital entonces el plan <strong>Sitio + Redes Sociales</strong> o una cotización personalizada es ideal para ti.
+                  Si necesitas manejo de redes sociales y tener presencia digital entonces el plan{" "}
+                  <strong>Sitio + Redes Sociales</strong> o una cotización personalizada es ideal para ti.
                 </p>
 
                 <div style={{ marginBottom: "1rem", textAlign: "center" }}>
-                  <img 
-                    src="/images/nivos_planes4.webp" 
+                  <img
+                    src="/images/nivos_planes4.webp"
                     alt="Plan 3: Sitio + Redes Sociales"
-                    style={{ 
-                      maxWidth: "100%", 
-                      height: "auto", 
+                    style={{
+                      maxWidth: "100%",
+                      height: "auto",
                       borderRadius: "12px",
                       display: "block",
-                      margin: "0 auto"
+                      margin: "0 auto",
                     }}
                   />
                 </div>
@@ -291,13 +367,11 @@ function Plan2() {
                 <p>
                   Este plan es ideal si vas a manejar contenido, usuarios, productos o información real con seguridad.
                 </p>
-                <div className="cta-final__actions" style={{ display: "flex", justifyContent: "center", gap: "1rem", flexWrap: "wrap" }}>
-                  <a
-                    className="btn btn--primary"
-                    href={WHATSAPP_LINK}
-                    target="_blank"
-                    rel="noreferrer"
-                  >
+                <div
+                  className="cta-final__actions"
+                  style={{ display: "flex", justifyContent: "center", gap: "1rem", flexWrap: "wrap" }}
+                >
+                  <a className="btn btn--primary" href={WHATSAPP_LINK} target="_blank" rel="noreferrer">
                     Agendar por WhatsApp
                   </a>
                   <Link className="btn btn--ghost" to="/servicios">
@@ -307,6 +381,11 @@ function Plan2() {
               </div>
             </section>
           </div>
+
+          {/* ====== MODAL ====== */}
+          {open && selected && (
+            <ProjectModal project={selected} onClose={closeProject} />
+          )}
         </section>
 
         <WhatsAppFloat />
@@ -320,3 +399,127 @@ function Plan2() {
 }
 
 export default Plan2;
+
+/* ====== MODAL COMPONENT (igual que Proyectos.jsx) ====== */
+function ProjectModal({ project, onClose }) {
+  const [zoomImage, setZoomImage] = useState(null);
+
+  useEffect(() => {
+    const onKey = (e) => {
+      if (e.key !== "Escape") return;
+      if (zoomImage) setZoomImage(null);
+      else onClose();
+    };
+
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [zoomImage, onClose]);
+
+  return (
+    <>
+      <div className="modal-backdrop" onMouseDown={onClose}>
+        <div className="modal" onMouseDown={(e) => e.stopPropagation()}>
+          <div className="modal-header">
+            <div>
+              <div className="modal-kicker">
+                <span className="badge">{project.type}</span>
+                <span className="badge soft">{project.year}</span>
+                <span className="badge soft">{project.tag}</span>
+              </div>
+
+              <h3 className="modal-title">{project.title}</h3>
+              <p className="modal-sub">{project.short}</p>
+            </div>
+
+            <button className="modal-close" onClick={onClose} aria-label="Cerrar">
+              ✕
+            </button>
+          </div>
+
+          <div className="modal-body">
+            <div className="modal-left">
+              <div className="modal-cover clickable" onClick={() => setZoomImage(project.cover)}>
+                <img src={project.cover} alt={project.title} />
+              </div>
+
+              {project.gallery?.length > 0 && (
+                <div className="modal-gallery">
+                  {project.gallery.map((src) => (
+                    <img
+                      key={src}
+                      src={src}
+                      alt=""
+                      loading="lazy"
+                      className="clickable"
+                      onClick={() => setZoomImage(src)}
+                    />
+                  ))}
+                </div>
+              )}
+            </div>
+
+            <div className="modal-right">
+              <div className="case-block">
+                <h4>El reto</h4>
+                <p>{project.reto}</p>
+              </div>
+
+              <div className="case-block">
+                <h4>La solución</h4>
+                <p>{project.solucion}</p>
+              </div>
+
+              <div className="case-block">
+                <h4>Resultados</h4>
+                <ul>
+                  {project.resultados?.map((r) => (
+                    <li key={r}>{r}</li>
+                  ))}
+                </ul>
+              </div>
+
+              <div className="case-block">
+                <h4>Stack</h4>
+                <div className="modal-stack">
+                  {project.stack.map((s) => (
+                    <span key={s} className="stack-pill">
+                      {s}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
+              <div className="modal-actions">
+                {project.liveUrl ? (
+                  <a className="projects-btn primary" href={project.liveUrl} target="_blank" rel="noreferrer">
+                    Visitar sitio
+                  </a>
+                ) : (
+                  <span className="private-note">Proyecto privado (sin enlace público)</span>
+                )}
+
+                <button className="projects-btn ghost" onClick={onClose}>
+                  Cerrar
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {zoomImage && (
+        <div className="lightbox-backdrop" onClick={() => setZoomImage(null)}>
+          <img src={zoomImage} alt="Vista ampliada" />
+          <button className="lightbox-close" onClick={() => setZoomImage(null)} aria-label="Cerrar imagen">
+            ✕
+          </button>
+        </div>
+      )}
+    </>
+  );
+}
+
+
+
+
+

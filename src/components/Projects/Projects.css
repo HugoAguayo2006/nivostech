@@ -709,3 +709,67 @@
     opacity: 0.92;
   }
 }
+
+/* =========================
+   MODAL ANIMATIONS (GLOBAL)
+   Funciona en Proyectos + Planes
+========================= */
+
+/* Backdrop: aparece con fade */
+.modal-backdrop{
+  animation: modalBackdropIn 180ms ease-out both;
+}
+
+@keyframes modalBackdropIn{
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* Modal panel: aparece con zoom + subida */
+.modal{
+  transform-origin: 50% 20%;
+  animation: modalPanelIn 220ms cubic-bezier(.2,.9,.2,1) both;
+  will-change: transform, opacity;
+}
+
+@keyframes modalPanelIn{
+  from{
+    opacity: 0;
+    transform: translateY(14px) scale(.98);
+  }
+  to{
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Lightbox también con animación */
+.lightbox-backdrop{
+  animation: modalBackdropIn 160ms ease-out both;
+}
+
+.lightbox-backdrop img{
+  animation: lightboxImgIn 200ms cubic-bezier(.2,.9,.2,1) both;
+  will-change: transform, opacity;
+}
+
+@keyframes lightboxImgIn{
+  from{
+    opacity: 0;
+    transform: scale(.98);
+  }
+  to{
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Accesibilidad: respeta reduce motion */
+@media (prefers-reduced-motion: reduce){
+  .modal-backdrop,
+  .modal,
+  .lightbox-backdrop,
+  .lightbox-backdrop img{
+    animation: none !important;
+  }
+}
