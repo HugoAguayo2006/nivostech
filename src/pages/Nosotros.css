@@ -437,3 +437,39 @@
     padding: 2.4rem;
   }
 }
+
+
+/* ================= HERO ================= */
+
+
+/* Quita el empuje “falso” del título */
+.about-h1 {
+  margin: 1.1rem 0 0.9rem !important;
+  margin-top: 0 !important; /* por si alguien lo vuelve a meter */
+  font-size: clamp(2.2rem, 4.4vw, 3.6rem) !important;
+  line-height: 1.05 !important;
+  letter-spacing: -0.03em !important;
+  font-weight: 900 !important;
+}
+
+/* Desktop: evita el padding-top gigante */
+@media (min-width: 1024px) {
+  .about-hero2 {
+    padding-top: 5.5rem !important;
+    padding: 9.5rem 1.25rem 3.5rem !important;
+  }
+}
+
+@media (min-width: 540px) {
+  .about-hero2 {
+    padding-top: 5.5rem !important;
+    padding: 6.5rem 1.25rem 3.5rem !important;
+  }
+}
+
+@media (min-width: 1368px) {
+  .about-hero2 {
+    padding-top: 5.5rem !important;
+    padding: 8.5rem 1.25rem 3.5rem !important;
+  }
+}
