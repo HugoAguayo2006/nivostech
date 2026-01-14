@@ -508,3 +508,10 @@
     padding: 1rem 1rem 2.25rem;
   }
 }
+
+/* ===== TEST: quitar espacio azul muerto ===== */
+.plan-hero {
+  padding-top: .75rem !important; /* 👈 CAMBIA ESTE NÚMERO */
+  overflow: clip !important;
+}
+
