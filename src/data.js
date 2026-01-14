@@ -187,7 +187,89 @@ export const PROYECTOS = [
   ],
   category: "Web App",
   liveUrl: "https://www.youtube.com/watch?v=0lQdrmrLZg4"
+},
+{
+  id: "menu-1",
+  title: "Opción de Menú 1 – Menú Digital",
+  type: "Menú Digital",
+  tag: "Menú Digital",
+  year: "2025",
+  cover: "/proyectos/menu_digital_opcion1.webp",
+  gallery: [
+    "/proyectos/menu_digital_postres.webp",
+    "/proyectos/menu_digital_busqueda_agua.webp"
+  ],
+    short: "Plataforma de menús digitales interactivos para restaurantes",
+  reto:
+    "Modernizar los menús físicos y facilitar su consulta mediante una plataforma visualmente atractiva, que permita a los usuarios encontrar platillos de forma rápida a través de imágenes, filtros y búsqueda por palabra.",
+  solucion:
+    "Desarrollo de una plataforma web responsive con menús digitales que integran galerías de imágenes, navegación por categorías, filtros dinámicos y un sistema de búsqueda por texto, accesible mediante código QR y optimizada para dispositivos móviles.",
+  resultados: [
+    "Alta carga visual con imágenes que mejoran la experiencia del usuario",
+    "Búsqueda rápida de platillos por nombre o palabra clave",
+    "Filtros por categoría que facilitan la toma de decisiones",
+    "Estructura flexible y escalable para promociones y nuevas secciones"
+  ],
+  stack: [
+    "React", "Vite", "CSS", "QR", "Responsive"
+  ],
+  category: "Menú Digital",
+  liveUrl: "https://menu-opcion-1.vercel.app/"
+},
+
+{
+  id: "menu-2",
+  title: "Opción de Menú 2 – Menú Digital",
+  type: "Menú Digital",
+  tag: "Menú Digital",
+  year: "2025",
+  cover: "/proyectos/menu_italiano_1.webp",
+  gallery: ["/proyectos/menu_italiano_2.webp"],
+  short: "Menú digital estructurado con enfoque informativo y funcional",
+  reto:
+    "Ofrecer un menú digital claro y ordenado que priorice la información del platillo, facilitando la lectura y navegación sin depender de recursos visuales extensos.",
+  solucion:
+    "Desarrollo de un menú digital web con diseño limpio y formal, centrado en texto, jerarquía tipográfica, categorías bien definidas y sistema de búsqueda por palabra para localizar platillos de manera rápida y eficiente.",
+  resultados: [
+    "Presentación clara y profesional del menú",
+    "Lectura rápida y ordenada en cualquier dispositivo",
+    "Búsqueda eficiente de platillos mediante texto",
+    "Menor dependencia de recursos visuales para una carga más ligera"
+  ],
+  stack: [
+    "React", "Vite", "CSS", "QR", "Responsive"
+  ],
+  category: "Menú Digital",
+  liveUrl: "https://menu-opcion-2.vercel.app/"
+}, 
+{
+  id: "menu-3",
+  title: "Opción de Menú 3 – Menú Digital",
+  type: "Menú Digital",
+  tag: "Menú Digital",
+  year: "2025",
+  cover: "/proyectos/menu_layout_1.webp",
+  gallery: [
+    "/proyectos/menu_layout_2.webp"
+  ],
+  short: "Menú digital equilibrado entre diseño visual y presentación formal",
+  reto:
+    "Lograr un balance entre una experiencia visual atractiva y una presentación formal del menú, sin sobrecargar la interfaz con demasiadas imágenes.",
+  solucion:
+    "Implementación de un menú digital web con apoyo visual moderado, imágenes seleccionadas por categoría, filtros dinámicos y búsqueda por palabra, manteniendo una estructura clara y profesional.",
+  resultados: [
+    "Equilibrio entre diseño visual y claridad informativa",
+    "Apoyo visual que facilita la decisión del usuario",
+    "Filtros y búsqueda que agilizan la navegación",
+    "Diseño adaptable a distintos tipos de restaurantes"
+  ],
+  stack: [
+    "React", "Vite", "CSS", "QR", "Responsive"
+  ],
+  category: "Menú Digital",
+  liveUrl: "https://menu-opcion-3.vercel.app/"
 }
 
-  
+
+
 ];
