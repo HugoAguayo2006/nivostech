@@ -55,6 +55,35 @@ export const PROYECTOS = [
     liveUrl: "https://www.colegiocolonial.edu.mx/",
   },
   {
+  id: "menu-1",
+  title: "Opción de Menú 1 – Menú Digital",
+  type: "Menú Digital",
+  tag: "Menú Digital",
+  year: "2025",
+  cover: "/proyectos/menu_digital_opcion1.webp",
+  gallery: [
+    "/proyectos/menu_digital_postres.webp",
+    "/proyectos/menu_digital_busqueda_agua.webp"
+  ],
+    short: "Plataforma de menús digitales interactivos para restaurantes",
+  reto:
+    "Modernizar los menús físicos y facilitar su consulta mediante una plataforma visualmente atractiva, que permita a los usuarios encontrar platillos de forma rápida a través de imágenes, filtros y búsqueda por palabra.",
+  solucion:
+    "Desarrollo de una plataforma web responsive con menús digitales que integran galerías de imágenes, navegación por categorías, filtros dinámicos y un sistema de búsqueda por texto, accesible mediante código QR y optimizada para dispositivos móviles.",
+  resultados: [
+    "Alta carga visual con imágenes que mejoran la experiencia del usuario",
+    "Búsqueda rápida de platillos por nombre o palabra clave",
+    "Filtros por categoría que facilitan la toma de decisiones",
+    "Estructura flexible y escalable para promociones y nuevas secciones"
+  ],
+  stack: [
+    "React", "Vite", "CSS", "QR", "Responsive"
+  ],
+  category: "Menú Digital",
+  liveUrl: "https://menu-opcion-1.vercel.app/"
+},
+
+  {
   id: "smart-mirror",
   title: "Smart Mirror",
   type: "Tecnológico",
@@ -188,35 +217,6 @@ export const PROYECTOS = [
   category: "Web App",
   liveUrl: "https://www.youtube.com/watch?v=0lQdrmrLZg4"
 },
-{
-  id: "menu-1",
-  title: "Opción de Menú 1 – Menú Digital",
-  type: "Menú Digital",
-  tag: "Menú Digital",
-  year: "2025",
-  cover: "/proyectos/menu_digital_opcion1.webp",
-  gallery: [
-    "/proyectos/menu_digital_postres.webp",
-    "/proyectos/menu_digital_busqueda_agua.webp"
-  ],
-    short: "Plataforma de menús digitales interactivos para restaurantes",
-  reto:
-    "Modernizar los menús físicos y facilitar su consulta mediante una plataforma visualmente atractiva, que permita a los usuarios encontrar platillos de forma rápida a través de imágenes, filtros y búsqueda por palabra.",
-  solucion:
-    "Desarrollo de una plataforma web responsive con menús digitales que integran galerías de imágenes, navegación por categorías, filtros dinámicos y un sistema de búsqueda por texto, accesible mediante código QR y optimizada para dispositivos móviles.",
-  resultados: [
-    "Alta carga visual con imágenes que mejoran la experiencia del usuario",
-    "Búsqueda rápida de platillos por nombre o palabra clave",
-    "Filtros por categoría que facilitan la toma de decisiones",
-    "Estructura flexible y escalable para promociones y nuevas secciones"
-  ],
-  stack: [
-    "React", "Vite", "CSS", "QR", "Responsive"
-  ],
-  category: "Menú Digital",
-  liveUrl: "https://menu-opcion-1.vercel.app/"
-},
-
 {
   id: "menu-2",
   title: "Opción de Menú 2 – Menú Digital",

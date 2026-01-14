@@ -616,3 +616,8 @@
   width: 100%;
   cursor: pointer;
 }
+
+/* Ajuste de anclaje para #incluye */
+#incluye {
+  scroll-margin-top: 180px; /* ajusta este número */
+}
