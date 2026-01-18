@@ -1133,15 +1133,37 @@ body.modal-open {
   text-decoration: none;
 }
 
-/* ===== TEST: quitar “líneas” laterales forzando full-width ===== */
-section {
-  width: 100% !important;
+/* ====== MÓVIL EN HORIZONTAL → TODO A LA IZQUIERDA ====== */
+@media (max-width: 900px) and (orientation: landscape) {
+
+  .hero {
+    align-items: flex-start !important;
+  }
+
+  .hero-title,
+  .hero-note,
+  .hero-tag {
+    text-align: left !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  .hero-actions {
+    justify-content: flex-start !important;
+  }
+
+  .hero-btn {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  /* ====== BOTONES AJUSTADOS AL TEXTO ====== */
+.hero-btn {
+  width: fit-content !important;
   max-width: none !important;
-  margin-left: 0 !important;
-  margin-right: 0 !important;
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
 }
 
-/* (opcional) por si algún section trae display raro */
-section {
-  box-sizing: border-box !important;
 }
